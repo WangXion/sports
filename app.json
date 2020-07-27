@@ -9,6 +9,7 @@
     "pages/appoint/teamReport",
     "pages/mine/personalInfo",
     "pages/system/systemSetting",
+    "pages/system/operationManual",
     "pages/mine/feedBack",
     "pages/system/systemMessage",
     "pages/mine/messageDetails",

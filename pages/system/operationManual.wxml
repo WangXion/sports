@@ -1,0 +1,4 @@
+<!--setting.wxml-->
+<view class="container">
+    <text>操作手册内容</text>
+</view>
