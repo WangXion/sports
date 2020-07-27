@@ -29,13 +29,23 @@
     "pages/venueDetail/venue",
     "pages/venueInfo/venueInfo",
     "pages/orderPayment/orderPayment",
-    "pages/scientificFitness/scientificFitness"
+    "pages/scientificFitness/scientificFitness",
+    "pages/keepSearch/keepSearch",
+    "pages/paySuccess/paySuccess",
+    "pages/authorization/authorization",
+    "pages/slimming/slimming",
+    "pages/share/share"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取您当前位置"
+    }
   },
   "tabBar": {
     "color": "#999999",

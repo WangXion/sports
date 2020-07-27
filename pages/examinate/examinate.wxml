@@ -31,7 +31,7 @@
       <view>本人已阅读以上声明，并已同意全部条款</view>
     </view>
     <view class="btn">
-      <view class="text" bindtap="sureAppointment">确认预约</view>
+      <view class="text" bindtap="sureAppointment" data-index="{{ currentKey }}">确认预约</view>
     </view>
   </view>
 </view>

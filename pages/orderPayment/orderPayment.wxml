@@ -41,7 +41,7 @@
       <image wx:if="{{ vipSelecetd }}" class="radio" src="../../images/radio-selected.png" mode="cover"></image>
     </view>
   </view>
-  <view class="btn">
+  <view class="btn" bindtap="buy">
     立即购买
   </view>
 </view>

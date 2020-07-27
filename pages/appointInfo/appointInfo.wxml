@@ -2,7 +2,7 @@
 <view class="appointInfo">
   <view class="title">预约信息</view>
   <!-- 个人预约 -->
-  <view wx:if="{{ title !== '团体' }}">
+  <view wx:if="{{ key === '1' }}">
     <view class="cont">
       <view class="item">
         <view class="lable">预约人</view>
@@ -72,7 +72,7 @@
     </view>
   </view>
   <!-- 团体预约 -->
-  <view wx:if="{{ title === '团体' }}">
+  <view wx:if="{{ key === '2' }}">
     <view class="cont">
       <view class="item">
         <view class="lable">团体/单位名</view>
@@ -148,7 +148,7 @@
     </view>
   </view>
   <view class="border"></view>
-  <view class="list">
+  <view wx:if="{{ key === '2' }}" class="list">
     <view class="add">
       <view class="left">人员列表</view>
       <view class="right" bindtap="showMask">添加名单</view>

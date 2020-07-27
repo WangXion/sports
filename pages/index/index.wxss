@@ -217,3 +217,46 @@ image {
   width: 100%;
   height: 100%;
 }
+/* 设置背景遮罩层样式 */
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10rpx;
+  z-index: 9999;
+}
+.mask .button {
+  width: 350rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 50rpx;
+  background: red;
+  color: #fff;
+  text-align: center;
+  font-size: 26rpx;
+}
+.mask .icon {
+  width: 400rpx;
+  height: 400rpx;
+  position: absolute;
+  top: 90rpx;
+  left: 170rpx;
+}
+/* 设置关闭按钮图片的位置 */
+.mask .closeImg {
+  position: absolute;
+  top: 600rpx;
+  left: 335rpx;
+}
+/* 设置关闭按钮宽高 */
+.mask .closeImg_image {
+  width: 50rpx;
+  height: 50rpx;
+}

@@ -182,6 +182,55 @@
 					"id": -1,
 					"name": "pages/orderPayment/orderPayment",
 					"pathName": "pages/orderPayment/orderPayment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/paySuccess/paySuccess",
+					"pathName": "pages/paySuccess/paySuccess",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/scientificFitness/scientificFitness",
+					"pathName": "pages/scientificFitness/scientificFitness",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/keepSearch/keepSearch",
+					"pathName": "pages/keepSearch/keepSearch",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/scientificFitness/scientificFitness",
+					"pathName": "pages/scientificFitness/scientificFitness",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/authorization/authorization",
+					"pathName": "pages/authorization/authorization",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/scientificFitness/scientificFitness",
+					"pathName": "pages/scientificFitness/scientificFitness",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/slimming/slimming",
+					"pathName": "pages/slimming/slimming",
 					"scene": null
 				}
 			]

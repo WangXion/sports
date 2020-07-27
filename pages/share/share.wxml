@@ -1,0 +1,48 @@
+<!--pages/share/share.wxml-->
+<view class="shore">
+    <view class="beall">
+        <view class="top"></view>
+        <view class="bottom">
+            <view class="upper">
+                健康健身标题健康健身标题健康健身
+                标题            
+            </view>
+            <view class="lower">
+                <view class="left"></view>
+                <view class="right">
+                    <view class="front">
+                        <view class="large">
+                        </view>
+                        <view class="small">
+                            张三  邀请您科学健身
+                        </view>
+                    </view>
+                    <view class="after">
+                        识别小程序，进入杭州体育局阅读全文
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="end">
+        <view class="picture">
+                <view class="stone">
+                    <image class="friend" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/weixin.png" mode="cover"></image>
+                    <view class="text">微信好友</view>
+                </view>
+                <view class="scissors">
+                    <image class="copy" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/weixin.png" mode="cover"></image>
+                    <view class="text">复制链接</view>
+                </view>
+                <view class="cloth">
+                    <image class="poster" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/weixin.png" mode="cover"></image>
+                    <view class="text">海报生成</view>
+                </view>
+        </view>
+        <view class="cancel">
+            <view class="word">
+                取消
+            </view>
+        </view>
+    </view>
+</view>

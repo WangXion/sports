@@ -15,17 +15,25 @@ Page({
   onLoad: function (options) {
 
   },
+  // 选择微信还是支付宝
   method (event) {
     let { type } = event.currentTarget.dataset;
     if (type === 'weiixn') {
       this.setData({
-        weixinSelecetd: !this.data.weixinSelecetd
+        weixinSelecetd: !this.data.weixinSelecetd,
+        vipSelecetd: false
       })
     }else {
       this.setData({
-        vipSelecetd: !this.data.vipSelecetd
+        vipSelecetd: !this.data.vipSelecetd,
+        weixinSelecetd: false
       })
     }
+  },
+  buy () {
+    wx.navigateTo({
+      url: '/pages/paySuccess/paySuccess'
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

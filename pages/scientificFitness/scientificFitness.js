@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    listData: [1,2,3],
+    navData: ['头条', '跑步',  '跳绳','爬山','游泳','饮食'],
+    currentIndex: 0
   },
 
   /**
@@ -14,7 +16,25 @@ Page({
   onLoad: function (options) {
 
   },
-
+  // nav  change事件
+  changeTap (event) {
+    let { index } = event.currentTarget.dataset;
+    this.setData({
+      currentIndex: index
+    })
+  },
+  // 跳转
+  listHref () {
+    wx.navigateTo({
+      url: '/pages/slimming/slimming'
+    })
+  },
+  // 搜索的点击事件
+  search () {
+    wx.navigateTo({
+      url: '/pages/keepSearch/keepSearch'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

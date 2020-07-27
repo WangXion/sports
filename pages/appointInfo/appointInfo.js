@@ -14,14 +14,19 @@ Page({
     date: '',
     personalArr: [1,2,3,4],
     flag: true,
-    isEdit: false
+    isEdit: false,
+    key: '1'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    this.setData({
+      key: options.key
+    })
+    
   },
   // input的change事件
   inputChange (event) {

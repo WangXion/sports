@@ -7,7 +7,7 @@ Page({
    */
   data: {
     // 轮播图设置
-    background: ['../../images/banner.png','../../images/banner.png'],
+    background: ['https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/banner.png','https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/banner.png'],
     indicatorDots: true,
     vertical: false,
     autoplay: true,
@@ -18,65 +18,70 @@ Page({
     nextMargin: 0,
     indicatorColor: 'rgba(255, 255, 255, .5)',
     indicatorActiveColor: '#ffffff',
-    swiper_height: '269rpx'
+    swiper_height: '269rpx',
     // 轮播图设置
+    userInfo: wx.getStorageSync('userInfo'),
+    flag: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
   // 体质监测跳转
   hrefTap (event) {
-    console.log(event.currentTarget.dataset.key)
     let { key } = event.currentTarget.dataset;
+    let url = '';
     switch (key) {
+      // 授权
+      case 'avatar':
+        wx.navigateTo({
+          url: '/pages/authorization/authorization'
+        })
+        break;
       // 体质监测
       case 'examinate':
         wx.navigateTo({
           url: '/pages/examinate/examinate'
         })
-        // wx.navigateTo({
-        //   url: '/pages/appointInfo/appointInfo'
-        // })
-        // wx.navigateTo({
-        //   url: '/pages/orderPayment/orderPayment'
-        // })
         break;
-        // 场馆地图
-        case 'map':
-          wx.navigateTo({
-            url: '/pages/map/map'
-          })
-          break;
-          // 体育大讲堂
-        case 'lecture':
-          wx.navigateTo({
-            url: '/pages/publicLecture/publicLecture'
-          })
-          break;
-          门票卡劵
-        case 'cart':
-          wx.navigateTo({
-            url: '/pages/venue/venue'
-          })
-          break;
-        case 'venueDetail':
-          wx.navigateTo({
-            url: '/pages/venueDetail/venue'
-          })
-          break;
-        case 'scientificFitness':
-          console.log('111')
-          wx.switchTab({
-            url: '/pages/scientificFitness/scientificFitness'
-          })
-          break;
+      // 场馆地图
+      case 'map':
+        wx.navigateTo({
+          url: '/pages/map/map'
+        })
+        break;
+        // 体育大讲堂
+      case 'lecture':
+        wx.navigateTo({
+          url: '/pages/publicLecture/publicLecture'
+        })
+        break;
+        门票卡劵
+      case 'cart':
+        wx.navigateTo({
+          url: '/pages/venue/venue'
+        })
+        break;
+      case 'venueDetail':
+        wx.navigateTo({
+          url: '/pages/venueDetail/venue'
+        })
+        break;
+      case 'scientificFitness':
+        wx.navigateTo({
+          url: '/pages/slimming/slimming?key='+2
+        })
+        break;
       default:
         break;
     }
+  },
+  closeMask () {
+    this.setData({
+      flag: true
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -89,7 +94,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let userInfo = wx.getStorageSync('userInfo')
+    if (userInfo) {
+      this.setData({
+        userInfo
+      })
+    }
   },
 
   /**

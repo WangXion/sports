@@ -1,0 +1,17 @@
+<!--pages/result/result.wxml-->
+<view class="order">
+    <view class="picture">
+        <image class="img" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/success.png" mode="cover"></image>
+        <view class="success">
+            支付成功
+        </view>
+        <view class="button">
+            <view class="return" bindtap="back">
+                返回首页
+            </view>
+            <view class="see" bindtap="checkOrder">
+                查看订单
+            </view>
+        </view>
+    </view>
+</view>

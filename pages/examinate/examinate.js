@@ -40,9 +40,10 @@ Page({
     }
   },
   // 确认预约
-  sureAppointment () {
+  sureAppointment (event) {
+    let { index } = event.currentTarget.dataset;
     wx.navigateTo({
-      url: '/pages/appointInfo/appointInfo'
+      url: '/pages/appointInfo/appointInfo?key='+index
     })
   },
   /**

@@ -1,0 +1,133 @@
+/* pages/share/share.wxss */
+.shore{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10rpx;
+    z-index: 9999;
+}
+.shore .beall{
+    width: 585rpx;
+    height: 670rpx;
+    background:rgba(255,255,255,1);
+    margin-bottom: 240rpx;
+}
+.shore .beall .top{
+    width: 585rpx;
+    height: 318rpx;
+    background:rgba(213,213,213,1);
+}
+.shore .beall .bottom .upper{
+    width: 480rpx;
+    height: 78rpx;
+    font-size: 30rpx;
+    font-weight: 400;
+    color:rgba(51,51,51,1);
+    line-height: 48rpx;
+    padding: 26rpx 0 0 27rpx;
+}
+.shore .beall .bottom .lower{
+    display: flex;
+    align-items: center;
+    padding: 61rpx 38rpx 31rpx 21rpx;
+}
+.shore .beall .bottom .lower .left{
+    min-width: 156rpx;
+    height: 156rpx;
+    background:rgba(210,188,188,1);
+    
+}
+.shore .beall .bottom .lower .front{
+    display: flex;
+    align-items: center;
+    padding-left: 31rpx;
+}
+.shore .beall .bottom .lower .large{
+    width: 57rpx;
+    height: 57rpx;
+    background:rgba(210,188,188,1);
+    border-radius:50%;
+}
+.shore .beall .bottom .lower .small{
+    font-size:24rpx;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    padding-left: 20rpx;
+}
+.shore .beall .bottom .lower .after{
+    font-size:24rpx;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    line-height: 36rpx;
+    opacity: 0.5;
+    padding-left: 35rpx;
+    padding-top: 36rpx;
+}
+.shore .end{
+    width: 750rpx;
+    height: 287rpx;
+    background:rgba(243,243,243,1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.shore .end .picture{
+    display: flex;
+    padding: 31rpx 0 0 40rpx;
+}
+.shore .end .picture .text{
+    padding-top: 17rpx;
+}
+
+.shore .end .picture .stone{
+    font-size: 24rpx;
+    font-weight: 400;
+    color:rgba(0,0,0,1);
+}
+.shore .end .picture .stone .friend{
+    width: 87rpx;
+    height: 87rpx;
+}
+.shore .end .picture .scissors{
+    font-size: 24rpx;
+    font-weight: 400;
+    color:rgba(0,0,0,1);
+    padding-left: 45rpx;
+}
+.shore .end .picture .scissors .copy{
+    width: 87rpx;
+    height: 87rpx;
+}
+.shore .end .picture .cloth{
+    font-size: 24rpx;
+    font-weight: 400;
+    color:rgba(0,0,0,1);
+    padding-left: 45rpx;
+}
+.shore .end .picture .cloth .poster{
+    width: 87rpx;
+    height: 87rpx;
+}
+.shore .end .cancel{
+    width: 750rpx;
+    height: 101rpx;
+    background:rgba(255,255,255,1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.shore .end .cancel .word{
+    font-size: 30rpx;
+    font-weight:400;
+    color:rgba(0,0,0,1);
+    padding: 33rpx 346rpx 39rpx;
+}

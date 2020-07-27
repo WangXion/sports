@@ -1,0 +1,23 @@
+<!--pages/keepSearch/keepSearch.wxml-->
+<view class="keepSearch">
+	<view class="box">
+		<view class="search">
+            <input class="input" type="text" placeholder="请输入您感兴趣的新闻"/>
+            <image class="img"
+                src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-search.png" mode="cover" />
+		</view>
+		<view class="cancel" bindtap="cancel">取消</view>
+	</view>
+	<view class="hot">
+		<image class="png" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/hot.png" mode="cover" />
+		<view class="hotspot">
+			今日热点
+		</view>
+    </view>
+    <block wx:for="{{ content }}" wx:key="index">
+        <view class="content">
+            {{ index+1 }}、健康健身说明的啊啊的啊
+        </view>
+    </block>
+</view>
+
