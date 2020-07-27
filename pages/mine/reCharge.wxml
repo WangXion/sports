@@ -1,0 +1,34 @@
+<!--recharge.wxml-->
+<view class="container">
+    <view class='header'>
+        <view class='top flexBetween'>
+            <text>帐号余额（元）</text>
+            <view class='btn'>交易记录</view>
+        </view>
+        <view class='balance'>0.00</view>
+    </view>
+    <view class='title'>充值金额</view>
+    <view class='chargeList flexBetween'>
+        <view class='item checked'>100<text>元</text></view>
+        <view class='item'>300<text>元</text></view>
+        <view class='item'>500<text>元</text></view>
+        <view class='item'>1000<text>元</text></view>
+        <view class='item'>3000<text>元</text></view>
+        <view class='item'>5000<text>元</text></view>
+    </view>
+    <view class='footer'>
+        <view class='btn'>提交反馈</view>
+        <view class='flexCenter'>
+            <icon class="icon-small" type="success" size="23" color='#E95A28'></icon>
+            同意
+            <view class='link' bindtap='showLay'>《支付服务协议》</view>
+        </view>
+    </view>
+    <view class='agreementLay' wx:if='{{authLay}}'>
+        <view class='content'>
+            <view class='layTitle'>支付协议</view>
+            <text>斯柯达啦计算机拉会计师沙拉沙拉酱了斯柯达啦计算机拉会计师沙拉沙拉酱了斯柯达啦计算机拉会计师沙拉沙拉酱了斯柯达啦计算机拉会计师沙拉沙拉酱了斯柯达啦计算机拉会计师沙拉沙拉酱了斯柯达啦计算机拉会计师沙拉沙拉酱了斯柯达啦计算机拉会计师沙拉沙拉酱了斯柯达啦计算机拉会计师沙拉沙拉酱了斯柯达啦计算机拉会计师沙拉沙拉酱了斯柯达啦计算机拉会计师沙拉沙拉酱了斯柯达啦计算机拉会计师沙拉沙拉酱了</text>
+            <view class='btn' bindtap='showLay'>我已阅读，并同意</view>
+        </view>
+    </view>
+</view>

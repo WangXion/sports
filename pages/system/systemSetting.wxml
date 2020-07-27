@@ -1,0 +1,21 @@
+<!--setting.wxml-->
+<view class="container">
+    <view class='setting'>
+        <view class='item flexBetween' data-type='feedBack' bindtap='linkTo'>
+            <text class='label'>意见建议</text>
+            <image class="arrow" src="../../static/right-arrow.png" mode="cover"></image>
+        </view>
+        <view class='item flexBetween'>
+            <text class='label'>操作手册</text>
+            <image class="arrow" src="../../static/right-arrow.png" mode="cover"></image>
+        </view>
+        <view class='item flexBetween' data-tel='0571-88886666' bindtap='callPhone'>
+            <text class='label'>客服电话</text>
+            <text class='val' >0571-88886666</text>
+        </view>
+        <view class='item flexBetween'>
+            <text class='label'>当前版本</text>
+            <text class='val'>v1.0</text>
+        </view>
+    </view>
+</view>

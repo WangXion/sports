@@ -1,0 +1,13 @@
+<!--details.wxml-->
+<view class="container">
+    <view class='header'>
+       <view class='top'>
+           <text class='name'>张珊</text>
+           <text class='num'>15858623333</text>
+       </view>
+       <view class='num'>331082198801281010</view>
+    </view>
+    <view class='reportDetails'>
+        <view class='title'>体检结果：</view>
+    </view>
+</view>

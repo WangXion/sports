@@ -1,0 +1,47 @@
+<!--details.wxml-->
+<view class="container">
+    <view class='header flexStart' data-type='one'>
+        <image src='../../static/swimming.png' class='itemRight'></image>
+        <view class='flexBetween center'>
+            <view class='info'>
+                <view class='flexBetween'>
+                    <text class='orderName'>游泳早场-平时场-成人票</text>
+                    <image src='../../static/right-arrow.png' class='arrow'></image>
+                </view>
+                <text class='limit'>限大关游泳馆</text>
+            </view>
+            <view class='price flexStart'><text>￥</text>50<view>X1</view></view>
+        </view>
+    </view>
+    <view class='address'>
+        <view class='name'>大观体育馆</view>
+        <view class='details flexBetween'>
+            <text>杭州拱墅区大关路XXX号</text>
+            <image src='../../static/nav-icon.png' class='navIcon'></image>
+        </view>
+        <view class='flexCenter call'>
+            <image src='../../static/phone-icon.png' class='phoneIcon'></image>
+            <text>联系商家</text>
+        </view>
+    </view>
+    <view class='writeOff'>
+        <view class='title'>核销码<text>现场凭此码扫码入场 </text></view>
+        <image src='' class='writeCode'></image>
+        <view class="limit">剩余有效次数：<text>3次 </text></view>
+    </view>
+    <view class='tip'>
+        <view class="title">温馨提示</view>
+        <view class='content flexStart'>
+            <view class="label">不可用</view>
+            <text class="details">什么情况下不可使用的说明什么情况下不情况下不情可使用的说明什么情况下不可使用的说明情况下不情什么情况下不可使用的说明什么情况下不情况下不情可使用的说明</text>
+        </view>
+        <view class='content flexStart'>
+            <view class="label">不可用</view>
+            <text class="details">什么情况下不可使用的说明什么情况下不情况下不情可使用的说明什么情况下不可使用的说明情况下不情什么情况下不可使用的说明什么情况下不情况下不情可使用的说明</text>
+        </view>
+    </view>
+    <view class='footer flexBetween'>
+        <view class="price">金额：<text>￥20.00</text></view>
+        <view class='btn'>去使用</view>
+    </view>
+</view>

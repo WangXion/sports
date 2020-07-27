@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="container">
+    <view class='tabBar'>
+        <view  class='item {{tabKey == 1 ? "checked" :""}}' data-key='1' bindtap='changeTab'>待使用</view>
+        <view  class='item {{tabKey == 2 ? "checked" :""}}' data-key='2' bindtap='changeTab'>已使用</view>
+        <view  class='item {{tabKey == 3 ? "checked" :""}}' data-key='3' bindtap='changeTab'>已过期</view>
+    </view>
+    <view class='couponList'>
+        <block>
+            <view class='item flexBetween' data-type='one'>
+                <view class='flexStart'>
+                    <view class='couponPirce'><text>￥</text>50</view>
+                    <view class='flexStart center'>
+                        <text class='couponName'>暑期儿童抵扣券</text>
+                        <text class='limit'>限大关游泳馆</text>
+                        <text class='time'>有效期：2020-07-16</text>
+                    </view>
+                </view>
+                <view class='btn'>去使用</view>
+            </view>
+        </block>
+        <block>
+            <view class='item flexBetween' data-type='one'>
+                <view class='flexStart'>
+                    <view class='couponPirce'><text>￥</text>50</view>
+                    <view class='flexStart center'>
+                        <text class='couponName'>暑期儿童抵扣券</text>
+                        <text class='limit'>限大关游泳馆</text>
+                        <text class='time'>有效期：2020-07-16</text>
+                    </view>
+                </view>
+                <view class='label'>已过期</view>
+            </view>
+        </block>
+        <block>
+            <view class='item flexBetween' data-type='one'>
+                <view class='flexStart'>
+                    <view class='couponPirce'><text>￥</text>50</view>
+                    <view class='flexStart center'>
+                        <text class='couponName'>暑期儿童抵扣券</text>
+                        <text class='limit'>限大关游泳馆</text>
+                        <text class='time'>有效期：2020-07-16</text>
+                    </view>
+                </view>
+                <view class='label'>已使用</view>
+            </view>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,15 @@
+.container{
+    box-sizing: border-box;
+    padding: 24rpx 15rpx;
+}
+.container .title{
+    font-size: 36rpx;
+    color: #333;
+    margin-bottom: 34rpx;
+}
+.container .time{
+    font-size: 24rpx;
+    color: #333;
+    margin-bottom: 67rpx;
+    opacity: 0.5;
+}

@@ -1,0 +1,186 @@
+/**details.wxss**/
+.container{
+    background: #F7F4F8;
+    box-sizing: border-box;
+    padding-top: 17rpx;
+}
+.header{
+    background: #fff;
+    border-radius: 10rpx;
+    height: 236rpx;
+    padding: 27rpx 15rpx;
+    box-sizing: border-box;
+    margin-bottom: 23rpx;
+}
+.header .itemRight{
+    width: 145rpx;
+    height: 182rpx;
+    margin-right: 23rpx;
+}
+.header .center{
+    flex: 1;
+    height: 182rpx;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.header .center .info{
+    width: 100%;
+}
+.header .center .arrow{
+    width: 16rpx;
+    height: 27rpx;
+}
+.header .price{
+    font-size: 36rpx;
+    color: #666666;
+}
+.header .price text{
+    font-size: 24rpx;
+}
+.header .price view{
+    padding-left: 20rpx;
+}
+.header .orderName{
+    font-size: 30rpx;
+    color: #000;
+    margin-bottom: 7rpx;
+}
+.header .limit{
+    font-size: 24rpx;
+    color: #888;
+}
+.address{
+    height: 216rpx;
+    background: #fff;
+    margin-bottom: 13rpx;
+    box-sizing: border-box;
+    padding: 0 15rpx;
+}
+.address .name{
+    height: 88rpx;
+    font-size: 30rpx;
+    color: #333;
+    line-height: 88rpx;
+}
+.address .details{
+    font-size: 24rpx;
+    color: #666;
+}
+.address .navIcon{
+    width: 38rpx;
+    height: 37rpx;
+}
+.address .phoneIcon{
+    width: 28rpx;
+    height: 34rpx;
+    margin-right: 24rpx;
+}
+.address .call{
+    font-size: 24rpx;
+    color: #000;
+    padding-top: 43rpx;
+}
+.writeOff{
+    height: 556rpx;
+    background: #fff;
+    margin-bottom: 30rpx;
+}
+.writeOff .title{
+    font-size: 30rpx;
+    color: #000;
+    padding-top: 27rpx;
+    padding-left: 17rpx;
+}
+.writeOff .title text{
+    opacity: 0.5;
+    padding-left: 19rpx;
+    font-size: 24rpx;
+}
+.writeOff .writeCode{
+    width: 367rpx;
+    height: 365rpx;
+    display: block;
+    margin: 0 auto;
+    margin-top: 36rpx;
+}
+.writeOff .limit {
+    font-size: 24rpx;
+    color: #000;
+    text-align: center;
+    padding-top: 23rpx;
+}
+.writeOff .limit text{
+    color: #FF9018;
+}
+.tip{
+    background: #fff;
+    margin-bottom: 123rpx;
+    padding: 0 23rpx;
+    box-sizing: border-box;
+}
+.tip .title{
+    font-size: 30rpx;
+    color: #000;
+    padding: 27rpx 0 45rpx 0;
+}
+.tip .content{
+    align-items: flex-start;
+}
+.tip .label{
+    width: 300rpx;
+    font-size: 30rpx;
+    color: #999;
+    padding-left: 12rpx;
+    padding-right: 26rpx;
+}
+.tip .details{
+    font-size: 24rpx;
+    color: #333;
+    line-height: 45rpx;
+    margin-bottom: 25rpx;
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    height: 109rpx;
+    background: #fff;
+    width: 100%;
+    padding: 0 15rpx;
+    box-sizing: border-box;
+}
+.footer .price {
+    font-size: 30rpx;
+    color: #000;
+    text-align: center;
+    padding-top: 23rpx;
+}
+.footer .price text{
+    color: #FF9018;
+}
+.footer  .btn{
+    width: 261rpx;
+    height: 78rpx;
+    border: 2rpx solid rgba(255, 121, 31, 1);
+    border-radius: 40rpx;
+    line-height: 78rpx;
+    text-align: center;
+    font-size: 30rpx;
+    margin-left: 18rpx;
+    background: #FF791F;
+    color: #fff;
+}
+.flexStart{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.flexBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

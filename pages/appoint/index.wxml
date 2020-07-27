@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view class="container">
+    <view class='tabBar'>
+        <view  class='{{tabKey == 1 ? "checked item" :"item"}}' data-key='1' bindtap='changeTab'>
+            <text>预约记录</text>
+        </view>
+        <view  class='{{tabKey == 2 ? "checked item" :"item"}}' data-key='2' bindtap='changeTab'>
+            <text>检测结果</text>
+        </view>
+    </view>
+    <view class='listBox'>
+        <block>
+            <view class='item' data-type='one' bindtap='details'>
+                <view class='itemTop flexBetween'>
+                    <view class='flexStart'>
+                        <text class='name'>张珊</text>
+                        <view class='tags'>个人</view>
+                    </view>
+                    <text class='status'>待检测</text>
+                </view>
+                <view class='itemBottom flexBetween'>
+                    <text class='info'>15858623333</text>
+                    <text class='time'>2020-10-10 10:30</text>
+                </view>
+            </view>
+        </block>
+        <block>
+            <view class='item' data-type='one' bindtap='details'>
+                <view class='itemTop flexBetween'>
+                    <view class='flexStart'>
+                        <text class='name'>张珊</text>
+                        <view class='tags'>个人</view>
+                    </view>
+                    <text class='status completed'>已完成</text>
+                </view>
+                <view class='itemBottom flexBetween'>
+                    <text class='info'>15858623333</text>
+                    <text class='time'>2020-10-10 10:30</text>
+                </view>
+            </view>
+        </block>
+        <block>
+            <view class='item' data-type='team' bindtap='details'>
+                <view class='itemTop flexBetween'>
+                    <view class='flexStart'>
+                        <text class='name'>张珊</text>
+                        <view class='tags teamTags'>团队</view>
+                    </view>
+                    <text class='status completed'>已完成</text>
+                </view>
+                <view class='itemBottom flexBetween'>
+                    <text class='info'>15858623333</text>
+                    <text class='time'>2020-10-10 10:30</text>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

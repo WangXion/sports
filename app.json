@@ -1,7 +1,24 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/appoint/index",
+    "pages/appoint/appointOrder",
+    "pages/appoint/orderDetails",
+    "pages/appoint/details",
+    "pages/appoint/teamReport",
+    "pages/mine/personalInfo",
+    "pages/system/systemSetting",
+    "pages/mine/feedBack",
+    "pages/system/systemMessage",
+    "pages/mine/messageDetails",
+    "pages/mine/nameAuthentication",
+    "pages/mine/index",
+    "pages/mine/reCharge",
+    "pages/coupon/index",
+    "pages/collection/index",
+    "pages/collection/myCollection",
+    "pages/collection/signupDetails"
   ],
   "window":{
     "backgroundTextStyle":"light",

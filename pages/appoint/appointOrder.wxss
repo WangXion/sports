@@ -1,0 +1,118 @@
+/**index.wxss**/
+.container{
+    background: #F7F4F8;
+}
+/* tab切换 */
+.tabBar{
+    /* width: 100%; */
+    height: 88rpx;
+    display: flex;
+    background: #fff;
+}
+.tabBar .item{
+    flex: 1;
+    line-height: 88rpx;
+    font-weight: 400;
+    color:rgba(102,102,102,1);
+    font-size: 30rpx;
+    text-align: center;
+}
+.tabBar .checked{
+    color: #FF791F;
+    position: relative;
+}
+.tabBar .checked:before{
+    content: '';
+    background: #FF791F;
+    width: 66rpx;
+    height: 6rpx;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10rpx;
+    border-radius: 4px;
+}
+/* 优惠群啊列表 */
+.orderList{
+    min-height: calc(100vh - 88rpx);
+    /* padding: 0 15rpx; */
+    padding-top: 28rpx;
+    box-sizing: border-box;
+}
+.orderList .item{
+    background: #fff;
+    border-radius: 10rpx;
+    height: 236rpx;
+    padding: 27rpx 15rpx;
+    box-sizing: border-box;
+    margin-bottom: 16rpx;
+}
+.orderList .item .itemRight{
+    width: 145rpx;
+    height: 182rpx;
+    margin-right: 23rpx;
+}
+.orderList .item .center{
+    flex: 1;
+    height: 182rpx;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.orderList .item .info{
+    width: 100%;
+}
+.orderList .item .orderPirce{
+    width: 100%;
+}
+.orderList .item .price{
+    font-size: 36rpx;
+    color: #FF791F;
+}
+.orderList .item .price text{
+    font-size: 24rpx;
+}
+.orderList .item .orderName{
+    font-size: 30rpx;
+    color: #000;
+    margin-bottom: 7rpx;
+}
+.orderList .item .limit{
+    font-size: 24rpx;
+    color: #888;
+}
+.orderList .item .btn{
+    width: 154rpx;
+    height: 63rpx;
+    border: 2rpx solid rgba(255, 121, 31, 1);
+    border-radius: 40rpx;
+    line-height: 63rpx;
+    text-align: center;
+    font-size: 30rpx;
+    margin-left: 18rpx;
+    background: #FF791F;
+    color: #fff;
+}
+.orderList .item .unsubscribe{
+    background: #fff;
+    color: #FF791F;
+}
+.orderList .item .label{
+    font-size: 24rpx;
+    color: #999;
+}
+.orderList .item .label.use{
+    color: #67CBF4;
+}
+.orderList .item .label.pay{
+    color: #FF791F;
+}
+.flexStart{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.flexBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

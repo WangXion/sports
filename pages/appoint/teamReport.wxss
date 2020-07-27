@@ -1,0 +1,75 @@
+/**teamReport.wxss**/
+.container{
+    background: #F7F4F8;
+}
+/* 记录列表 */
+.listBox{
+    min-height: 100vh;
+    padding-top: 13rpx;
+}
+.listBox .item{
+    box-sizing:border-box;
+    margin-bottom: 13rpx;
+    width: 100%;
+    height: 145rpx;
+    background: #fff;
+    padding: 30rpx 16rpx;
+}
+.listBox .item .name{
+    font-size: 30rpx;
+    color: #333;
+    padding-bottom: 10rpx;
+}
+.listBox .item .info,.listBox .item .time{
+    color: #999;
+    font-size: 24rpx;
+}
+.listBox .item .status{
+    font-size: 26rpx;
+    color: #FF791F;
+    width: 122rpx;
+    text-align: center;
+}
+.listBox .item .status.completed{
+    color: #7FD262;
+}
+.flexStart{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.flexBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    height: 119rpx;
+    width: 100%;
+    background: #fff;
+    padding: 0 15rpx;
+    box-sizing: border-box;
+}
+.footer .checkbox{
+    width: 39rpx;
+    height: 39rpx;
+    background: #e4e4e4;
+    border-radius: 50%;
+}
+.footer .checked{
+    width: 39rpx;
+    height: 39rpx;
+    background: rgba(247,141,27,1);
+    border-radius: 50%;
+}
+.footer .button{
+    width: 266rpx;
+    height: 92rpx;
+    line-height: 92rpx;
+    background:rgba(247,141,27,1);
+    text-align: center;
+    color: #fff;
+    border-radius: 50rpx;
+}

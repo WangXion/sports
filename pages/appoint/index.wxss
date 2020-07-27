@@ -1,0 +1,90 @@
+/**index.wxss**/
+.container{
+    background: #F7F4F8;
+}
+/* tab切换 */
+.tabBar{
+    /* width: 100%; */
+    height: 99rpx;
+    display: flex;
+    padding: 0 170rpx;
+    background: #fff;
+}
+.tabBar .item{
+    flex: 1;
+    line-height: 99rpx;
+    font-weight: 400;
+    color:rgba(102,102,102,1);
+    font-size: 30rpx;
+    
+}
+.tabBar .item:last-child{
+    text-align: right;
+}
+.tabBar .checked text{
+    color: #FF791F;
+    position: relative;
+}
+.tabBar .checked text:before{
+    content: '';
+    background: #FF791F;
+    width: 100%;
+    height: 6rpx;
+    position: absolute;
+    bottom: -17rpx;
+    border-radius: 4px;
+}
+/* 记录列表 */
+.listBox{
+    min-height: calc(100vh - 99rpx);
+    padding-top: 13rpx;
+}
+.listBox .item{
+    box-sizing:border-box;
+    margin-bottom: 13rpx;
+    width: 100%;
+    height: 145rpx;
+    background: #fff;
+    padding: 30rpx 16rpx;
+}
+.listBox .item .itemTop{
+    margin-bottom: 23rpx;
+}
+.listBox .item .name{
+    font-size: 30rpx;
+    color: #333;
+}
+.listBox .item .tags{
+    height: 35rpx;
+    border-radius: 5rpx;
+    line-height: 35rpx;
+    padding: 0 8rpx;
+    margin-left: 13rpx;
+    font-size: 20rpx;
+    color: #fff;
+    background: #FF791F;
+}
+.listBox .item .tags.teamTags{
+    background: #408BE8;
+}
+.listBox .item .status{
+    font-size: 26rpx;
+    color: #FF791F;
+}
+.listBox .item .status.completed{
+    color: #7FD262;
+}
+.listBox .item .info,.listBox .item .time{
+    color: #999;
+    font-size: 24rpx;
+}
+.flexStart{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.flexBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,181 @@
+/**index.wxss**/
+.container{
+    background: #F7F4F8;
+    box-sizing: border-box;
+    height: 100vh;
+}
+.header{
+    width: 100%;
+    height: 290rpx;
+    position: relative;
+    overflow: hidden;
+}
+.header .headerBg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+.header .top{
+    position: absolute;
+    z-index: 2;
+    top: 63rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 687rpx;
+}
+.header .top .avatar{
+    width: 109rpx;
+    height: 109rpx;
+    border-radius: 50%;
+    margin-right: 23rpx;
+}
+.header .top .topRight{
+    flex: 1;
+}
+.header .top .nickName{
+    color: #fff;
+    font-size: 36rpx;
+    padding-bottom: 10rpx;
+}
+.header .top .arrow{
+    width: 16rpx;
+    height: 28rpx;
+}
+.header .top .realNameIcon{
+    width: 26rpx;
+    height: 26rpx;
+    margin-right: 6rpx;
+}
+.header .top .realName{
+    color: #fff;
+    font-size: 24rpx;
+}
+.header .bottom{
+    width: 680rpx;
+    height: 93rpx;
+    background: #1F1F1F;
+    border-radius: 20rpx;
+    position: absolute;
+    bottom: -20rpx;
+    z-index: 2;
+    box-sizing: border-box;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: flex-start;
+    padding-top: 20rpx;
+}
+.header .bottom .vipIcon{
+    width: 53rpx;
+    height: 34rpx;
+    margin-left: 26rpx;
+    margin-right: 11rpx;
+}
+.header .bottom .vipText{
+    color: #DBA177;
+    font-size: 24rpx;
+}
+.header .bottom .bottomButton{
+    width: 121rpx;
+    height: 40rpx;
+    background:linear-gradient(0deg,rgba(233,171,129,1),rgba(236,182,147,1));
+    font-size: 20rpx;
+    color: #1B1B1B;
+    border-radius: 20rpx;
+    line-height: 40rpx;
+    text-align: center;
+    margin-right: 15rpx;
+}
+.module{
+    width: 100%;
+    height: 169rpx;
+    background: #fff;
+    margin-bottom: 14rpx;
+}
+.module .item{
+    width: 25%;
+    flex-direction: column;
+}
+.module .item .ticketIcon{
+    height: 89rpx;
+    width: 72rpx;
+}
+.module .item .orderIcon{
+    height: 88rpx;
+    width: 89rpx;
+    transform: translateX(-10rpx);
+
+}
+.module .item .constitutionIcon{
+    height: 88rpx;
+    width: 67rpx;
+    transform: translateX(-10rpx);
+}
+.module .item .classRoomIcon{
+    height: 88rpx;
+    width: 81rpx;
+    transform: translateX(-15rpx);
+}
+.module .item text{
+    font-size: 24rpx;
+    color: #333;
+    padding-top: 6rpx;
+}
+.moduleFu{
+    width: 100%;
+    height: 619rpx;
+    background: #fff;
+    margin-bottom: 18rpx;
+}
+.moduleFu .item{
+    height: 103rpx;
+    padding: 0 26rpx 0 40rpx;
+}
+.moduleFu .item .label{
+    font-size: 30rpx;
+    color: #232323;
+    padding-left: 24rpx;
+}
+.moduleFu .item .rightLabel{
+    font-size: 36rpx;
+    color: #232323;
+    margin-right: 22rpx;
+}
+.moduleFu .item .newMessage{
+    font-size: 24rpx;
+    color: #333;
+    position: relative;
+    margin-right: 29rpx;
+}
+.moduleFu .item .newMessage view{
+    width: 11rpx;
+    height: 11rpx;
+    background: #F3544C;
+    border-radius: 50%;
+    position: absolute;
+    right: -10rpx;
+    top: -5rpx;
+}
+.moduleFu .item .icon{
+    max-width: 39rpx;
+    max-height: 39rpx;
+}
+.moduleFu .item .arrow{
+    width: 15rpx;
+    height: 26rpx;
+}
+.flexBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flexStart{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

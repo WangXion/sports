@@ -1,0 +1,154 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 0 15rpx;
+}
+.header{
+    padding-top: 50rpx;
+}
+.header .top{
+    height: 53rpx;
+    margin-bottom: 10rpx;
+}
+.header .top text{
+    font-size: 24rpx;
+    color: #333333;
+    padding-left: 17rpx;
+}
+.header .top .btn{
+    width: 162rpx;
+    height: 53rpx;
+    background:rgba(255,255,255,1);
+    border: 1px solid rgba(255, 121, 31, 1);
+    border-radius: 40rpx;
+    line-height: 53rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #FF791F;
+    margin-right: 18rpx;
+}
+.header .balance{
+    font-size: 80rpx;
+    color: #000;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding-left: 17rpx;
+}
+.title{
+    font-size: 30rpx;
+    color: #333;
+    padding-left: 16rpx;
+    font-weight: bold;
+    height: 84rpx;
+    line-height: 84rpx;
+}
+.chargeList{
+    flex-wrap: wrap;
+    padding: 0 15rpx;
+    box-sizing: border-box;
+}
+.chargeList .item{
+    width: 212rpx;
+    height: 120rpx;
+    box-shadow: 0rpx 0rpx 10rpx 0rpx rgba(0, 0, 0, 0.2);
+    border-radius: 10rpx;
+    font-size: 48rpx;
+    color: #333333;
+    font-weight: bold;
+    line-height: 120rpx;
+    text-align: center;
+    margin-bottom: 37rpx;
+}
+.chargeList .item text{
+    font-size: 30rpx;
+}
+.chargeList .item.checked{
+    background:rgba(233,90,40,1);
+    box-shadow:0px 0px 10rpx 0px rgba(233,90,40,0.2);
+    color: #fff;
+}
+.footer{
+    width: 100%;
+    position: fixed;
+    bottom: 37rpx;
+    box-sizing: border-box;
+    z-index: 1;
+}
+.footer .btn{
+    width: 96%;
+    height: 98rpx;
+    box-sizing: border-box;
+    background: #FF791F;
+    border-radius: 50rpx;
+    color: #fff;
+    font-size: 30rpx;
+    text-align: center;
+    line-height: 98rpx;
+    margin-bottom: 25rpx;
+}
+.footer .link{
+    color: #FF791F;
+}
+.agreementLay{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+.agreementLay .content{
+    width: 613rpx;
+    height: 811rpx;
+    background: rgba(255,255,255,1);
+    border-radius:10rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0 26rpx;
+    box-sizing: border-box;
+    font-size: 24rpx;
+    color: #666;
+}
+.agreementLay .content .layTitle{
+    text-align: center;
+    font-size: 30rpx;
+    color: #333;
+    height: 113rpx;
+    line-height: 113rpx;
+}
+.agreementLay .content .btn{
+    width: 90%;
+    height: 98rpx;
+    box-sizing: border-box;
+    height: 98rpx;
+    background: #FF791F;
+    border-radius: 50rpx;
+    color: #fff;
+    font-size: 30rpx;
+    text-align: center;
+    line-height: 98rpx;
+    position: absolute;
+    bottom: 31rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.flexBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flexStart{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

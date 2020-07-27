@@ -1,0 +1,34 @@
+<!--personalInfo.wxml-->
+<view class="container">
+    <view class='userInfo'>
+        <view class='header flexBetween'>
+            <text class='label'>头像</text>
+            <image bindtap="bindViewTap" class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        </view>
+        <view class='item flexBetween'>
+            <text class='label'>昵称</text>
+            <input value='{{userInfo.nickName}}' placeholder="请填写昵称"/>
+        </view>
+        <view class='item flexBetween'>
+            <text class='label'>昵称</text>
+            <view class='sex flexStart'>
+                <view class='{{userInfo.sex ==1?"checked": ""}}'>男</view>
+                <view class='checked {{userInfo.sex ==2?"checked": ""}}'>女</view>
+            </view>
+        </view>
+        <view class='item flexBetween'>
+            <text class='label'>绑定手机号</text>
+            <view class='flexStart'>
+                <input value='{{userInfo.nickName}}' placeholder="请填写手机号"/>
+                <image bindtap="bindViewTap" class="arrow" src="../../static/right-arrow.png" mode="cover"></image>
+            </view>
+        </view>
+        <view class='item flexBetween'>
+            <text class='label'>签名</text>
+            <input placeholder="暂时未描写签名"/>
+        </view>
+    </view>
+    <view class='footer'>
+        修改更新
+    </view>
+</view>

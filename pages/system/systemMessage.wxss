@@ -1,0 +1,42 @@
+.container{
+    background: #F7F4F8;
+    box-sizing: border-box;
+    padding-top: 16rpx;
+    height: 100vh;
+}
+.messageList{
+    box-sizing: border-box;
+    padding: 0 15rpx;
+}
+.messageList .item{
+    height: 175rpx;
+    background: #fff;
+    border-radius: 10rpx;
+    padding: 30rpx 27rpx;
+    box-sizing: border-box;
+}
+.messageList .time{
+    color: #888888;
+    font-size: 24rpx;
+    text-align: center;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+.messageList .item .title{
+    font-size: 30rpx;
+    color: #000;
+    margin-bottom: 10rpx;
+}
+.messageList .item .content{
+    color: #888888;
+    font-size: 24rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.textOver{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}

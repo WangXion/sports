@@ -1,0 +1,33 @@
+/**details.wxss**/
+.container{
+    background: #F7F4F8;
+    box-sizing: border-box;
+}
+.header{
+    width: 100%;
+    height: 151rpx;
+    background: #fff;
+    padding-top: 29rpx;
+    padding-left: 19rpx;
+}
+.header .top{
+    margin-bottom: 29rpx;
+}
+.header .name{
+    font-size: 30rpx;
+    color: #333;
+    margin-right: 22rpx;
+}
+.header .num{
+    font-size: 24rpx;
+    color: #999;
+}
+.reportDetails{
+    min-height: calc(100vh - 151rpx);
+}
+.reportDetails .title{
+    font-size: 30rpx;
+    color: #333;
+    padding-top: 29rpx;
+    padding-left: 14rpx;
+}

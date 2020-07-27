@@ -1,0 +1,74 @@
+<!--index.wxml-->
+<view class="container">
+    <view class='tabBar'>
+        <view  class='item {{tabKey == 1 ? "checked" :""}}' data-key='1' bindtap='changeTab'>全部</view>
+        <view  class='item {{tabKey == 2 ? "checked" :""}}' data-key='2' bindtap='changeTab'>待支付</view>
+        <view  class='item {{tabKey == 3 ? "checked" :""}}' data-key='3' bindtap='changeTab'>待使用</view>
+        <view  class='item {{tabKey == 4 ? "checked" :""}}' data-key='4' bindtap='changeTab'>已使用</view>
+        <view  class='item {{tabKey == 5 ? "checked" :""}}' data-key='5' bindtap='changeTab'>过期/退订</view>
+    </view>
+    <view class='orderList'>
+        <block>
+            <view class='item flexStart' bindtap='details'>
+                <image src='../../static/swimming.png' class='itemRight'></image>
+                <view class='flexBetween center'>
+                    <view class='info'>
+                        <view class='flexBetween'>
+                            <text class='orderName'>游泳早场-平时场-成人票</text>
+                            <view class='label'>已过期</view>
+                        </view>
+                        <text class='limit'>限大关游泳馆</text>
+                    </view>
+                    <view class='orderPirce flexBetween'>
+                        <view class='price'><text>￥</text>50</view>
+                        <view class='flexStart'>
+                            <view class='btn'>去使用</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <block>
+            <view class='item flexStart' bindtap='details'>
+                <image src='../../static/swimming.png' class='itemRight'></image>
+                <view class='flexBetween center'>
+                    <view class='info'>
+                        <view class='flexBetween'>
+                            <text class='orderName'>游泳早场-平时场-成人票</text>
+                            <view class='label use'>待使用</view>
+                        </view>
+                        <text class='limit'>限大关游泳馆</text>
+                    </view>
+                    <view class='orderPirce flexBetween'>
+                        <view class='price'><text>￥</text>50</view>
+                        <view class='flexStart'>
+                            <view class='btn unsubscribe'>退订</view>
+                            <view class='btn'>去使用</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <block>
+            <view class='item flexStart'  bindtap='details'>
+                <image src='../../static/swimming.png' class='itemRight'></image>
+                <view class='flexBetween center'>
+                    <view class='info'>
+                        <view class='flexBetween'>
+                            <text class='orderName'>游泳早场-平时场-成人票</text>
+                            <view class='label pay'>待支付</view>
+                        </view>
+                        <text class='limit'>限大关游泳馆</text>
+                    </view>
+                    <view class='orderPirce flexBetween'>
+                        <view class='price'><text>￥</text>50</view>
+                        <view class='flexStart'>
+                            <view class='btn unsubscribe'>退订</view>
+                            <view class='btn'>去使用</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>
