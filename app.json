@@ -59,7 +59,7 @@
         "selectedIconPath": "images/icon_home_selected.png"
       },
       {
-        "pagePath": "pages/venue/venue",
+        "pagePath": "pages/mine/index",
         "text": "我的",
         "iconPath": "images/icon_my.png",
         "selectedIconPath": "images/icon_my.png"

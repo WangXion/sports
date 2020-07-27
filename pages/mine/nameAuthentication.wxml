@@ -18,7 +18,7 @@
     <view class='footer'>提交认证</view>
     <view class='tip'>
         <view class="title">温馨提示</view>
-        <view class='label'>1.温馨提示</view>
+        <view class='label'>1.温馨提示111</view>
         <view class='label'>2.温馨提示</view>
         <view class='label'>3.温馨提示</view>
     </view>
