@@ -1,0 +1,108 @@
+/* pages/orderPayment/orderPayment.wxss */
+.orderPayment {
+  background: #F7F4F8;
+  height: 100vh;
+}
+.orderPayment .info {
+  padding: 50rpx 0 65rpx 0;
+  font-size: 20rpx;
+  font-weight: 400;
+  color:rgba(102,102,102,1);
+  text-align: center;
+  background: #F6F6F6;
+}
+.orderPayment .info .time {
+  margin-bottom: 30rpx;
+  color: #F5834B;
+}
+.orderPayment .info .unit {
+  font-size: 30rpx;
+  font-weight: 400;
+  color:rgba(0,0,0,1);
+}
+.orderPayment .info .price {
+  font-size: 48rpx;
+}
+/* 票的信息 */
+.orderPayment .cont {
+  background: #fff;
+  font-size: 24rpx;
+  font-weight: 400;
+  color:rgba(51,51,51,1);
+  padding: 30rpx 22rpx 60rpx 22rpx;
+  margin-bottom: 26rpx;
+}
+.orderPayment .cont .date {
+  display: flex;
+  align-items: center;
+  color:rgba(244,107,25,1);
+  margin: 10rpx 0 24rpx 0;
+}
+.orderPayment .cont .date .icon {
+  width: 31rpx;
+  height: 30rpx;
+  margin-right: 16rpx;
+}
+.orderPayment .ticket {
+  padding: 20rpx 18rpx;
+  background:#F7F4F8;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  font-weight: 400;
+  color:rgba(0,0,0,1);
+}
+.orderPayment .term {
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
+.orderPayment .term .day {
+  margin-right: 200rpx;
+}
+/* 支付方式 */
+.orderPayment .methods {
+  padding: 27rpx 21rpx 0 21rpx;
+  background: #fff;
+  font-size: 24rpx;
+  font-weight: 400;
+  color:rgba(51,51,51,1);
+}
+.orderPayment .methods .name {
+  margin-bottom: 30rpx;
+}
+.orderPayment .methods .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 28rpx;
+}
+.orderPayment .methods .item .left {
+  display: flex;
+  align-items: center;
+}
+.orderPayment .methods .item .discount {
+  color: #F46B19;
+}
+.orderPayment .methods .item .left .icon {
+  width: 49rpx;
+  height: 49rpx;
+  margin-right: 19rpx;
+}
+.orderPayment .methods .item .radio {
+  width: 37rpx;
+  height: 37rpx;
+}
+.orderPayment .btn {
+  width: 700rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  color: #fff;
+  background:rgba(255,133,44,1);
+  margin-left: 13rpx;
+  position: fixed;
+  bottom: 32rpx;
+  left: 17rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  font-size: 35rpx;
+}

@@ -1,11 +1,11 @@
-// pages/venue/venue.js
+// pages/venueInfo/venueInfo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    venueArr: [1,-1,1,-1],
+
   },
 
   /**
@@ -14,12 +14,7 @@ Page({
   onLoad: function (options) {
 
   },
-  // 跳转详情
-  hrefDetail () {
-    wx.navigateTo({
-      url: '/pages/venueDetail/venue'
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

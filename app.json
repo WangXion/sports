@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
     "pages/appoint/index",
@@ -26,13 +26,16 @@
     "pages/publicLectureDetail/publicLectureDetail",
     "pages/registrateDetails/registrateDetails",
     "pages/venue/venue",
-    "pages/venueDetail/venue"
+    "pages/venueDetail/venue",
+    "pages/venueInfo/venueInfo",
+    "pages/orderPayment/orderPayment",
+    "pages/scientificFitness/scientificFitness"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#999999",
@@ -53,7 +56,7 @@
         "selectedIconPath": "images/icon_venue_selected.png"
       },
       {
-        "pagePath": "pages/venue/venue",
+        "pagePath": "pages/scientificFitness/scientificFitness",
         "text": "健身",
         "iconPath": "images/icon_run.png",
         "selectedIconPath": "images/icon_run_selected.png"

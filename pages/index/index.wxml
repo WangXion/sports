@@ -73,7 +73,7 @@
       推荐场馆
     </view>
     <view class="cont">
-      <view class="item">
+      <view class="item" catchtap="hrefTap" data-key="venueDetail">
         <image class="icon" src="../../images/venue.png" mode="cover"></image>
         <view class="name">杭州游泳馆</view>
         <view class="section">
@@ -94,7 +94,7 @@
           <view class="km">15.4km</view>
         </view>
       </view>
-      <view class="item">
+      <view class="item" catchtap="hrefTap" data-key="venueDetail">
         <image class="icon" src="../../images/venue.png" mode="cover"></image>
         <view class="name">杭州游泳馆</view>
         <view class="section">
@@ -123,11 +123,11 @@
       科学健身
     </view>
     <view class="item">
-       <view class="cont">
+       <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
         <image class="icon" src="../../images/keep.png" mode="cover"></image>
         <view class="desc">打篮球投篮的正确方法</view>
       </view>
-      <view class="cont">
+      <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
         <image class="icon" src="../../images/keep.png" mode="cover"></image>
         <view class="desc">打篮球投篮的正确方法</view>
       </view>
@@ -138,7 +138,7 @@
     <view class="title">
       推荐资讯
     </view>
-    <view class="cont">
+    <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
       <view class="left">
         <view class="top">没有时间运动健身？试试戒掉这个习惯没有时间运动健身？试试戒掉这个习惯</view>
         <view class="desc">
@@ -150,7 +150,7 @@
         <image class="icon" src="../../images/food.png" mode="cover"></image>
       </view>
     </view>
-    <view class="cont">
+    <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
       <view class="left">
         <view class="top">没有时间运动健身？试试戒掉这个习惯没有时间运动健身？试试戒掉这个习惯</view>
         <view class="desc">
@@ -162,7 +162,7 @@
         <image class="icon" src="../../images/food.png" mode="cover"></image>
       </view>
     </view>
-    <view class="cont">
+    <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
       <view class="left">
         <view class="top">没有时间运动健身？试试戒掉这个习惯没有时间运动健身？试试戒掉这个习惯</view>
         <view class="desc">

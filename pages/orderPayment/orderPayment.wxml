@@ -1,0 +1,47 @@
+<!--pages/orderPayment/orderPayment.wxml-->
+<view class="orderPayment">
+  <view class="info">
+    <view>支付倒计时：<text class="time">05:40</text></view>
+    <view class="unit">￥ <text class="price">125.00</text></view>
+  </view>
+  <view class="cont">
+    <view class="name">杭州游泳馆</view>
+    <view class="date">
+      <view class="icon">
+        <image src="../../images/date.png" mode="cover"></image>
+      </view>
+      <view class="week">2020-07-17 星期五</view>
+    </view>
+    <!-- 票的信息 -->
+    <view class="ticket">
+      <view >游泳早场 成人票 05:30-07:00</view>
+      <view class="term">
+        <view class="day">有效期：30天</view>
+        <view >票价：25元 x5</view>
+      </view>
+    </view>
+  </view>
+  <!-- 支付方式 -->
+  <view class="methods">
+    <view class="name">支付方式</view>
+    <view class="item" catchtap="method" data-type="weiixn">
+      <view class="left">
+        <image class="icon" src="../../images/weixin.png" mode="cover"></image>
+        <view >微信支付</view>
+      </view>
+      <image wx:if="{{ !weixinSelecetd }}" class="radio" src="../../images/radio.png" mode="cover"></image>
+      <image wx:if="{{ weixinSelecetd }}" class="radio" src="../../images/radio-selected.png" mode="cover"></image>
+    </view>
+    <view class="item" catchtap="method" data-type="vip">
+      <view class="left">
+        <image class="icon" src="../../images/vip.png" mode="cover"></image>
+        <view >会员卡余额支付<text class="discount">（9折）</text></view>
+      </view>
+      <image wx:if="{{ !vipSelecetd }}" class="radio" src="../../images/radio.png" mode="cover"></image>
+      <image wx:if="{{ vipSelecetd }}" class="radio" src="../../images/radio-selected.png" mode="cover"></image>
+    </view>
+  </view>
+  <view class="btn">
+    立即购买
+  </view>
+</view>

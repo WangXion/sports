@@ -14,7 +14,17 @@ Page({
   onLoad: function (options) {
 
   },
-
+  // 跳转场馆信息
+  herfInfo () {
+    wx.navigateTo({
+      url: '/pages/venueInfo/venueInfo'
+    })
+  },
+  buy () {
+    wx.navigateTo({
+      url: '/pages/orderPayment/orderPayment'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

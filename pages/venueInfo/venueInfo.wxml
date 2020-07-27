@@ -1,0 +1,83 @@
+<!--pages/venueInfo/venueInfo.wxml-->
+<view class="venueInfo">
+  <view class="title">
+    <image class="icon" src="" mode="cover"></image>
+    <view>场馆信息</view>
+  </view>
+  <view class="cont">
+    <view class="row">
+      <view class="item">
+        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <view>停车</view>
+      </view>
+      <view class="item">
+        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <view>器材租</view>
+      </view>
+      <view class="item">
+        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <view>零售</view>
+      </view>
+      <view class="item mr0">
+        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <view>空调</view>
+      </view>
+    </view>
+    <view class="row start">
+      <view class="item">
+        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <view>wifi</view>
+      </view>
+      <view class="item">
+        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <view>充电宝</view>
+      </view>
+    </view>
+    <!-- 车位情况 -->
+    <view class="car">
+      <view class="top">
+        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <view>车位情况</view>
+      </view>
+      <view class="section">
+        <view class="left">
+          <view >空余车位</view>
+          <view class="price">75</view>
+          <view >12元/小时</view>
+        </view>
+        <view class="left">
+          <view >空余充电桩</view>
+          <view class="price">5</view>
+          <view >充满50元/车</view>
+        </view>
+      </view>
+    </view>
+    <!-- 其他信息 -->
+    <view class="other">
+      <view class="top">
+        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <view>其他信息</view>
+      </view>
+      <view class="section">
+        <view class="left">
+            <view class="label">在馆人数：</view>
+            <view class="value">1000人</view>
+        </view>
+        <view class="left">
+          <view class="label">室内温度：</view>
+          <view class="value">29</view>
+        </view>
+      </view>
+      <view class="section">
+        <view class="left">
+            <view class="label">泳池水温：</view>
+            <view class="value">30.5</view>
+        </view>
+        <view class="left">
+          <view class="label">PH值：</view>
+          <view class="value">7.2</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -35,12 +35,15 @@ Page({
     switch (key) {
       // 体质监测
       case 'examinate':
-        // wx.navigateTo({
-        //   url: '/pages/examinate/examinate'
-        // })
         wx.navigateTo({
-          url: '/pages/appointInfo/appointInfo'
+          url: '/pages/examinate/examinate'
         })
+        // wx.navigateTo({
+        //   url: '/pages/appointInfo/appointInfo'
+        // })
+        // wx.navigateTo({
+        //   url: '/pages/orderPayment/orderPayment'
+        // })
         break;
         // 场馆地图
         case 'map':
@@ -60,10 +63,20 @@ Page({
             url: '/pages/venue/venue'
           })
           break;
+        case 'venueDetail':
+          wx.navigateTo({
+            url: '/pages/venueDetail/venue'
+          })
+          break;
+        case 'scientificFitness':
+          console.log('111')
+          wx.switchTab({
+            url: '/pages/scientificFitness/scientificFitness'
+          })
+          break;
       default:
         break;
     }
-    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

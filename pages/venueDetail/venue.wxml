@@ -11,7 +11,9 @@
     </view>
     <view class="time">
       正常营业 9:00-22:00
-      <view class="icon"></view>
+      <view class="icon">
+        <!-- <image src="../../static/phone-icon.png" mode="cover"></image> -->
+      </view>
       <view class="phone">0571-88886666</view>
     </view>
     <view class="address">
@@ -28,10 +30,15 @@
       <view>场馆信息</view>
     </view>
     <view class="cont">
-      <view class="tag">免费停车</view>
-      <view class="tag">免费wifi</view>
-      <view class="tag">免费停车</view>
-      <view class="tag">免费wifi</view>
+      <view class="item">
+        <view class="tag ml74">免费停车</view>
+        <view class="tag">免费wifi</view>
+        <view class="tag">免费停车</view>
+        <view class="tag">免费wifi</view>
+      </view>
+      <view class="right" catchtap="herfInfo">
+        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+      </view>
     </view>
   </view>
   <!-- 分割线 -->
@@ -39,7 +46,11 @@
   <!-- 单票 -->
   <view class="singleTicket">
     <view class="title">
-      <view class="left"></view>
+      <view class="left">
+        <view class="icon"></view>
+        <view>单票</view>
+        <view class="price">9折</view>
+      </view>
       <view class="right">
         <view class="icon"></view>
         <view>可发票</view>
@@ -48,24 +59,35 @@
     <!-- tab栏 -->
     <view class="tab">
       <view class="cont">
-        <view class="">游泳</view>
-        <view class="">羽毛球</view>
-        <view class="">保龄球</view>
+        <view class="name active">游泳</view>
+        <view class="name">羽毛球</view>
+        <view class="name">保龄球</view>
       </view>
+      <view class="line"></view>
     </view>
     <!-- 单票的列表 -->
     <view class="item">
       <view class="left">
         <view class="name">早场 成人票</view>
-        <view class="name">05:30-07:00</view>
-        <view class="name">随时退 | 过期退</view>
+        <view class="time">05:30-07:00</view>
+        <view>随时退 | 过期退</view>
       </view>
       <view class="right">
         <view class="price">
-          ￥ 90 <view class="active">￥ 100</view>
+          ￥90 <view class="active">￥100</view>
         </view>
-        <view class="btn">购买</view>
+        <view class="btn" bindtap="buy">购买</view>
       </view>
     </view>
+    <!-- 更多 -->
+    <view class="more">
+      查看其他5种票
+      <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+    </view>
+  </view>
+  <!-- 联系场馆 -->
+  <view class="contactVenues">
+    <image class="icon" src="" mode="cover" />
+    <view>联系场馆</view>
   </view>
 </view>

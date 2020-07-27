@@ -1,1 +1,236 @@
 /* pages/venueDetail/venue.wxss */
+.venueDetail {
+
+}
+/* banner */
+.venueDetail .banner {
+  width: 720rpx;
+  height: 341rpx;
+  margin: 0 15rpx 40rpx 15rpx;
+}
+/* 详情 */
+.venueDetail .detail{
+  font-size: 36rpx;
+  font-weight: bold;
+  color:rgba(0,0,0,1);
+  margin-bottom: 60rpx;
+  padding: 16rpx;
+}
+.venueDetail .detail .time {
+  display: flex;
+  align-items: center;
+  font-size: 20rpx;
+  font-weight: 400;
+  color:rgba(27,27,27,1);
+  margin: 20rpx 0 20rpx 0;
+}
+.venueDetail .detail .time .icon {
+  width: 44rpx;
+  height: 44rpx;
+  margin: 0 20rpx 0 30rpx;
+  background: #FF8D2E;
+}
+.venueDetail .detail .address {
+  font-size: 30rpx;
+  font-weight: 400;
+  color:rgba(27,27,27,1);
+  display: flex;
+  align-items: center;
+}
+.venueDetail .detail .address .icon {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 20rpx;
+  background: #FF8D2E;
+}
+/* 场馆信息 */
+.venueDetail .info {
+  padding: 0 20rpx;
+}
+.venueDetail .info .title {
+  display: flex;
+  font-size: 36rpx;
+  font-weight: 400;
+  color:rgba(0,0,0,1);
+  margin-bottom: 30rpx;
+}
+.venueDetail .info .title .icon {
+  width: 40rpx;
+  height: 40rpx;
+  background:rgba(245,145,74,1);
+  border-radius: 5rpx;
+  margin-right: 20rpx;
+}
+.venueDetail .info .cont {
+  display: flex;
+  padding-bottom: 40rpx;
+  position: relative;
+}
+.venueDetail .info .cont .item {
+  display: flex;
+}
+.venueDetail .info .tag {
+  padding: 11rpx 22rpx;
+  color: #666666;
+  font-size: 24rpx;
+  background: rgba(242,242,242,1);
+  margin-right: 23rpx;
+  border-radius: 50rpx;
+}
+.ml74 {
+  margin-left: 70rpx;
+}
+.venueDetail .info .right {
+  width: 17rpx;
+  height: 29rpx;
+  position: absolute;
+  right: 0;
+  top: 4rpx;
+}
+/* 分割线 */
+.venueDetail .border {
+  height: 14rpx;
+  background:rgba(242,242,242,1);
+}
+/* 单票 */
+.venueDetail .singleTicket {
+  padding: 30rpx 20rpx;
+}
+.venueDetail .singleTicket .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.venueDetail .singleTicket .title .left {
+  display: flex;
+  align-items: center;
+  font-size: 36rpx;
+  font-weight: 400;
+  color:rgba(0,0,0,1);
+}
+.venueDetail .singleTicket .left .icon {
+  width: 40rpx;
+  height: 40rpx;
+  background: #F5914A;
+  margin-right: 16rpx;
+}
+.venueDetail .singleTicket .left .price {
+  font-size: 24rpx;
+  font-weight: 400;
+  color:rgba(255,142,48,1);
+  margin-left: 20rpx;
+}
+.venueDetail .singleTicket .right {
+  font-size: 24rpx;
+  font-weight: 400;
+  color:rgba(153,153,153,1);
+  display: flex;
+  align-items: center;
+}
+.venueDetail .singleTicket .right .icon {
+  width: 28rpx;
+  height: 28rpx;
+  border: 2rpx solid green;
+  margin-right: 7rpx;
+}
+/* 单票 - tab栏 */
+.venueDetail .singleTicket .tab {
+  /* display: flex; */
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+  color:rgba(102,102,102,1);
+  /* border-bottom: 6rpx solid rgba(242,242,242,1); */
+  position: relative;
+}
+.venueDetail .singleTicket  .line {
+  width: 100%;
+  height: 6rpx;
+  background: rgba(242,242,242,1);
+  position: absolute;
+  bottom: -4rpx;
+  left: 0;
+}
+.venueDetail .singleTicket .tab .cont {
+  display: flex;
+}
+.venueDetail .singleTicket .tab .name {
+  margin-right: 25rpx;
+  border-bottom: 6rpx solid rgba(242,242,242,1);
+  z-index: 99;
+}
+.venueDetail .singleTicket .tab .active {
+  border-bottom: 6rpx solid #F5914A;
+}
+/* 票的列表 */
+.venueDetail .singleTicket .item {
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+}
+.venueDetail .singleTicket .item .left {
+  font-size: 24rpx;
+  font-weight: 400;
+  color:rgba(153,153,153,1);
+}
+.venueDetail .singleTicket .item .name {
+  font-size: 30rpx;
+  font-weight: 400;
+  color:rgba(0,0,0,1);
+  margin-bottom: 14rpx;
+}
+.venueDetail .singleTicket .item .time {
+  margin-bottom: 10rpx;
+}
+.venueDetail .singleTicket .item .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.venueDetail .singleTicket .item .price {
+  display: flex;
+  font-size: 30rpx;
+  color: #999999;
+  margin-bottom: 10rpx;
+}
+.venueDetail .singleTicket .item .active {
+  color: #ED7044;
+  margin-left: 10rpx;
+}
+.venueDetail .singleTicket .item .btn {
+  width: 114rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  text-align: center;
+  background:rgba(237,112,68,1);
+  margin-top: 18rpx;
+  color:rgba(255,255,255,1);
+  border-radius: 20rpx;
+}
+/* 查看更多 */
+.venueDetail .more {
+  text-align: center;
+  font-size: 24rpx;
+  font-weight: 400;
+  color:rgba(102,102,102,1);
+  margin-top: 25rpx;
+}
+/* 联系场馆 */
+.venueDetail .contactVenues {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(237,112,68,1);
+  font-size: 28rpx;
+  text-align: center;
+}
+.venueDetail .contactVenues .icon {
+  width: 60rpx;
+  height: 60rpx;
+}

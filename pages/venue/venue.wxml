@@ -29,7 +29,7 @@
   </view>
   <!-- 场馆信息 -->
   <block wx:for="{{ venueArr }}">
-    <view class="item">
+    <view class="item" catchtap="hrefDetail">
       <view class="left">
         <image class="img" src="../../images/food.png" mode="cover"></image>
       </view>

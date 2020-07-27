@@ -1,11 +1,12 @@
-// pages/venue/venue.js
+// pages/orderPayment/orderPayment.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    venueArr: [1,-1,1,-1],
+    weixinSelecetd: false,
+    vipSelecetd: false,
   },
 
   /**
@@ -14,11 +15,17 @@ Page({
   onLoad: function (options) {
 
   },
-  // 跳转详情
-  hrefDetail () {
-    wx.navigateTo({
-      url: '/pages/venueDetail/venue'
-    })
+  method (event) {
+    let { type } = event.currentTarget.dataset;
+    if (type === 'weiixn') {
+      this.setData({
+        weixinSelecetd: !this.data.weixinSelecetd
+      })
+    }else {
+      this.setData({
+        vipSelecetd: !this.data.vipSelecetd
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
