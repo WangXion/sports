@@ -54,7 +54,7 @@
         </view>
         <view class='item flexBetween' data-type='sysMessage' bindtap='linkTo'>
             <view class='flexStart'>
-                <image src='../../static/sys-message.png' mode='cover' class='icon'></image>
+                <image src='../../static/sys-message.png' mode='cover' class='icon messageIcon'></image>
                 <text class='label'>系统消息</text>
             </view>
             <view class='flexStart'>

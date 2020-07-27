@@ -160,6 +160,10 @@
     width: 39rpx;
     height: 39rpx;
 }
+.moduleFu .item .messageIcon{
+    width: 35rpx;
+    height: 35rpx;
+}
 .moduleFu .item .arrow{
     width: 15rpx;
     height: 26rpx;
