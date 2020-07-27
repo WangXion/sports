@@ -91,6 +91,9 @@
 .footer .link{
     color: #FF791F;
 }
+.footer .icon{
+  margin-right: 10rpx;
+}
 .agreementLay{
     width: 100%;
     height: 100%;

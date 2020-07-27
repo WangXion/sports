@@ -157,8 +157,12 @@
     top: -5rpx;
 }
 .moduleFu .item .icon{
-    max-width: 39rpx;
-    max-height: 39rpx;
+    width: 39rpx;
+    height: 39rpx;
+}
+.moduleFu .item .messageIcon{
+    width: 35rpx;
+    height: 35rpx;
 }
 .moduleFu .item .arrow{
     width: 15rpx;

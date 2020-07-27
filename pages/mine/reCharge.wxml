@@ -19,7 +19,7 @@
     <view class='footer'>
         <view class='btn'>提交反馈</view>
         <view class='flexCenter'>
-            <icon class="icon-small" type="success" size="23" color='#E95A28'></icon>
+            <icon class="icon-small icon" type="success" size="23" color='#E95A28'></icon>
             同意
             <view class='link' bindtap='showLay'>《支付服务协议》</view>
         </view>
