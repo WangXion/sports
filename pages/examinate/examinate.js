@@ -40,7 +40,11 @@ Page({
     }
   },
   // 确认预约
-  sureAppointment () {},
+  sureAppointment () {
+    wx.navigateTo({
+      url: '/pages/appointInfo/appointInfo'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
