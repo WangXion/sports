@@ -55,14 +55,14 @@
       {
         "pagePath": "pages/venue/venue",
         "text": "健身",
-        "iconPath": "images/icon_home.png",
-        "selectedIconPath": "images/icon_home_selected.png"
+        "iconPath": "images/icon_run.png",
+        "selectedIconPath": "images/icon_run_selected.png"
       },
       {
         "pagePath": "pages/mine/index",
         "text": "我的",
         "iconPath": "images/icon_my.png",
-        "selectedIconPath": "images/icon_my.png"
+        "selectedIconPath": "images/icon_my_selected.png"
       }
     ]
   },
