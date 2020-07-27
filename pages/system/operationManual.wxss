@@ -1,0 +1,9 @@
+/**setting.wxss**/
+.container{
+    background: #fff;
+    box-sizing: border-box;
+    height: 100vh;
+    color: #999;
+    font-size: 26rpx;
+    padding: 20rpx;
+}

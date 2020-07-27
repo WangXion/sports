@@ -1,9 +1,5 @@
 <!--index.wxml-->
 <view class="container">
-    <view class='tabBar'>
-        <view  class='item {{tabKey == 1 ? "checked" :""}}' data-key='1' bindtap='changeTab'>待参加</view>
-        <view  class='item {{tabKey == 2 ? "checked" :""}}' data-key='2' bindtap='changeTab'>已结束</view>
-    </view>
     <view class='List'>
         <block>
             <view class='item flexStart' data-type='one'>

@@ -5,7 +5,7 @@
             <text class='label'>意见建议</text>
             <image class="arrow" src="../../static/right-arrow.png" mode="cover"></image>
         </view>
-        <view class='item flexBetween'>
+        <view class='item flexBetween' data-type='manual' bindtap='linkTo'>
             <text class='label'>操作手册</text>
             <image class="arrow" src="../../static/right-arrow.png" mode="cover"></image>
         </view>

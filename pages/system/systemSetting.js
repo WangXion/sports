@@ -22,9 +22,9 @@ Page({
       wx.navigateTo({
         url: '../mine/feedBack'
       })
-    } else {
+    } else if(type == 'manual'){
       wx.navigateTo({
-        url: '../appointRecord/details'
+        url: '../system/operationManual'
       })
     }
   }
