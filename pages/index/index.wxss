@@ -1,21 +1,219 @@
 /**index.wxss**/
-.userinfo {
+.index {
+  padding: 0 16rpx;
+}
+/* title、头像 */
+.index-title {
+  display: flex;
+  justify-content: space-between;
+  color:rgba(51,51,51,1);
+  font-weight: 400;
+  margin-bottom: 17rpx;
+}
+.index-title .left {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+}
+.index-title .avatar {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  background: #FFA546;
+  margin-right: 20rpx;
+}
+.index-title .right {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+}
+.index-title .right .icon {
+  width: 25rpx;
+  height: 32rpx;
+  margin-left: 10rpx;
+}
+/* 轮播图 */
+.index-banner {
+  width: 720rpx;
+  height: 269rpx;
+  margin-bottom: 26rpx;
+}
+/* 体质检测 入口 */
+.index-icon {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 24rpx;
+  font-weight: 400;
+  color:rgba(51,51,51,1);
+  padding: 0 23rpx 0 17rpx;
+}
+.index-icon .item {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  position: relative;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.index-icon .item .name {
+  margin-top: 20rpx;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.index-icon .item .icon {
+  width: 73rpx;
+  height: 73rpx;
 }
-
-.usermotto {
-  margin-top: 200px;
+.index-icon .item .icon1 {
+  width: 119rpx;
+  height: 83rpx;
+}
+.index-icon .item .icon2 {
+  width: 73rpx;
+  height: 83rpx;
+}
+.index-icon .item .icon3 {
+  width: 93rpx;
+  height: 83rpx;
+}
+.index-icon .item .icon4 {
+  width: 103rpx;
+  height: 83rpx;
+}
+.index-icon .item .icon5 {
+  width: 73rpx;
+  height: 83rpx;
+}
+/* 体育头条 */
+.index-ports {
+  width: 720rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background:rgba(252,240,232,1);
+  border-radius: 10rpx;
+  margin: 52rpx 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(51,51,51,1);
+}
+.index-ports .left {
+  display: flex;
+}
+.index-ports .left .icon {
+  width: 53rpx;
+  height: 53rpx;
+  margin: 14rpx 28rpx 0 24rpx;
+}
+.index-ports .right {
+  color: #999999;
+  margin-right: 24rpx;
+}
+.index-venues {
+  font-size: 30rpx;
+  font-weight: bold;
+  color:rgba(51,51,51,1);
+  margin-bottom: 30rpx;
+}
+.index-venues .cont {
+  margin-top: 39rpx;
+  display: flex;
+}
+.index-venues .cont .item {
+  display: flex;
+  margin-right: 30rpx;
+  position: relative;
+}
+.index-venues .cont .item .icon{
+  width: 345rpx;
+  height: 372rpx;
+}
+.index-venues .cont .item .name {
+  position: absolute;
+  top: 235rpx;
+  left: 0;
+  font-size: 24rpx;
+  font-weight: 400;
+  color:rgba(27,27,27,1);
+}
+.index-venues .cont .item .section {
+  display: flex;
+  position: absolute;
+  top: 285rpx;
+  left: 0;
+}
+.index-venues .cont .item .section .tag {
+  height: 30rpx;
+  line-height: 30rpx;
+  padding: 0 8rpx;
+  font-size: 16rpx;
+  color: #EDA2A0;
+  background: rgba(252,240,232,1);
+  margin-right: 10rpx;
+}
+.index-venues .cont .item .section .color1 {
+  color: #86BFCC;
+  background: #E7F8FF;
+}
+.index-venues .cont .item .detail {
+  font-size: 20rpx;
+  color:  rgba(51,51,51,1);
+  position: absolute;
+  top: 330rpx;
+  left: 0;
+  display: flex;
+}
+.index-venues .cont .item .detail .km {
+  position: absolute;
+  left: 260rpx;
+  color: #999;
+}
+.index-fitness {
+  font-size: 24rpx;
+  color:rgba(51,51,51,1);
+}
+.index-fitness .title {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 32rpx;
+}
+.index-fitness .item {
+  display: flex;
+}
+.index-fitness .cont {
+  overflow: hidden;
+  margin-right: 30rpx;
+}
+.index-fitness .cont .icon {
+  width: 382rpx;
+  height: 241rpx;
+  margin-bottom: 20rpx;
+}
+.index-information .title {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin: 70rpx 0 0rpx 0;
+}
+.index-information .cont {
+  display: flex;
+  font-size: 24rpx;
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid #E8E5E9;
+}
+.index-information .cont .left {
+  width: 432rpx;
+  display: flex;
+  flex-direction: column;
+  margin: 0 47rpx 0rpx 0;
+  color:rgba(51,51,51,1);
+}
+.index-information .cont .left .desc {
+  display: flex;
+  color:rgba(153,153,153,1);
+  margin-top: 40rpx;
+}
+.index-information .cont .right {
+  width: 240rpx;
+  height: 142rpx;
+}
+image {
+  width: 100%;
+  height: 100%;
 }

@@ -1,0 +1,83 @@
+/* pages/publicLectureDetail/publicLectureDetail.wxss */
+.publicLectureDetail {
+
+}
+.publicLectureDetail .title {
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(51,51,51,1);
+  margin-bottom: 40rpx;
+  margin: 0 16rpx;
+}
+.publicLectureDetail .detail {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color:rgba(153,153,153,1);
+  padding-bottom: 36rpx;
+  margin: 0 16rpx 0 0rpx;
+}
+.publicLectureDetail .detail .left {
+  width: 240rpx;
+  height: 142rpx;
+  margin-right: 25rpx;
+}
+.publicLectureDetail .detail .time {
+  margin-bottom: 10rpx;
+}
+.publicLectureDetail .detail .address {
+  margin-bottom: 10rpx;
+}
+/* 分割线 */
+.publicLectureDetail .border {
+  width:750rpx;
+  height:11rpx;
+  background:rgba(233,233,233,1);
+}
+/* 培训介绍 */
+.publicLectureDetail .cont {
+  padding: 30rpx 16rpx 0 16rpx;
+}
+.publicLectureDetail .cont .icon {
+  width: 46rpx;
+  height: 46rpx;
+  margin-right: 16rpx;
+}
+.publicLectureDetail .cont .top {
+  font-size: 30rpx;
+  font-weight: 400;
+  color:rgba(0,0,0,1);
+  display: flex;
+  align-items: center;
+  margin-bottom: 34rpx;
+}
+.publicLectureDetail .cont .section {
+  font-size: 24rpx;
+  font-weight: 400;
+  color:rgba(51,51,51,1);
+  line-height: 36rpx;
+}
+/* 底部费用和报名按钮 */
+.publicLectureDetail .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  font-weight: 400;
+  color:rgba(111,111,111,1);
+  position: fixed;
+  bottom: 15rpx;
+  left: 15rpx;
+}
+.publicLectureDetail .footer .btn {
+  width: 343rpx;
+  height: 83rpx;
+  line-height: 83rpx;
+  text-align: center;
+  margin-left: 280rpx;
+  background:rgba(247,141,27,1);
+  font-size: 30rpx;
+  font-weight: 400;
+  color:rgba(255,255,255,1);
+  border-radius: 40rpx;
+}

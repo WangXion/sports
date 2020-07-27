@@ -18,7 +18,15 @@
     "pages/coupon/index",
     "pages/collection/index",
     "pages/collection/myCollection",
-    "pages/collection/signupDetails"
+    "pages/collection/signupDetails",
+    "pages/examinate/examinate",
+    "pages/map/map",
+    "pages/appointInfo/appointInfo",
+    "pages/publicLecture/publicLecture",
+    "pages/publicLectureDetail/publicLectureDetail",
+    "pages/registrateDetails/registrateDetails",
+    "pages/venue/venue",
+    "pages/venueDetail/venue"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -26,6 +34,37 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
   },
-  "style": "v2",
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#FF791F",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_home_selected.png"
+      },
+      {
+        "pagePath": "pages/venue/venue",
+        "text": "场馆",
+        "iconPath": "images/icon_venue.png",
+        "selectedIconPath": "images/icon_venue_selected.png"
+      },
+      {
+        "pagePath": "pages/venue/venue",
+        "text": "健身",
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_home_selected.png"
+      },
+      {
+        "pagePath": "pages/venue/venue",
+        "text": "我的",
+        "iconPath": "images/icon_my.png",
+        "selectedIconPath": "images/icon_my.png"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json"
 }

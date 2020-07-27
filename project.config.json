@@ -5,27 +5,27 @@
 	},
 	"setting": {
 		"urlCheck": true,
-		"scopeDataCheck": false,
-		"coverView": true,
 		"es6": true,
 		"postcss": true,
-		"compileHotReLoad": false,
 		"preloadBackgroundData": false,
 		"minified": true,
-		"autoAudits": false,
 		"newFeature": false,
+		"autoAudits": false,
+		"coverView": true,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"compileHotReLoad": false,
 		"uglifyFileName": false,
 		"uploadWithSourceMap": true,
 		"useIsolateContext": true,
 		"nodeModules": false,
 		"enhance": false,
 		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false,
-		"showShadowRootInWxmlPanel": true
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.0",
-	"appid": "wx10d77bd825c27c61",
+	"appid": "wx3aae9c6a2f646683",
 	"projectname": "sports",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -49,6 +49,7 @@
 		},
 		"game": {
 			"current": -1,
+			"currentL": -1,
 			"list": []
 		},
 		"gamePlugin": {
@@ -81,15 +82,15 @@
 				},
 				{
 					"id": -1,
-					"name": "系统设置",
-					"pathName": "pages/mine/systemSetting",
+					"name": "pages/map/map",
+					"pathName": "pages/map/map",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "系统消息",
-					"pathName": "pages/mine/systemMessage",
+					"name": "pages/appointInfo/appointInfo",
+					"pathName": "pages/appointInfo/appointInfo",
 					"query": "",
 					"scene": null
 				},
@@ -102,22 +103,22 @@
 				},
 				{
 					"id": 6,
-					"name": "优惠券",
-					"pathName": "pages/coupon/index",
+					"name": "pages/publicLecture/publicLecture",
+					"pathName": "pages/publicLecture/publicLecture",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "充值",
-					"pathName": "pages/mine/reCharge",
+					"name": "pages/publicLectureDetail/publicLectureDetail",
+					"pathName": "pages/publicLectureDetail/publicLectureDetail",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "预约订单",
-					"pathName": "pages/appoint/appointOrder",
+					"name": "pages/registrateDetails/registrateDetails",
+					"pathName": "pages/registrateDetails/registrateDetails",
 					"query": "",
 					"scene": null
 				},
@@ -151,8 +152,8 @@
 				},
 				{
 					"id": -1,
-					"name": "实名认证",
-					"pathName": "pages/mine/nameAuthentication",
+					"name": "pages/venue/venue",
+					"pathName": "pages/venue/venue",
 					"query": "",
 					"scene": null
 				}

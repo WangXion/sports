@@ -1,0 +1,223 @@
+/* pages/appointInfo/appointInfo.wxss */
+.appointInfo {
+  background: #F6F6F6;
+  height: 100vh;
+}
+/* 预约信息 */
+.appointInfo .title {
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  padding-left: 20rpx;
+}
+.appointInfo .cont {
+  font-size: 24rpx;
+  padding: 0 20rpx;
+  background: #fff;
+}
+.appointInfo .cont .item {
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 2;
+  border-bottom: 2rpx solid #E5E5E5;
+}
+.appointInfo .cont .item .lable {
+  color: #A3A3A3;
+  flex: 1;
+}
+.appointInfo .cont .item .value {
+  color: #313131;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.appointInfo .cont .item .upload {
+  width: 215rpx;
+  height: 148rpx;
+  background:rgba(228,228,228,1);
+  flex: 1;
+}
+.appointInfo .cont .item .value .left {
+  
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.appointInfo .cont .item .value .icon {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: #F6F6F6;
+  color: #313131;
+  margin-right: 10rpx;
+}
+.appointInfo .cont .item .value .active {
+  background: #F38F1C;
+}
+.appointInfo .cont .item .value .name {
+  color: #313131;
+  margin-right: 20rpx;
+}
+.appointInfo .cont .item .value .name1 {
+  color: #313131;
+}
+.appointInfo .cont .item .value .activeColor {
+  color: #F38F1C;
+}
+.appointInfo .cont .item .value .input {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+.appointInfo .cont .upload {
+  height: 148rpx;
+  line-height: 148rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 2;
+  padding: 40rpx 0;
+}
+.appointInfo .cont .upload .lable{
+  color: #A3A3A3;
+  flex: 1;
+}
+/* 营业执照上传 */
+.appointInfo .cont .upload  .cont {
+  width: 215rpx;
+  height: 148rpx;
+  background:rgba(228,228,228,1);
+  color:#999;
+  line-height: 148rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+.appointInfo .border {
+  height: 31rpx;
+}
+/* 人员列表 */
+.appointInfo .list {
+  background: #fff;
+  padding: 30rpx 15rpx;
+  margin-bottom: 120rpx;
+}
+/* 添加名单 */
+.appointInfo .list .add {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  font-weight: 400;
+  margin-bottom: 17rpx;
+}
+.appointInfo .list  .add .left {
+  color:rgba(0,0,0,1);
+}
+.appointInfo .list  .add .right {
+  color:rgba(247,141,27,1);
+}
+.appointInfo .list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx solid #E5E5E5;
+  padding: 37rpx 0 30rpx 0;
+}
+.appointInfo .list .item .left {
+  font-size: 24rpx;
+  color:rgba(102,102,102,1);
+}
+.appointInfo .list .item .phone {
+  font-size: 24rpx;
+  color:rgba(102,102,102,1);
+  display: flex;
+}
+.appointInfo .list .item .name {
+  margin: 0 20rpx 10rpx 0;
+}
+.appointInfo .list .item .right {
+  width: 37rpx;
+  height: 37rpx;
+}
+/* 提交预约按钮 */
+.btn {
+  width: 720rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #F78E1E;
+  color: #fff;
+  position: fixed;
+  bottom: 10rpx;
+  left: 20rpx;
+  border-radius: 60rpx;
+  font-size: 30rpx;
+}
+/* 遮罩层 */
+/* 设置背景遮罩层样式 */
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10rpx;
+  z-index: 9999;
+}
+/* 设置遮罩内容样式 */
+.mask .maskContent {
+  width: 70%;
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 30rpx;
+}
+/* 设置遮罩层标题 */
+.mask .maskContent .title {
+  font-size: 30rpx;
+  font-weight: 400;
+  color:rgba(51,51,51,1);
+  text-align: center;
+  padding-bottom: 32rpx;
+}
+/* 设置关闭按钮图片的位置 */
+.mask .closeImg {
+  position: fixed;
+  top: 40rpx;
+  right: 40rpx;
+}
+/* 设置关闭按钮宽高 */
+.mask .closeImg_image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.mask .input{
+  height: 82rpx;
+  line-height: 82rpx;
+  background:rgba(242,242,242,1);
+  border-radius: 10rpx;
+  font-size: 26rpx !important;
+  margin-bottom: 24rpx;
+  padding-left: 21rpx;
+  font-size: 30rpx;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.mask .save{
+  height: 83rpx;
+  line-height: 83rpx;
+  background: rgba(247,141,27,1);
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  margin: 35rpx 0 20rpx 0;
+}

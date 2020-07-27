@@ -1,0 +1,21 @@
+<!--pages/map/map.wxml-->
+<view class="map">
+  <map style="width: 100%; height: 100vh;" :longitude='lng' :latitude='lat' :markers="covers">
+  </map>
+  <view class="search">
+    <input
+      class="input"
+      type="text" 
+      bindinput='accountInput'
+      placeholder='场馆名字搜索'
+      placeholder-class='input-placeholder'/>
+  </view>
+  <view class="cont">
+    <view class="name">糖果盒足球场</view>
+    <view class="address">903m | 浙江省杭州市下城区长城街124号附近</view>
+    <view class="btn">
+      <view class="navigation">导航</view>
+      <view class="car">到这去</view>
+    </view>
+  </view>
+</view>

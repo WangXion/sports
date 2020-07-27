@@ -1,0 +1,195 @@
+<!--pages/appointInfo/appointInfo.wxml-->
+<view class="appointInfo">
+  <view class="title">预约信息</view>
+  <!-- 个人预约 -->
+  <view wx:if="{{ title !== '团体' }}">
+    <view class="cont">
+      <view class="item">
+        <view class="lable">预约人</view>
+        <view class="value">
+          <input
+            class="input"
+            type="text"
+            placeholder="请输入预约人姓名"
+            data-type="name"
+            value="{{ name }}"
+            bindinput="inputChange">
+          </input>
+        </view>
+      </view>
+      <view class="item">
+        <view class="lable">性别</view>
+        <view class="value">
+          <view class="left" bindtap="sexChange" data-key="1">
+            <view class="icon {{ currentKey === 1 ? 'active':'' }}"></view>
+            <view class="name {{ currentKey === 1 ? 'activeColor':'' }}">男</view>
+          </view>
+          <view class="left" bindtap="sexChange" data-key="2">
+            <view class="icon {{ currentKey === 2 ? 'active':'' }}"></view>
+            <view class="name1 {{ currentKey === 2 ? 'activeColor':'' }}">女</view>
+          </view>
+        </view>
+      </view>
+      <view class="item">
+        <view class="lable">手机号</view>
+        <view class="value">
+          <input
+            class="input name"
+            type="text"
+            placeholder="请输入手机号"
+            data-type="phone"
+            value="{{ phone }}"
+            bindinput="inputChange">
+          </input>
+        </view>
+      </view>
+      <view class="item">
+        <view class="lable">身份证</view>
+        <view class="value">
+          <input
+            class="input name"
+            type="text"
+            placeholder="请输入身份证号"
+            data-type="cart"
+            value="{{ cart }}"
+            bindinput="inputChange">
+          </input>
+        </view>
+      </view>
+      <view class="item">
+        <view class="lable">预约时间</view>
+        <view class="value">
+          <input
+            class="input name"
+            type="text"
+            placeholder="请选择预约时间"
+            data-type="date"
+            value="{{ date }}"
+            bindinput="inputChange">
+          </input>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 团体预约 -->
+  <view wx:if="{{ title === '团体' }}">
+    <view class="cont">
+      <view class="item">
+        <view class="lable">团体/单位名</view>
+        <view class="value">
+          <input
+            class="input"
+            type="text"
+            placeholder="请输入预约人姓名"
+            data-type="name"
+            value="{{ name }}"
+            bindinput="inputChange">
+          </input>
+        </view>
+      </view>
+      <view class="item">
+        <view class="lable">预约联系人</view>
+        <view class="value">
+          <input
+            class="input"
+            type="text"
+            placeholder="请输入预约联系人姓名"
+            data-type="name"
+            value="{{ name }}"
+            bindinput="inputChange">
+          </input>
+        </view>
+      </view>
+      <view class="item">
+        <view class="lable">手机号</view>
+        <view class="value">
+          <input
+            class="input name"
+            type="text"
+            placeholder="请输入手机号"
+            data-type="phone"
+            value="{{ phone }}"
+            bindinput="inputChange">
+          </input>
+        </view>
+      </view>
+      <view class="item">
+        <view class="lable">预约时间</view>
+        <view class="value">
+          <input
+            class="input name"
+            type="text"
+            placeholder="请选择预约时间"
+            data-type="date"
+            value="{{ date }}"
+            bindinput="inputChange">
+          </input>
+        </view>
+      </view>
+      <view class="item">
+        <view class="lable">上门检测</view>
+        <view class="value">
+          <view class="left" bindtap="sexChange" data-key="1">
+            <view class="icon {{ currentKey === 1 ? 'active':'' }}"></view>
+            <view class="name {{ currentKey === 1 ? 'activeColor':'' }}">是</view>
+          </view>
+          <view class="left" bindtap="sexChange" data-key="2">
+            <view class="icon {{ currentKey === 2 ? 'active':'' }}"></view>
+            <view class="name1 {{ currentKey === 2 ? 'activeColor':'' }}">否</view>
+          </view>
+        </view>
+      </view>
+      <view class="upload">
+        <view class="lable">营业执照上传</view>
+        <view class="cont">
+          <view class="img">点击上传</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="border"></view>
+  <view class="list">
+    <view class="add">
+      <view class="left">人员列表</view>
+      <view class="right" bindtap="showMask">添加名单</view>
+    </view>
+    <block wx:for="{{ personalArr }}"
+      wx:key="index">
+      <view class="item">
+        <view class="left">
+          <view class="phone">
+            <view class="name">张山</view>
+            17856348907
+          </view>
+          <view class="">身份证：311111634568468486</view>
+        </view>
+        <view class="right">
+          <image class="icon" src="../../images/icon-edit.png" mode="cover"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="btn">
+    <view bindtap="submit">
+      提交预约
+    </view>
+  </view>
+</view>
+<view class="mask" hidden="{{ flag }}">
+  <view class="maskContent">
+    <view class="title">{{ isEdit === true ? '编辑': '添加' }}</view>
+    <view>
+      <input class='input' placeholder="请输入人员姓名" />
+    </view>
+    <view>
+      <input class='input' placeholder="请输入人员手机号" />
+    </view>
+    <view>
+      <input class='input' placeholder="请输入人员身份证" />
+    </view> 
+    <view class='save' bindtap="addSubmit">保存添加</view>
+  </view>
+  <view class="closeImg" bindtap="closeMask">
+    <image  class="closeImg_image" src="../../images/close.png"></image>
+  </view>
+</view>

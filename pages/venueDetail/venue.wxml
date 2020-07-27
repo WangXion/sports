@@ -1,0 +1,71 @@
+<!--pages/venueDetail/venue.wxml-->
+<view class="venueDetail">
+  <!-- banner图片 -->
+  <view class="banner">
+    <image src="../../images/banner.png" mode="cover"></image>
+  </view>
+  <!-- 游泳馆详情 -->
+  <view class="detail">
+    <view class="title">
+      杭州市游泳馆
+    </view>
+    <view class="time">
+      正常营业 9:00-22:00
+      <view class="icon"></view>
+      <view class="phone">0571-88886666</view>
+    </view>
+    <view class="address">
+      <view class="icon"></view>
+      <view>地址：浙江省 杭州市 下城区 啥啥啥街道环城北路
+        179号2楼
+      </view>
+    </view>
+  </view>
+  <!-- 场馆信息 -->
+  <view class="info">
+    <view class="title">
+      <image class="icon" src="../../images/banner.png" mode="cover"></image>
+      <view>场馆信息</view>
+    </view>
+    <view class="cont">
+      <view class="tag">免费停车</view>
+      <view class="tag">免费wifi</view>
+      <view class="tag">免费停车</view>
+      <view class="tag">免费wifi</view>
+    </view>
+  </view>
+  <!-- 分割线 -->
+  <view class="border"></view>
+  <!-- 单票 -->
+  <view class="singleTicket">
+    <view class="title">
+      <view class="left"></view>
+      <view class="right">
+        <view class="icon"></view>
+        <view>可发票</view>
+      </view>
+    </view>
+    <!-- tab栏 -->
+    <view class="tab">
+      <view class="cont">
+        <view class="">游泳</view>
+        <view class="">羽毛球</view>
+        <view class="">保龄球</view>
+      </view>
+    </view>
+    <!-- 单票的列表 -->
+    <view class="item">
+      <view class="left">
+        <view class="name">早场 成人票</view>
+        <view class="name">05:30-07:00</view>
+        <view class="name">随时退 | 过期退</view>
+      </view>
+      <view class="right">
+        <view class="price">
+          ￥ 90 <view class="active">￥ 100</view>
+        </view>
+        <view class="btn">购买</view>
+      </view>
+    </view>
+  </view>
+</view>

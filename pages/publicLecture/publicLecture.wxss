@@ -1,0 +1,48 @@
+/* pages/publicLecture/publicLecture.wxss */
+.publicLecture {
+  padding: 0 15rpx;
+}
+.publicLecture .item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.pt40 {
+  padding-top: 40rpx;
+}
+.publicLecture .item .left{
+  width: 240rpx;
+  height: 142rpx;
+  margin-right: 16rpx;
+}
+.publicLecture .item .right{
+  width: 460rpx;
+  font-size: 20rpx;
+  font-weight: 400;
+  color:rgba(153,153,153,1);
+}
+.publicLecture .item .right .title {
+  font-size: 30rpx;
+  font-weight: 400;
+  color:rgba(51,51,51,1);
+}
+.publicLecture .item .right .desc {
+  display: flex;
+  justify-content: space-between;
+}
+.publicLecture .item .right .desc .btn {
+  width: 101rpx;
+  height: 39rpx;
+  line-height: 39rpx;
+  text-align: center;
+  background: rgba(253,134,29,1);
+  font-size: 20rpx;
+  font-weight: 400;
+  color: rgba(255,255,255,1);
+  border-radius: 20rpx;
+  margin-bottom: 22rpx;
+}
+.publicLecture .item .right .desc .btn.active {
+  background: rgba(219,219,219,1);
+  color: #666;
+}

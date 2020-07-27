@@ -1,0 +1,58 @@
+<!--pages/venue/venue.wxml-->
+<view class="venue">
+  <!-- 搜索框 -->
+  <view class="venue-search">
+    <image class="img" src="../../images/close.png" mode="cover"></image>
+    <input
+      class="input"
+      type="text"
+      placeholder="请输入您想查找的场馆"
+      data-type="name"
+      value="{{ search }}"
+      bindinput="inputChange">
+    </input>
+  </view>
+  <!-- tab栏 -->
+  <view class="tab">
+    <view class="left">
+      附近区域
+      <view class="icon"></view>
+    </view>
+    <view class="left">
+      附近区域
+      <view class="icon"></view>
+    </view>
+    <view class="left">
+      附近区域
+      <view class="icon"></view>
+    </view>
+  </view>
+  <!-- 场馆信息 -->
+  <block wx:for="{{ venueArr }}">
+    <view class="item">
+      <view class="left">
+        <image class="img" src="../../images/food.png" mode="cover"></image>
+      </view>
+      <view class="right">
+        <view class="name">
+          杭州市游泳馆
+          <view class="icon">惠</view>
+          <view class="hot">热</view>
+        </view>
+        <view class="time {{ item > 0 ? 'color1':'color' }}">
+          {{ item > 0 ? '正常营业 9:00-22:00' : '即将开业' }}
+        </view>
+        <view class="address">
+          下城区 环城北路179号
+        </view>
+        <view class="select">
+          <view class="cont">
+            <view class="tag">游泳</view>
+            <view class="tag">保龄球</view>
+          </view>
+          <view>1000m</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
