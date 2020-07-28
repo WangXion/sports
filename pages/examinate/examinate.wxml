@@ -32,7 +32,7 @@
   <view class="button">
     <view>
       <checkbox-group class="row" bindchange="boxcheck">
-        <checkbox name="box_check" value="{{ if_checked }}"></checkbox>
+        <checkbox name="box_check" checked="{{if_checked}}" value="{{ if_checked }}"></checkbox>
           <view>本人已阅读以上声明，并已同意全部条款</view>
       </checkbox-group>
     </view>

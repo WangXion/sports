@@ -42,7 +42,7 @@ Page({
         break;
     }
     this.setData({
-      if_checked: []
+      if_checked: false
     })
   },
   // 确认预约

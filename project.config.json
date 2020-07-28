@@ -350,6 +350,13 @@
 					"id": -1,
 					"name": "pages/registrateDetails/registrateDetails",
 					"pathName": "pages/registrateDetails/registrateDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/examinate/examinate",
+					"pathName": "pages/examinate/examinate",
 					"scene": null
 				}
 			]
