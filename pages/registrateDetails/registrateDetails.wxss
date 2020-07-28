@@ -51,7 +51,6 @@
   font-size: 30rpx;
 }
 .registrateDetails .section .textarea .lable {
-  font-size: 32rpx;
   margin-bottom: 15rpx;
   color: #999;
 }
