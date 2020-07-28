@@ -1,6 +1,6 @@
 <!--details.wxml-->
 <view class="container">
-    <view class='header flexStart' data-type='one'>
+    <view class='header flexStart' bindtap='toDetails'>
         <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/swimming.png' class='itemRight'></image>
         <view class='flexBetween center'>
             <view class='info'>
@@ -17,16 +17,16 @@
         <view class='name'>大观体育馆</view>
         <view class='details flexBetween'>
             <text>杭州拱墅区大关路XXX号</text>
-            <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/nav-icon.png' class='navIcon'></image>
+            <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/nav-icon.png' class='navIcon' bindtap='toMap'></image>
         </view>
         <view class='flexCenter call'>
             <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/phone-icon.png' class='phoneIcon'></image>
-            <text>联系商家</text>
+            <text bindtap='callPhone' data-tel='0571-88886666'>联系商家</text>
         </view>
     </view>
     <view class='writeOff'>
         <view class='title'>核销码<text>现场凭此码扫码入场 </text></view>
-        <image src='' class='writeCode'></image>
+        <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/20200728173330.png' class='writeCode'></image>
         <view class="limit">剩余有效次数：<text>3次 </text></view>
     </view>
     <view class='tip'>

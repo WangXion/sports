@@ -3,23 +3,23 @@
     <view class='header'>
         <view class='top flexBetween'>
             <text>帐号余额（元）</text>
-            <view class='btn'>交易记录</view>
+            <view class='btn' bindtap='toRecords'>交易记录</view>
         </view>
         <view class='balance'>0.00</view>
     </view>
     <view class='title'>充值金额</view>
     <view class='chargeList flexBetween'>
-        <view class='item checked'>100<text>元</text></view>
-        <view class='item'>300<text>元</text></view>
-        <view class='item'>500<text>元</text></view>
-        <view class='item'>1000<text>元</text></view>
-        <view class='item'>3000<text>元</text></view>
-        <view class='item'>5000<text>元</text></view>
+        <view class='item {{price == 100 ?"checked":""}}' data-price='100' bindtap='changeTab'>100<text>元</text></view>
+        <view class='item {{price == 300 ?"checked":""}}' data-price='300' bindtap='changeTab'>300<text>元</text></view>
+        <view class='item {{price == 500 ?"checked":""}}' data-price='500' bindtap='changeTab'>500<text>元</text></view>
+        <view class='item {{price == 1000 ?"checked":""}}' data-price='1000' bindtap='changeTab'>1000<text>元</text></view>
+        <view class='item {{price == 3000 ?"checked":""}}' data-price='3000' bindtap='changeTab'>3000<text>元</text></view>
+        <view class='item {{price == 5000 ?"checked":""}}' data-price='5000' bindtap='changeTab'>5000<text>元</text></view>
     </view>
     <view class='footer'>
-        <view class='btn'>提交反馈</view>
+        <view class='btn {{argee==0?"diableBtn":""}}'>确认支付 ￥{{price}}</view>
         <view class='flexCenter'>
-            <icon class="icon-small icon" type="success" size="23" color='#E95A28'></icon>
+            <icon class="icon-small icon" type="success" size="23" color='{{argee == 0?"#999" : "#E95A28"}}' bindtap="changeArgee"></icon>
             同意
             <view class='link' bindtap='showLay'>《支付服务协议》</view>
         </view>

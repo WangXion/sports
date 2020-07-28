@@ -3,7 +3,7 @@
     <view class='userInfo'>
         <view class='header flexBetween'>
             <text class='label'>头像</text>
-            <image bindtap="bindViewTap" class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            <image bindtap="bindViewTap" class="avatar" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/20200728173316.png" mode="cover"></image>
         </view>
         <view class='item flexBetween'>
             <text class='label'>昵称</text>
@@ -19,7 +19,7 @@
         <view class='item flexBetween'>
             <text class='label'>绑定手机号</text>
             <view class='flexStart'>
-                <input value='{{userInfo.nickName}}' placeholder="请填写手机号"/>
+                <input value='15858267888' placeholder="请填写手机号"/>
                 <image bindtap="bindViewTap" class="arrow" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
             </view>
         </view>

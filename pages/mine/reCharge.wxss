@@ -88,6 +88,9 @@
     line-height: 98rpx;
     margin-bottom: 25rpx;
 }
+.footer .diableBtn{
+  background: #B9B9B9;
+}
 .footer .link{
     color: #FF791F;
 }

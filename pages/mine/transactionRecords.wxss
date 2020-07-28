@@ -1,0 +1,63 @@
+.container{
+    background: #F6F6F6;
+    box-sizing: border-box;
+    padding: 0 15rpx;
+    padding-top: 16rpx;
+    height: 100vh;
+}
+.container .topTitle{
+    padding-left: 4rpx;
+    padding-right: 14rpx;
+    box-sizing: border-box;
+    height: 80rpx;
+    line-height: 80rpx;
+    position: relative;
+}
+.container .topTitle .icon{
+    border: 15rpx solid transparent;
+    border-top-color:  rgba(0,0,0,0.6);
+    position: absolute;
+    right: 10rpx;
+    top: 40%;
+}
+.container .topTitle .month{
+    padding-right: 30rpx;
+}
+.messageList{
+    height: 115rpx;
+    background: #fff;
+    border-radius: 10rpx;
+    padding: 25rpx;
+    box-sizing: border-box;
+    margin-bottom: 16rpx;
+}
+.messageList .price{
+    color: #FD2323;
+    font-size: 36rpx;
+}
+.messageList .add{
+    color: #438CF0;
+}
+.messageList .item .title{
+    font-size: 24rpx;
+    color: #000;
+}
+.messageList .item .content{
+    color: #999;
+    font-size: 24rpx;
+}
+.textOver{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.flexBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flexStart{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
