@@ -10,7 +10,8 @@
   color:rgba(102,102,102,1);
 }
 .keep .tab .item{
-  margin-right: 38rpx;
+  /* margin-right: 38rpx; */
+  width: 99rpx;
   font-size: 30rpx;
 }
 .keep .tab .active {

@@ -35,37 +35,55 @@
   <!-- 体质检测、体育大讲堂、门票卡劵 -->
   <view class="index-icon">
     <view class="item" catchtap="hrefTap" data-key="examinate">
-      <view class="icon icon1">
-        <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon3.png" mode="cover"></image>
+      <view class="icon">
+      <!-- https://sports-bureau.oss-cn-hangzhou.aliyuncs.com -->
+        <image src="../../images/icon1.png" mode="cover"></image>
       </view>
       <view class="name">体质检测</view>
     </view>
     <view class="item" catchtap="hrefTap" data-key="lecture">
-      <image class="icon icon2" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon4.png" mode="cover"></image>
+      <image class="icon" src="../../images/icon2.png" mode="cover"></image>
       <view class="name">体育大讲堂</view>
     </view>
     <view class="item" catchtap="hrefTap" data-key="cart">
-      <image class="icon icon3" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon1.png" mode="cover"></image>
+      <image class="icon" src="../../images/icon3.png" mode="cover"></image>
       <view class="name">门票卡劵</view>
     </view>
     <view class="item">
-      <image class="icon icon4" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon2.png" mode="cover"></image>
+      <image class="icon" src="../../images/icon4.png" mode="cover"></image>
       <view class="name">教学直播</view>
     </view>
     <view class="item" catchtap="hrefTap" data-key="map">
-      <image class="icon icon5" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon5.png" mode="cover"></image>
+      <image class="icon" src="../../images/icon5.png" mode="cover"></image>
       <view class="name">场馆地图</view>
     </view>
   </view>
   <!-- 体育头条 -->
   <view class="index-ports">
-    <view class="left">
-      <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon6.png" mode="cover"></image>
-      <view>体育新闻头条内容闻头条内容...</view>
-    </view>
-    <view class="right">
-      <view>07/18</view>
-    </view>
+    <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon6.png" mode="cover"></image>
+    <swiper
+      class="swiper-box"
+      indicator-dots="{{ indicatorPorts }}"
+      autoplay="{{ autoplayPorts }}"
+      circular="{{ circularPorts }}"
+      indicator-color="{{ indicatorColor }}"
+      vertical="{{ verticalPorts }}"
+      interval="{{ intervalPorts }}"
+      duration="{{ durationPorts }}"
+      previous-margin="{{ previousMarginPorts }}px"
+      next-margin="{{ nextMarginPorts }}px"
+      style="height:{{ swiper_heightPorts }}">
+      <block wx:for="{{ sportArr }}" wx:key="index">
+        <swiper-item>
+          <!-- <image src="{{ item }}" mode="cover"></image> -->
+          <view class="item">
+            <view class="title">{{ item.title }}</view>
+            <view class="right">{{ item.time }}</view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    
   </view>
   <!-- 推荐场馆 -->
   <view class="index-venues">

@@ -10,7 +10,7 @@
   font-family: MicrosoftYaHei;
 } 
 button{
-  background-color: #fff; /*可根据自己的背景颜色自行设置*/
+  /* background-color: #fff; 可根据自己的背景颜色自行设置 */
   border-radius: 0rpx;
   padding: 0rpx;
   margin: 0rpx;
@@ -23,7 +23,7 @@ button::after{ /*button的边框样式是通过::after方式实现的*/
   
 .button-hover{ /*点击后样式*/
   color:#000;
-  background-color: rgb(247, 247, 247);
+  /* background-color: rgb(247, 247, 247); */
 }
 image {
   width: 100%;

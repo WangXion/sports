@@ -22,7 +22,31 @@ Page({
     // 轮播图设置
     userInfo: wx.getStorageSync('userInfo'),
     flag: true,
-    imageUrl: img_url
+    imageUrl: img_url,
+    indicatorPorts: false,
+    autoplayPorts: true,
+    verticalPorts: true,
+    circularPorts: false,
+    intervalPorts: 3000,
+    durationPorts: 500,
+    previousMarginPorts: 0,
+    nextMarginPorts: 0,
+    indicatorColorPorts: 'rgba(255, 255, 255, .5)',
+    swiper_height: '269rpx',
+    sportArr: [
+      {
+        title: '体育新闻头条内容闻头条内容体育新闻头条内容闻头条内容体育新闻头条内容闻头条内容',
+        time: '07/18'
+      },
+      {
+        title: '111111111111111容闻头条内容',
+        time: '07/19'
+      },
+      {
+        title: '2222222222222222容闻头条内容',
+        time: '07/20'
+      }
+    ]
   },
 
   /**

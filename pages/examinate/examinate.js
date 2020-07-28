@@ -14,6 +14,7 @@ Page({
       }
     ],
     currentKey: 1,
+    disabled: true
   },
 
   /**

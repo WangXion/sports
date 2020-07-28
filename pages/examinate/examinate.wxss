@@ -80,13 +80,13 @@
   height: 90rpx;
   line-height: 90rpx;
   text-align: center;
-  color:rgba(255,255,255,1);
-  background-color: #F78D1B;
+  color:rgba(255,255,255,1) !important;
+  background-color: #F78D1B !important;
   font-size: 33rpx;
   font-weight: 400;
   margin-left: 15rpx;
   border-radius: 100rpx;
 }
 .examinate .button .text {
-  color: #fff;
+  color: #fff !important;
 }

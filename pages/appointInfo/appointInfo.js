@@ -61,12 +61,16 @@ Page({
   },
   // 编辑名单
   editList () {
-    this.isEdit = true
+    this.isEdit = true;
+    this.setData({ flag: false })
   },
   // 添加名单
   addSubmit () {
     this.isEdit = false
     this.setData({ flag: false })
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
