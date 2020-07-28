@@ -10,7 +10,7 @@
     <view class='orderList'>
         <block>
             <view class='item flexStart' bindtap='details'>
-                <image src='../../static/swimming.png' class='itemRight'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/swimming.png' class='itemRight'></image>
                 <view class='flexBetween center'>
                     <view class='info'>
                         <view class='flexBetween'>
@@ -30,7 +30,7 @@
         </block>
         <block>
             <view class='item flexStart' bindtap='details'>
-                <image src='../../static/swimming.png' class='itemRight'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/swimming.png' class='itemRight'></image>
                 <view class='flexBetween center'>
                     <view class='info'>
                         <view class='flexBetween'>
@@ -51,7 +51,7 @@
         </block>
         <block>
             <view class='item flexStart'  bindtap='details'>
-                <image src='../../static/swimming.png' class='itemRight'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/swimming.png' class='itemRight'></image>
                 <view class='flexBetween center'>
                     <view class='info'>
                         <view class='flexBetween'>

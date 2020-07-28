@@ -7,24 +7,24 @@
     <view class='List'>
         <block>
             <view class='item flexStart' bindtap='linkTo'>
-                <image src='../../static/swimming.png' class='itemRight'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/swimming.png' class='itemRight'></image>
                 <view class='flexStart center'>
                     <text class='couponName'>没有时间运动健身？试试戒掉这个习惯没有时间运动健身？</text>
                     <text class='limit'>限大关游泳馆</text>
                     <text class='limit'>限大关游泳馆</text>
                 </view>
-                <image src='../../static/signup-success.png' class='success'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/signup-success.png' class='success'></image>
             </view>
         </block>
         <block>
             <view class='item flexStart' bindtap='linkTo'>
-                <image src='../../static/swimming.png' class='itemRight'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/swimming.png' class='itemRight'></image>
                 <view class='flexStart center'>
                     <text class='couponName'>没有时间运动健身？试试戒掉这个习惯没有时间运动健身？</text>
                     <text class='limit'>限大关游泳馆</text>
                     <text class='limit'>限大关游泳馆</text>
                 </view>
-                <image src='../../static/signup-end.png' class='end'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/signup-end.png' class='end'></image>
             </view>
         </block>
     </view>
