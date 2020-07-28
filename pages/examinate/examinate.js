@@ -41,6 +41,9 @@ Page({
       default:
         break;
     }
+    this.setData({
+      if_checked: []
+    })
   },
   // 确认预约
   sureAppointment (event) {
@@ -59,7 +62,8 @@ Page({
   },
   /**是否同意协议 */
   boxcheck: function (e) {
-    var flag = e.detail.value[0];
+    console.log(e)
+    let flag = e.detail.value[0];
     console.log(flag)
     this.setData({
       if_checked: flag

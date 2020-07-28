@@ -5,8 +5,8 @@
 }
 /* 预约信息 */
 .appointInfo .title {
-  height: 90rpx;
-  line-height: 90rpx;
+  height: 114rpx;
+  line-height: 114rpx;
   font-size: 30rpx;
   padding-left: 20rpx;
 }
@@ -16,8 +16,8 @@
   background: #fff;
 }
 .appointInfo .cont .item {
-  height: 100rpx;
-  line-height: 100rpx;
+  height: 114rpx;
+  line-height: 114rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,11 +29,11 @@
 }
 .appointInfo .cont .item .lable {
   font-size: 30rpx;
-  color: #A3A3A3;
+  color: #999999;
   flex: 1;
 }
 .appointInfo .cont .item .value {
-  color: rgba(0,0,0,0.85);
+  color: #333;
   flex: 1;
   display: flex;
   justify-content: flex-end;
@@ -86,7 +86,7 @@
   padding: 40rpx 0;
 }
 .appointInfo .cont .upload .lable{
-  color: #A3A3A3;
+  color: #999;
   flex: 1;
 }
 /* 营业执照上传 */

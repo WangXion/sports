@@ -336,6 +336,13 @@
 					"id": -1,
 					"name": "pages/authorization/authorization",
 					"pathName": "pages/authorization/authorization",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/appointInfo/appointInfo",
+					"pathName": "pages/appointInfo/appointInfo",
 					"scene": null
 				}
 			]
