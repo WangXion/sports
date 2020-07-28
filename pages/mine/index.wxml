@@ -1,23 +1,23 @@
 <!--index.wxml-->
 <view class="container">
     <view class='header'>
-        <image src='../../static/mine-bg.png' mode='cover' class='headerBg'></image>
+        <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/mine-bg.png' mode='cover' class='headerBg'></image>
         <view class='top flexStart'>
             <image class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
             <view class='topRight'>
                 <view class='flexBetween' data-type='userInfo' bindtap='linkTo'>
                     <text class='nickName'>{{userInfo.nickName}}</text>
-                    <image src='../../static/right-arrow-white.png' mode='cover' class='arrow'></image>
+                    <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow-white.png' mode='cover' class='arrow'></image>
                 </view>
                 <view class='flexStart' data-type='realName' bindtap='linkTo'>
-                    <image src='../../static/realName.png' mode='cover' class='realNameIcon'></image>
+                    <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/realName.png' mode='cover' class='realNameIcon'></image>
                     <text class='realName'>未实名认证</text>
                 </view>
             </view>
         </view>
         <view class='bottom flexBetween'>
             <view class='flexStart'>
-                <image src='../../static/vip-icon.png' mode='cover' class='vipIcon'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/vip-icon.png' mode='cover' class='vipIcon'></image>
                 <text class='vipText'>运动一卡通，超值权益</text>
             </view>
             <view class='bottomButton'>即将上线</view>
@@ -25,67 +25,67 @@
     </view>
     <view class='module flexBetween'>
         <view class='flexCenter item' data-type='ticket' bindtap='linkTo'>
-            <image src='../../static/ticket-icon.png' mode='cover' class='ticketIcon'></image>
+            <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/ticket-icon.png' mode='cover' class='ticketIcon'></image>
             <text>我的门票</text>
         </view>
         <view class='flexCenter item' data-type='appointOrder' bindtap='linkTo'>
-            <image src='../../static/order-icon.png' mode='cover' class='orderIcon'></image>
+            <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/order-icon.png' mode='cover' class='orderIcon'></image>
             <text>预约订单</text>
         </view>
         <view class='flexCenter item' data-type='constitution' bindtap='linkTo'>
-            <image src='../../static/constitution-icon.png' mode='cover' class='constitutionIcon'></image>
+            <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/constitution-icon.png' mode='cover' class='constitutionIcon'></image>
             <text>体质检测</text>
         </view>
         <view class='flexCenter item' data-type='classRoom' bindtap='linkTo'>
-            <image src='../../static/classRoom-icon.png' mode='cover' class='classRoomIcon'></image>
+            <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/classRoom-icon.png' mode='cover' class='classRoomIcon'></image>
             <text>公益课堂</text>
         </view>
     </view>
     <view class='moduleFu'>
         <view class='item flexBetween' data-type='balance' bindtap='linkTo'>
             <view class='flexStart'>
-                <image src='../../static/balance-icon.png' mode='cover' class='icon'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/balance-icon.png' mode='cover' class='icon'></image>
                 <text class='label'>账号余额</text>
             </view>
             <view>
                 <text class='rightLabel'>0.00</text>
-                <image src='../../static/right-arrow.png' mode='cover' class='arrow'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png' mode='cover' class='arrow'></image>
             </view>
         </view>
         <view class='item flexBetween' data-type='sysMessage' bindtap='linkTo'>
             <view class='flexStart'>
-                <image src='../../static/sys-message.png' mode='cover' class='icon messageIcon'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/sys-message.png' mode='cover' class='icon messageIcon'></image>
                 <text class='label'>系统消息</text>
             </view>
             <view class='flexStart'>
                 <view class='newMessage'>有新消息 <view></view></view>
-                <image src='../../static/right-arrow.png' mode='cover' class='arrow'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png' mode='cover' class='arrow'></image>
             </view>
         </view>
         <view class='item flexBetween' data-type='coupon' bindtap='linkTo'>
             <view class='flexStart'>
-                <image src='../../static/coupon-icon.png' mode='cover' class='icon'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/coupon-icon.png' mode='cover' class='icon'></image>
                 <text class='label'>优惠券</text>
             </view>
-            <image src='../../static/right-arrow.png' mode='cover' class='arrow'></image>
+            <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png' mode='cover' class='arrow'></image>
         </view>
          <view class='item flexBetween' data-type='invoice' bindtap='linkTo'>
             <view class='flexStart'>
-                <image src='../../static/invoice-icon.png' mode='cover' class='icon'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/invoice-icon.png' mode='cover' class='icon'></image>
                 <text class='label'>电子发票</text>
             </view>
-            <image src='../../static/right-arrow.png' mode='cover' class='arrow'></image>
+            <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png' mode='cover' class='arrow'></image>
         </view>
          <view class='item flexBetween' data-type='collection' bindtap='linkTo'>
             <view class='flexStart'>
-                <image src='../../static/collection-icon.png' mode='cover' class='icon'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/collection-icon.png' mode='cover' class='icon'></image>
                 <text class='label'>信息收藏</text>
             </view>
-            <image src='../../static/right-arrow.png' mode='cover' class='arrow'></image>
+            <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png' mode='cover' class='arrow'></image>
         </view>
          <view class='item flexBetween' data-type='sysSetting' bindtap='linkTo'>
             <view class='flexStart'>
-                <image src='../../static/sys-setting-icon.png' mode='cover' class='icon'></image>
+                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/sys-setting-icon.png' mode='cover' class='icon'></image>
                 <text class='label'>系统设置</text>
             </view>
         </view>

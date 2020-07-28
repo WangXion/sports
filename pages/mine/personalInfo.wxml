@@ -20,7 +20,7 @@
             <text class='label'>绑定手机号</text>
             <view class='flexStart'>
                 <input value='{{userInfo.nickName}}' placeholder="请填写手机号"/>
-                <image bindtap="bindViewTap" class="arrow" src="../../static/right-arrow.png" mode="cover"></image>
+                <image bindtap="bindViewTap" class="arrow" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
             </view>
         </view>
         <view class='item flexBetween'>

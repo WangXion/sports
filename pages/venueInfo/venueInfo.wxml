@@ -36,7 +36,7 @@
     <!-- 车位情况 -->
     <view class="car">
       <view class="top">
-        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/ight-arrow.png" mode="cover"></image>
+        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
         <view>车位情况</view>
       </view>
       <view class="section">

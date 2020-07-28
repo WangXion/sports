@@ -1,6 +1,6 @@
 <!--feedBack.wxml-->
 <view class="container">
-    <image class="header" src='../../static/nameAuth.png'></image>
+    <image class="header" src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/nameAuth.png'></image>
     <view class='feedBack'>
         <view class='item flexStart'>
             <text class='label'>姓名</text>
