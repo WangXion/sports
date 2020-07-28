@@ -6,7 +6,7 @@
   </view>
   <view class="text">以下信息</view>
   <view class="info">
-    <image class="icon" src="../../images/icon-yes.png" mode="cover" />
+    <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-yes.png" mode="cover" />
     <view>你的账号信息（头像、地区及性别）</view>
   </view>
   <view class="register">

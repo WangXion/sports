@@ -6,7 +6,7 @@
       <view>{{ userInfo.nickName ? '欢迎miyin周':'未登录' }}</view>
     </view>
     <view class="right">
-      <view class="name">杭州市 下城区</view>
+      <view class="name">{{ provice }}</view>
       <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/address.png" mode="cover"></image>
     </view>
   </view>
@@ -37,24 +37,24 @@
     <view class="item" catchtap="hrefTap" data-key="examinate">
       <view class="icon">
       <!-- https://sports-bureau.oss-cn-hangzhou.aliyuncs.com -->
-        <image src="../../images/icon1.png" mode="cover"></image>
+        <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon1.png" mode="cover"></image>
       </view>
       <view class="name">体质检测</view>
     </view>
     <view class="item" catchtap="hrefTap" data-key="lecture">
-      <image class="icon" src="../../images/icon2.png" mode="cover"></image>
+      <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon2.png" mode="cover"></image>
       <view class="name">体育大讲堂</view>
     </view>
     <view class="item" catchtap="hrefTap" data-key="cart">
-      <image class="icon" src="../../images/icon3.png" mode="cover"></image>
+      <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon3.png" mode="cover"></image>
       <view class="name">门票卡劵</view>
     </view>
     <view class="item">
-      <image class="icon" src="../../images/icon4.png" mode="cover"></image>
+      <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon4.png" mode="cover"></image>
       <view class="name">教学直播</view>
     </view>
     <view class="item" catchtap="hrefTap" data-key="map">
-      <image class="icon" src="../../images/icon5.png" mode="cover"></image>
+      <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon5.png" mode="cover"></image>
       <view class="name">场馆地图</view>
     </view>
   </view>

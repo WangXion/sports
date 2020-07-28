@@ -48,25 +48,42 @@ Page({
         title: '2222222222222222容闻头条内容',
         time: '07/20'
       }
-    ]
+    ],
+    provice: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // wx.getLocation({
-    //   type: 'wgs84',
-    //   success(res) {
-    //     console.log(res)
-    //     const latitude = res.latitude
-    //     const longitude = res.longitude
-    //     wx.openLocation({
-    //       latitude:latitude,
-    //       longitude:longitude,
-    //     })
-    //   }
-    // })
+    if (!this.data.provice) {
+      // wx.getLocation({
+      //   type: 'wgs84',
+      //   success(res) {
+      //     console.log(res,'11111')
+      //     const latitude = res.latitude
+      //     const longitude = res.longitude
+      //     var that = this; 
+      //     wx.request({ // ②百度地图API，将微信获得的经纬度传给百度，获得城市等信息
+      //       url: 'https://api.map.baidu.com/geocoder/v2/?ak=5uyQfS5GVKmnG3s21ZzQMY9sLcsfsvwI=' + latitude + ',' + longitude + '&output=json&coordtype=wgs84ll',
+      //       data: {},
+      //       header: {
+      //         'Content-Type': 'application/json'
+      //       },
+      //       success: function (res) {
+      //         console.log(res.data,'22222')
+      //         console.log(res.data.result);
+      //       },
+      //       fail: function () {
+      //         // fail
+      //       },
+      //       complete: function () {
+      //         // complete
+      //       }
+      //     })
+      //   }
+      // })
+    }
   },
   // 体质监测跳转
   hrefTap (event) {

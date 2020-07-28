@@ -12,13 +12,13 @@
     <view class="time">
       正常营业 9:00-22:00
       <view class="icon">
-        <image src="../../images/icon-phone.png" mode="cover"></image>
+        <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-phone.png" mode="cover"></image>
       </view>
       <view class="phone">0571-88886666</view>
     </view>
     <view class="address">
       <view class="icon">
-        <image src="../../images/icon-navigete.png" mode="cover"></image>
+        <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-navigete.png" mode="cover"></image>
       </view>
       <view>地址：浙江省 杭州市 下城区 啥啥啥街道环城北路
         179号2楼
@@ -28,7 +28,7 @@
   <!-- 场馆信息 -->
   <view class="info">
     <view class="title">
-      <image class="icon" src="../../images/icon-informate.png" mode="cover"></image>
+      <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-informate.png" mode="cover"></image>
       <view>场馆信息</view>
     </view>
     <view class="cont">
@@ -50,14 +50,14 @@
     <view class="title">
       <view class="left">
         <view class="icon">
-          <image class="icon" src="../../images/ticket.png" mode="cover"></image>
+          <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/ticket.png" mode="cover"></image>
         </view>
         <view>单票</view>
         <view class="price">9折</view>
       </view>
       <view class="right">
         <view class="icon">
-          <image class="icon" src="../../images/icon-yes.png" mode="cover"></image>
+          <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-yes.png" mode="cover"></image>
         </view>
         <view>可发票</view>
       </view>
