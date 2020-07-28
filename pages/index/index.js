@@ -1,5 +1,5 @@
-//index.js
 // pages/shopCart/shopCart.js
+import { img_url } from '../../utils/util'
 Page({
 
   /**
@@ -21,7 +21,8 @@ Page({
     swiper_height: '269rpx',
     // 轮播图设置
     userInfo: wx.getStorageSync('userInfo'),
-    flag: true
+    flag: true,
+    imageUrl: img_url
   },
 
   /**

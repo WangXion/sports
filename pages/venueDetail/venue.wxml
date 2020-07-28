@@ -2,7 +2,7 @@
 <view class="venueDetail">
   <!-- banner图片 -->
   <view class="banner">
-    <image src="../../images/banner.png" mode="cover"></image>
+    <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/banner.png" mode="cover"></image>
   </view>
   <!-- 游泳馆详情 -->
   <view class="detail">
@@ -12,7 +12,7 @@
     <view class="time">
       正常营业 9:00-22:00
       <view class="icon">
-        <!-- <image src="../../static/phone-icon.png" mode="cover"></image> -->
+        <!-- <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/phone-icon.png" mode="cover"></image> -->
       </view>
       <view class="phone">0571-88886666</view>
     </view>
@@ -26,7 +26,7 @@
   <!-- 场馆信息 -->
   <view class="info">
     <view class="title">
-      <image class="icon" src="../../images/banner.png" mode="cover"></image>
+      <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/banner.png" mode="cover"></image>
       <view>场馆信息</view>
     </view>
     <view class="cont">
@@ -37,7 +37,7 @@
         <view class="tag">免费wifi</view>
       </view>
       <view class="right" catchtap="herfInfo">
-        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
       </view>
     </view>
   </view>
@@ -82,7 +82,7 @@
     <!-- 更多 -->
     <view class="more">
       查看其他5种票
-      <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+      <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
     </view>
   </view>
   <!-- 联系场馆 -->

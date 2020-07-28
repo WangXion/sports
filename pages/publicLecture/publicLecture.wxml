@@ -4,7 +4,7 @@
     wx:key="index">
     <view class="item {{ index === 0 ? '':'pt40' }}" bindtap="hrefDetail">
       <view class="left">
-        <image src="../../images/food.png" mode="cover"></image>
+        <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/food.png" mode="cover"></image>
       </view>
       <view class="right">
         <view class="title">没有时间运动健身？试试戒掉这个习惯没有时间运动健身？</view>

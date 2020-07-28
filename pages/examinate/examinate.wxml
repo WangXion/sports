@@ -27,7 +27,7 @@
   <!-- 按钮 -->
   <view class="button">
     <view class="row">
-      <image class="icon" src="../../images/icon-react.png" mode="cover"></image>
+      <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-react.png" mode="cover"></image>
       <view>本人已阅读以上声明，并已同意全部条款</view>
     </view>
     <view class="btn">

@@ -6,7 +6,7 @@
   <!-- 详情信息 -->
   <view class="detail">
     <view class="left">
-      <image src="../../images/food.png" mode="cover"></image>
+      <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/food.png" mode="cover"></image>
     </view>
     <view class="right">
       <view class="time">时 间：9月15日  </view>
@@ -19,7 +19,7 @@
   <!-- 培训介绍 -->
   <view class="cont">
     <view class="top">
-      <image class="icon" src="../../images/icon-info.png" mode="cover"></image>
+      <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-info.png" mode="cover"></image>
       <view >培训介绍</view>
     </view>
     <view class="section">

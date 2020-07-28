@@ -164,7 +164,7 @@
           <view class="">身份证：311111634568468486</view>
         </view>
         <view class="right">
-          <image class="icon" src="../../images/icon-edit.png" mode="cover"></image>
+          <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-edit.png" mode="cover"></image>
         </view>
       </view>
     </block>
@@ -190,6 +190,6 @@
     <view class='save' bindtap="addSubmit">保存添加</view>
   </view>
   <view class="closeImg" bindtap="closeMask">
-    <image  class="closeImg_image" src="../../images/close.png"></image>
+    <image  class="closeImg_image" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/close.png"></image>
   </view>
 </view>

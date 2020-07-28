@@ -7,36 +7,36 @@
   <view class="cont">
     <view class="row">
       <view class="item">
-        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
         <view>停车</view>
       </view>
       <view class="item">
-        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
         <view>器材租</view>
       </view>
       <view class="item">
-        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
         <view>零售</view>
       </view>
       <view class="item mr0">
-        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
         <view>空调</view>
       </view>
     </view>
     <view class="row start">
       <view class="item">
-        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
         <view>wifi</view>
       </view>
       <view class="item">
-        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
         <view>充电宝</view>
       </view>
     </view>
     <!-- 车位情况 -->
     <view class="car">
       <view class="top">
-        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/ight-arrow.png" mode="cover"></image>
         <view>车位情况</view>
       </view>
       <view class="section">
@@ -55,7 +55,7 @@
     <!-- 其他信息 -->
     <view class="other">
       <view class="top">
-        <image class="icon" src="../../static/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
         <view>其他信息</view>
       </view>
       <view class="section">

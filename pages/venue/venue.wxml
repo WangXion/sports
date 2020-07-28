@@ -2,7 +2,7 @@
 <view class="venue">
   <!-- 搜索框 -->
   <view class="venue-search">
-    <image class="img" src="../../images/close.png" mode="cover"></image>
+    <image class="img" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-search.png" mode="cover"></image>
     <input
       class="input"
       type="text"
@@ -28,10 +28,10 @@
     </view>
   </view>
   <!-- 场馆信息 -->
-  <block wx:for="{{ venueArr }}">
+  <block wx:for="{{ venueArr }}" wx:key="index">
     <view class="item" catchtap="hrefDetail">
       <view class="left">
-        <image class="img" src="../../images/food.png" mode="cover"></image>
+        <image class="img" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/food.png" mode="cover"></image>
       </view>
       <view class="right">
         <view class="name">

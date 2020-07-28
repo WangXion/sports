@@ -1,3 +1,4 @@
+export const img_url = 'https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/'
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
