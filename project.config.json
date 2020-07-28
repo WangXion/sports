@@ -357,6 +357,13 @@
 					"id": -1,
 					"name": "pages/examinate/examinate",
 					"pathName": "pages/examinate/examinate",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/publicLectureDetail/publicLectureDetail",
+					"pathName": "pages/publicLectureDetail/publicLectureDetail",
 					"scene": null
 				}
 			]
