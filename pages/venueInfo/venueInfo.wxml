@@ -1,42 +1,43 @@
 <!--pages/venueInfo/venueInfo.wxml-->
 <view class="venueInfo">
   <view class="title">
-    <image class="icon" src="" mode="cover"></image>
+    <image class="icon" src="../../images/icon-informate.png" mode="cover"></image>
     <view>场馆信息</view>
   </view>
   <view class="cont">
     <view class="row">
       <view class="item">
-        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
+        <!-- https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/ -->
+        <image class="icon" src="../../images/parking.png" mode="cover"></image>
         <view>停车</view>
       </view>
       <view class="item">
-        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="../../images/carRental.png" mode="cover"></image>
         <view>器材租</view>
       </view>
       <view class="item">
-        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="../../images/retail.png" mode="cover"></image>
         <view>零售</view>
       </view>
       <view class="item mr0">
-        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="../../images/airConditioner.png" mode="cover"></image>
         <view>空调</view>
       </view>
     </view>
     <view class="row start">
       <view class="item">
-        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="../../images/wifi.png" mode="cover"></image>
         <view>wifi</view>
       </view>
       <view class="item">
-        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="../../images/portableBattery.png" mode="cover"></image>
         <view>充电宝</view>
       </view>
     </view>
     <!-- 车位情况 -->
     <view class="car">
       <view class="top">
-        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="../../images/icon-park.png" mode="cover"></image>
         <view>车位情况</view>
       </view>
       <view class="section">
@@ -55,7 +56,7 @@
     <!-- 其他信息 -->
     <view class="other">
       <view class="top">
-        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
+        <image class="icon" src="../../images/icon-park.png" mode="cover"></image>
         <view>其他信息</view>
       </view>
       <view class="section">

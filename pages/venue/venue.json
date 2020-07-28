@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "dropdownmenu": "/component/dropdownmenu/dropdownmenu"
+  },
   "navigationBarTitleText": "场馆"
 }

@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    arr: ['游泳','羽毛球','保龄球'],
+    currentIndex: 0,
+    ticket: [1,2,3,4,5],
+    showTicket: false
   },
 
   /**
@@ -13,6 +16,18 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  tapChange (event) {
+    let { index } = event.currentTarget.dataset;
+    this.setData({
+      currentIndex: index
+    })
+  },
+  // 查看更多票种
+  ticketClick () {
+    this.setData({
+      showTicket: true
+    })
   },
   // 跳转场馆信息
   herfInfo () {

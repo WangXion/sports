@@ -62,7 +62,7 @@
   <view class="index-ports">
     <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon6.png" mode="cover"></image>
     <swiper
-      class="swiper-box"
+      class="swiper-box1"
       indicator-dots="{{ indicatorPorts }}"
       autoplay="{{ autoplayPorts }}"
       circular="{{ circularPorts }}"
@@ -136,25 +136,25 @@
   </view>
   <!-- 科学健身 -->
   
-    <view class="index-fitness">
-      <view class="title">科学健身</view>
-        <scroll-view class="image-group" scroll-x>
-          <view class="section">
-              <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
-                <view class="icon">
-                  <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/keep.png" mode="cover"></image>
-                </view>
-                <view class="desc">打篮球投篮的正确方法</view>
+  <view class="index-fitness">
+    <view class="title">科学健身</view>
+      <scroll-view class="image-group" scroll-x>
+        <view class="section">
+            <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
+              <view class="icon">
+                <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/keep.png" mode="cover"></image>
               </view>
-              <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
-                <view class="icon">
-                  <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/keep.png" mode="cover"></image>
-                </view>
-                <view class="desc">打篮球投篮的正确方法</view>
+              <view class="desc">打篮球投篮的正确方法</view>
+            </view>
+            <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
+              <view class="icon">
+                <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/keep.png" mode="cover"></image>
               </view>
-          </view>
-        </scroll-view>
-    </view>
+              <view class="desc">打篮球投篮的正确方法</view>
+            </view>
+        </view>
+      </scroll-view>
+  </view>
   <!-- 推荐资讯 -->
   <view class="index-information">
     <view class="title">
@@ -164,7 +164,7 @@
       <view class="left">
         <view class="top">没有时间运动健身？试试戒掉这个习惯没有时间运动健身？试试戒掉这个习惯</view>
         <view class="desc">
-          <view class="recoerd">6评论</view>
+          <view class="record">6评论</view>
           <view class="date">07/16 15:20</view>
         </view>
       </view>
@@ -176,7 +176,7 @@
       <view class="left">
         <view class="top">没有时间运动健身？试试戒掉这个习惯没有时间运动健身？试试戒掉这个习惯</view>
         <view class="desc">
-          <view class="recoerd">6评论</view>
+          <view class="record">6评论</view>
           <view class="date">07/16 15:20</view>
         </view>
       </view>
@@ -184,11 +184,11 @@
         <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/food.png" mode="cover"></image>
       </view>
     </view>
-    <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
+    <view class="cont border-none" catchtap="hrefTap" data-key="scientificFitness">
       <view class="left">
         <view class="top">没有时间运动健身？试试戒掉这个习惯没有时间运动健身？试试戒掉这个习惯</view>
         <view class="desc">
-          <view class="recoerd">6评论</view>
+          <view class="record">6评论</view>
           <view class="date">07/16 15:20</view>
         </view>
       </view>

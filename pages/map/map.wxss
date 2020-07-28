@@ -32,29 +32,30 @@
   left: 15rpx;
 }
 .map .cont .name {
-  font-size: 24rpx;
+  font-size: 28rpx;
   font-weight: bold;
   margin-bottom: 15rpx;
   margin: 20rpx 20rpx 30rpx 20rpx;
 }
 .map .cont .address {
-  font-size: 20rpx;
+  font-size: 24rpx;
   color: #999;
   margin: 20rpx 20rpx 30rpx 20rpx;
 }
 .map .cont .btn {
   display: flex;
   justify-content: flex-end;
-  font-size: 26rpx;
+  font-size: 30rpx;
+  padding: 0 21rpx;
 }
 .map .cont .btn .navigation {
   height: 80rpx;
   width: 180rpx;
   line-height: 80rpx;
-  border: 1rpx solid #AAB5D4;
+  border: 2rpx solid #AAB5D4;
   border-radius: 70rpx;
   color: #6D8BC3;
-  margin-right: 10rpx;
+  margin-right: 20rpx;
   text-align: center;
 }
 .map .cont .btn .car {

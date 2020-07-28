@@ -56,15 +56,13 @@
     border-radius:50%;
 }
 .shore .beall .bottom .lower .small{
-    font-size:24rpx;
-    font-family:MicrosoftYaHei;
+    font-size: 26rpx;
     font-weight:400;
     color:rgba(51,51,51,1);
     padding-left: 20rpx;
 }
 .shore .beall .bottom .lower .after{
-    font-size:24rpx;
-    font-family:MicrosoftYaHei;
+    font-size: 26rpx;
     font-weight:400;
     color:rgba(51,51,51,1);
     line-height: 36rpx;
@@ -120,6 +118,7 @@
 .shore .end .cancel{
     width: 750rpx;
     height: 101rpx;
+    line-height: 101rpx;
     background:rgba(255,255,255,1);
     position: fixed;
     bottom: 0;
@@ -129,5 +128,5 @@
     font-size: 30rpx;
     font-weight:400;
     color:rgba(0,0,0,1);
-    padding: 33rpx 346rpx 39rpx;
+    text-align: center;
 }

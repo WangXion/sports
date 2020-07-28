@@ -27,13 +27,13 @@ Page({
     indicatorPorts: false,
     autoplayPorts: true,
     verticalPorts: true,
-    circularPorts: false,
+    circularPorts: true,
     intervalPorts: 3000,
     durationPorts: 500,
     previousMarginPorts: 0,
     nextMarginPorts: 0,
     indicatorColorPorts: 'rgba(255, 255, 255, .5)',
-    swiper_height: '269rpx',
+    swiper_heightPorts: '80rpx',
     // 体育头条的数据
     sportArr: [
       {
@@ -55,6 +55,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        console.log(res)
+        const latitude = res.latitude
+        const longitude = res.longitude
+        wx.openLocation({
+          latitude:latitude,
+          longitude:longitude,
+        })
+      }
+    })
   },
   // 体质监测跳转
   hrefTap (event) {

@@ -13,25 +13,15 @@
     </input>
   </view>
   <!-- tab栏 -->
-  <view class="tab">
-    <view class="left">
-      附近区域
-      <view class="icon"></view>
-    </view>
-    <view class="left">
-      附近区域
-      <view class="icon"></view>
-    </view>
-    <view class="left">
-      附近区域
-      <view class="icon"></view>
-    </view>
-  </view>
+  <!-- <view class="tab"> -->
+    <dropdownmenu dropDownMenuTitle='{{dropDownMenuTitle}}' dropDownMenuDistrictData='{{data1}}' dropDownMenuSourceData='{{data2}}' dropDownMenuStyleData='{{data3}}' dropDownMenuFilterData='{{data4}}'
+    bind:selectedItem='selectedItem' />
+  <!-- </view> -->
   <!-- 场馆信息 -->
   <block wx:for="{{ venueArr }}" wx:key="index">
     <view class="item" catchtap="hrefDetail">
       <view class="left">
-        <image class="img" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/food.png" mode="cover"></image>
+        <image class="img" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/venue.png" mode="cover"></image>
       </view>
       <view class="right">
         <view class="name">

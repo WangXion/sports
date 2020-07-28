@@ -37,7 +37,7 @@
 /* 预约须知 */
 .examinate .cont {
   padding: 40rpx 20rpx;
-  margin-bottom: 200rpx;
+  margin-bottom: 220rpx;
 }
 .examinate .cont .title {
   font-size: 30rpx;

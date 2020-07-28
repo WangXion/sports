@@ -6,16 +6,16 @@
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
+		"enhance": false,
 		"postcss": true,
 		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": false,
-		"autoAudits": false,
 		"coverView": true,
+		"nodeModules": false,
+		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
-		"enhance": false,
-		"nodeModules": false,
 		"uglifyFileName": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
@@ -252,6 +252,90 @@
 					"id": -1,
 					"name": "pages/publicLecture/publicLecture",
 					"pathName": "pages/publicLecture/publicLecture",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/appointInfo/appointInfo",
+					"pathName": "pages/appointInfo/appointInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/appointInfo/appointInfo",
+					"pathName": "pages/appointInfo/appointInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/venueDetail/venue",
+					"pathName": "pages/venueDetail/venue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/orderPayment/orderPayment",
+					"pathName": "pages/orderPayment/orderPayment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/venue/venue",
+					"pathName": "pages/venue/venue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/venueDetail/venue",
+					"pathName": "pages/venueDetail/venue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/venueDetail/venue",
+					"pathName": "pages/venueDetail/venue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/slimming/slimming",
+					"pathName": "pages/slimming/slimming",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/share/share",
+					"pathName": "pages/share/share",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/venueDetail/venue",
+					"pathName": "pages/venueDetail/venue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/map/map",
+					"pathName": "pages/map/map",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/authorization/authorization",
+					"pathName": "pages/authorization/authorization",
 					"scene": null
 				}
 			]

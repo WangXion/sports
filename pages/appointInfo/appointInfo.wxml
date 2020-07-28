@@ -56,7 +56,7 @@
           </input>
         </view>
       </view>
-      <view class="item">
+      <view class="item border-none">
         <view class="lable">预约时间</view>
         <view class="value">
           <input

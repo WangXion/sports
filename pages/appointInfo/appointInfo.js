@@ -12,7 +12,7 @@ Page({
     phone: '',
     cart: '',
     date: '',
-    personalArr: [1,2,3,4],
+    personalArr: [1,2],
     flag: true,
     isEdit: false,
     key: '1'
