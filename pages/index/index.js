@@ -23,6 +23,7 @@ Page({
     userInfo: wx.getStorageSync('userInfo'),
     flag: true,
     imageUrl: img_url,
+    // 体育头条的轮播设置
     indicatorPorts: false,
     autoplayPorts: true,
     verticalPorts: true,
@@ -33,6 +34,7 @@ Page({
     nextMarginPorts: 0,
     indicatorColorPorts: 'rgba(255, 255, 255, .5)',
     swiper_height: '269rpx',
+    // 体育头条的数据
     sportArr: [
       {
         title: '体育新闻头条内容闻头条内容体育新闻头条内容闻头条内容体育新闻头条内容闻头条内容',
@@ -61,47 +63,36 @@ Page({
     switch (key) {
       // 授权
       case 'avatar':
-        wx.navigateTo({
-          url: '/pages/authorization/authorization'
-        })
+        url = '/pages/authorization/authorization'
         break;
       // 体质监测
       case 'examinate':
-        wx.navigateTo({
-          url: '/pages/examinate/examinate'
-        })
+        url = '/pages/examinate/examinate'
         break;
       // 场馆地图
       case 'map':
-        wx.navigateTo({
-          url: '/pages/map/map'
-        })
+        url = '/pages/map/map'
         break;
         // 体育大讲堂
       case 'lecture':
-        wx.navigateTo({
-          url: '/pages/publicLecture/publicLecture'
-        })
+        url = '/pages/publicLecture/publicLecture'
         break;
         门票卡劵
       case 'cart':
-        wx.navigateTo({
-          url: '/pages/venue/venue'
-        })
+        url = '/pages/venue/venue'
         break;
       case 'venueDetail':
-        wx.navigateTo({
-          url: '/pages/venueDetail/venue'
-        })
+        url = '/pages/venueDetail/venue'
         break;
       case 'scientificFitness':
-        wx.navigateTo({
-          url: '/pages/slimming/slimming?key='+2
-        })
+        url = '/pages/slimming/slimming?key='+2
         break;
       default:
         break;
     }
+    wx.navigateTo({
+      url
+    })
   },
   closeMask () {
     this.setData({

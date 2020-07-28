@@ -169,17 +169,20 @@
   font-weight: bold;
   margin-bottom: 32rpx;
 }
-.index-fitness .item {
+.index-fitness .section {
   display: flex;
+  white-space: nowrap;
 }
 .index-fitness .cont {
   overflow: hidden;
   margin-right: 30rpx;
+  display: inline-block;
 }
 .index-fitness .cont .icon {
   width: 382rpx;
   height: 241rpx;
   margin-bottom: 20rpx;
+  display: inline-block;
 }
 .index-information .title {
   font-size: 30rpx;

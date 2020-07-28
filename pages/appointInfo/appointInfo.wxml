@@ -169,10 +169,8 @@
       </view>
     </block>
   </view>
-  <view class="btn">
-    <view bindtap="submit">
-      提交预约
-    </view>
+  <view class="btn" bindtap="submit">
+    提交预约
   </view>
 </view>
 <view class="mask" hidden="{{ flag }}">

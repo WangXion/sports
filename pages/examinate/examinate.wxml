@@ -3,14 +3,15 @@
   <view class="tab">
     <view
       class="item {{ currentKey === 1 ? 'active' : '' }}"
-        data-key="1"
-        bindtap="handleChange">
+      data-key="1"
+      bindtap="handleChange">
       <view class="name">个人</view>
       <view wx:if="{{ currentKey === 1 }}" class="slider"></view>
     </view>
     <view
       class="item {{ currentKey === 2 ? 'active' : '' }}"
-      data-key="2" bindtap="handleChange">
+      data-key="2"
+      bindtap="handleChange">
       <view class="name">团体</view>
       <view wx:if="{{ currentKey === 2 }}" class="slider"></view>
     </view>
@@ -29,15 +30,17 @@
   </view>
   <!-- 按钮 -->
   <view class="button">
-    <view class="row">
-      <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-react.png" mode="cover"></image>
-      <view>本人已阅读以上声明，并已同意全部条款</view>
+    <view>
+      <checkbox-group class="row" bindchange="boxcheck">
+        <checkbox name="box_check" value="{{ if_checked }}"></checkbox>
+          <view>本人已阅读以上声明，并已同意全部条款</view>
+      </checkbox-group>
     </view>
-    <view class="btn">
-      <view class="text"
+    <view>
+      <button class="btn"
         disabled="{{ disabled }}"
         bindtap="sureAppointment"
-        data-index="{{ currentKey }}">确认预约</view>
+        data-index="{{ currentKey }}">确认预约</button>
     </view>
   </view>
 </view>

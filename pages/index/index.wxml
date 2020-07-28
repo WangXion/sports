@@ -83,7 +83,6 @@
         </swiper-item>
       </block>
     </swiper>
-    
   </view>
   <!-- 推荐场馆 -->
   <view class="index-venues">
@@ -136,21 +135,26 @@
     </view>
   </view>
   <!-- 科学健身 -->
-  <view class="index-fitness">
-    <view class="title">
-      科学健身
+  
+    <view class="index-fitness">
+      <view class="title">科学健身</view>
+        <scroll-view class="image-group" scroll-x>
+          <view class="section">
+              <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
+                <view class="icon">
+                  <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/keep.png" mode="cover"></image>
+                </view>
+                <view class="desc">打篮球投篮的正确方法</view>
+              </view>
+              <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
+                <view class="icon">
+                  <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/keep.png" mode="cover"></image>
+                </view>
+                <view class="desc">打篮球投篮的正确方法</view>
+              </view>
+          </view>
+        </scroll-view>
     </view>
-    <view class="item">
-       <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
-        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/keep.png" mode="cover"></image>
-        <view class="desc">打篮球投篮的正确方法</view>
-      </view>
-      <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
-        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/keep.png" mode="cover"></image>
-        <view class="desc">打篮球投篮的正确方法</view>
-      </view>
-    </view>
-  </view>
   <!-- 推荐资讯 -->
   <view class="index-information">
     <view class="title">

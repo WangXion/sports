@@ -14,7 +14,8 @@ Page({
       }
     ],
     currentKey: 1,
-    disabled: true
+    disabled: false,
+    if_checked: false
   },
 
   /**
@@ -23,6 +24,7 @@ Page({
   onLoad: function (options) {
 
   },
+  // tab  change事件
   handleChange (event) {
     console.log(event.currentTarget.dataset.key)
     let { key } = event.currentTarget.dataset;
@@ -43,8 +45,24 @@ Page({
   // 确认预约
   sureAppointment (event) {
     let { index } = event.currentTarget.dataset;
+    console.log(this.data.if_checked)
+    if (!this.data.if_checked) {
+      wx.showToast({
+        title: '请先勾选预约须知',
+        icon: 'none'
+      })
+      return
+    }
     wx.navigateTo({
       url: '/pages/appointInfo/appointInfo?key='+index
+    })
+  },
+  /**是否同意协议 */
+  boxcheck: function (e) {
+    var flag = e.detail.value[0];
+    console.log(flag)
+    this.setData({
+      if_checked: flag
     })
   },
   /**

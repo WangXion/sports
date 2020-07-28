@@ -152,7 +152,7 @@
   background: #F78E1E;
   color: #fff;
   position: fixed;
-  bottom: 10rpx;
+  bottom: 35rpx;
   left: 20rpx;
   border-radius: 60rpx;
   font-size: 30rpx;

@@ -50,7 +50,11 @@ Page({
     }
   },
   // 提交按钮
-  submit () {},
+  submit () {
+    wx.switchTab({
+      url: '/pages/index/index'
+    }) 
+  },
   // 显示遮罩层
   showMask () {
     this.setData({ flag: false })

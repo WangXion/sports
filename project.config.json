@@ -231,6 +231,27 @@
 					"id": -1,
 					"name": "pages/slimming/slimming",
 					"pathName": "pages/slimming/slimming",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/examinate/examinate",
+					"pathName": "pages/examinate/examinate",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/appointInfo/appointInfo",
+					"pathName": "pages/appointInfo/appointInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/publicLecture/publicLecture",
+					"pathName": "pages/publicLecture/publicLecture",
 					"scene": null
 				}
 			]
