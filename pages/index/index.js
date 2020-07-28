@@ -49,7 +49,7 @@ Page({
         time: '07/20'
       }
     ],
-    provice: ''
+    provice: '杭州大关体育馆'
   },
 
   /**
