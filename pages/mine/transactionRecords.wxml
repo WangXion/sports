@@ -1,0 +1,25 @@
+<view class="container">
+    <view class='topTitle flexBetween'>
+        <text>消费明细</text>
+        <picker mode="date" value="{{date}}" end="{{currentDate}}" fields='month' bindchange="bindDateChange">
+            <view class='month'>
+            {{date}}
+            <view class='icon'></view>
+        </view>
+        </picker>
+    </view>
+    <view class='messageList flexBetween' bindtap='details'>
+        <view class='item'>
+            <view class='title'>充值金额</view>
+            <text class='content'>2020-06-04 15:30:20</text>
+        </view>
+        <view class='price'>-500.00</view>
+    </view>
+    <view class='messageList flexBetween' bindtap='details'>
+        <view class='item'>
+            <view class='title'>充值金额</view>
+            <text class='content'>2020-06-04 15:30:20</text>
+        </view>
+        <view class='price add'>+50.00</view>
+    </view>
+</view>

@@ -13,6 +13,22 @@ Page({
       tabKey: tabKey
     })
   },
+  toMap(){
+    wx.navigateTo({
+      url: '../map/map'
+    })
+  },
+  toDetails() {
+    wx.navigateTo({
+      url: '../venueDetail/venue'
+    })
+  },
+  callPhone(e) {
+    let phone = e.currentTarget.dataset.tel;
+    wx.makePhoneCall({
+      phoneNumber: phone,
+    })
+  },
   onLoad: function () {
     
   },

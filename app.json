@@ -16,6 +16,7 @@
     "pages/mine/nameAuthentication",
     "pages/mine/index",
     "pages/mine/reCharge",
+    "pages/mine/transactionRecords",
     "pages/coupon/index",
     "pages/collection/index",
     "pages/collection/myCollection",

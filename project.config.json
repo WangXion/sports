@@ -392,6 +392,13 @@
 					"id": -1,
 					"name": "pages/scientificFitness/scientificFitness",
 					"pathName": "pages/scientificFitness/scientificFitness",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "交易明细",
+					"pathName": "pages/mine/transactionRecords",
+					"query": "",
 					"scene": null
 				}
 			]

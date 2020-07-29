@@ -1,23 +1,11 @@
 <!--index.wxml-->
 <view class="container">
     <view class='List'>
-        <block>
-            <view class='item flexStart' data-type='one'>
+        <block wx:for='{{dataList}}' wx:key='index'>
+            <view class='item flexStart' data-key='{{item.key}}' bindtap='changeStatus'>
                 <view class='flexBetween center'>
-                    <text class='couponName'>没有时间运动健身？试试戒掉这个习惯没有时间运动健身？</text>
-                    <view class='collection flexStart'>
-                        <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/star-icon.jpg' class='star'></image>
-                        <text>取消收藏</text>
-                    </view>
-                </view>
-                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/swimming.png' class='itemRight'></image>
-            </view>
-        </block>
-         <block>
-            <view class='item flexStart' data-type='one'>
-                <view class='flexBetween center'>
-                    <text class='couponName'>没有时间运动健身？试试戒掉这个习惯没有时间运动健身？</text>
-                    <view class='collection flexStart'>
+                    <text class='couponName'>{{item.title}}</text>
+                    <view class='collection flexStart' wx:if='{{item.collection}}'>
                         <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/star-icon.jpg' class='star'></image>
                         <text>取消收藏</text>
                     </view>

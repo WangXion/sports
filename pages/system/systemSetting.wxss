@@ -21,7 +21,7 @@
     border-top: none;
 }
 .setting .item .label{
-    font-size: 30rpx;
+    font-size: 32rpx;
     color: #333;
 }
 .setting .item .val{

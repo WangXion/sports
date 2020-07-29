@@ -4,9 +4,14 @@ const app = getApp()
 
 Page({
   data: {
-    authLay: false
+    authLay: false,
+    price: 100,
+    agree: 1
   },
   onLoad: function () {
+    this.setData({
+      agree: true
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -34,9 +39,31 @@ Page({
       })
     }
   },
+  toRecords(){
+    wx.navigateTo({
+      url: '../mine/transactionRecords'
+    })
+  },
   showLay() {
     this.setData({
       authLay: !this.data.authLay
+    })
+  },
+  changeTab(e) {
+    let price = e.currentTarget.dataset.price;
+    this.setData({
+      price: price
+    })
+  },
+  changeArgee(){
+    let argee = this.data.argee;
+    if(argee == 0) {
+      argee = 1
+    } else {
+      argee = 0
+    }
+    this.setData({
+      argee: argee
     })
   }
 })
