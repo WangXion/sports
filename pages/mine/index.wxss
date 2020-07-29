@@ -117,7 +117,7 @@
     transform: translateX(-15rpx);
 }
 .module .item text{
-    font-size: 24rpx;
+    font-size: 28rpx;
     color: #333;
     padding-top: 6rpx;
 }
@@ -132,7 +132,7 @@
     padding: 0 26rpx 0 40rpx;
 }
 .moduleFu .item .label{
-    font-size: 30rpx;
+    font-size: 32rpx;
     color: #232323;
     padding-left: 24rpx;
 }
@@ -142,7 +142,7 @@
     margin-right: 22rpx;
 }
 .moduleFu .item .newMessage{
-    font-size: 24rpx;
+    font-size: 26rpx;
     color: #333;
     position: relative;
     margin-right: 29rpx;
