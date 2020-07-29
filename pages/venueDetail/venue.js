@@ -30,9 +30,16 @@ Page({
     })
   },
   // 跳转场馆信息
-  herfInfo () {
+  herfInfo (event) {
+    let { type } = event.currentTarget.dataset;
+    let url = ''
+    if (type === 'info') {
+      url = '/pages/venueInfo/venueInfo'
+    }else {
+      url = '/pages/map/map'
+    }
     wx.navigateTo({
-      url: '/pages/venueInfo/venueInfo'
+      url
     })
   },
   buy () {

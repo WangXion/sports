@@ -16,7 +16,7 @@
       </view>
       <view class="phone">0571-88886666</view>
     </view>
-    <view class="address">
+    <view class="address" bindtap="herfInfo" data-type="map">
       <view class="icon">
         <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-navigete.png" mode="cover"></image>
       </view>
@@ -38,7 +38,7 @@
         <view class="tag">免费停车</view>
         <view class="tag">免费wifi</view>
       </view>
-      <view class="right" catchtap="herfInfo">
+      <view class="right" catchtap="herfInfo" data-type="info">
         <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
       </view>
     </view>
