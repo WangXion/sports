@@ -13,6 +13,9 @@
   font-size: 30rpx;
   height: 99rpx;
   background:rgba(255,255,255,1);
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .examinate .tab .item {
   display: flex;
@@ -38,6 +41,7 @@
 .examinate .cont {
   padding: 40rpx 20rpx;
   margin-bottom: 220rpx;
+  padding-top: 140rpx;
 }
 .examinate .cont .title {
   font-size: 30rpx;

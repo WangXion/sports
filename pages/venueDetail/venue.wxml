@@ -2,43 +2,39 @@
 <view class="venueDetail">
   <!-- banner图片 -->
   <view class="banner">
-    <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/banner.png" mode="cover"></image>
+    <image src="{{details.stadiumDetailimage}}" mode="cover"></image>
   </view>
   <!-- 游泳馆详情 -->
   <view class="detail">
-    <view class="title">
-      杭州市游泳馆
-    </view>
+    <view class="title">{{details.stadiumName}}</view>
     <view class="time">
-      正常营业 9:00-22:00
-      <view class="icon">
+      <view class='flexStart'>
+        <image src='https://cunjifen.oss-cn-beijing.aliyuncs.com/userImg/1597549620462.jpg' class='icon' style='margin: 0; margin-right: 10rpx;'></image>
+        {{ details.stadiumOpentime}}
+      </view>
+      <view class="icon" data-tel='{{details.stadiumPhone}}' bindtap='callPhone'>
         <image src="../../images/icon-phone.png" mode="cover"></image>
       </view>
-      <view class="phone">0571-88886666</view>
+      <view class="phone" data-tel='{{details.stadiumPhone}}' bindtap='callPhone'>{{details.stadiumPhone}}</view>
     </view>
-    <view class="address">
-      <view class="icon">
-        <image src="../../images/icon-navigete.png" mode="cover"></image>
-      </view>
-      <view>地址：浙江省 杭州市 下城区 啥啥啥街道环城北路
-        179号2楼
-      </view>
+    <view class="address flexStart" bindtap='openMap'>
+      <image src="../../images/icon-navigete.png" class='icon' mode="cover"></image>
+      <view>地址：{{details.stadiumArea+'  '+details.stadiumAddress}}</view>
     </view>
   </view>
   <!-- 场馆信息 -->
-  <view class="info">
+  <view class="info" catchtap="herfInfo" wx:if='{{configList && configList.length>0}}'>
     <view class="title">
       <image class="icon" src="../../images/icon-informate.png" mode="cover"></image>
       <view>场馆信息</view>
     </view>
     <view class="cont">
       <view class="item">
-        <view class="tag ml74">免费停车</view>
-        <view class="tag">免费wifi</view>
-        <view class="tag">免费停车</view>
-        <view class="tag">免费wifi</view>
+        <block wx:for='{{configList}}' wx:key='index'>
+          <view class="tag" wx:if='{{index<4}}'>{{item.configName}}</view>
+        </block>
       </view>
-      <view class="right" catchtap="herfInfo">
+      <view class="right">
         <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
       </view>
     </view>
@@ -53,9 +49,9 @@
           <image class="icon" src="../../images/ticket.png" mode="cover"></image>
         </view>
         <view>单票</view>
-        <view class="price">9折</view>
+        <view class="price" wx:if='{{false}}'>9折</view>
       </view>
-      <view class="right">
+      <view class="right" wx:if='{{false}}'>
         <view class="icon">
           <image class="icon" src="../../images/icon-yes.png" mode="cover"></image>
         </view>
@@ -63,39 +59,48 @@
       </view>
     </view>
     <!-- tab栏 -->
-    <view class="tab">
+    <view class="tab" wx:if='{{spData.length>0}}'>
       <view class="cont">
-        <block wx:for="{{ arr }}" wx:key="index">
+        <block wx:for="{{ spData }}" wx:key="index">
           <view
-            class="name {{ currentIndex === index ? 'active':''}}"
+            class="name {{ currentIndex === item.id ? 'active':''}}"
             bindtap="tapChange"
-            data-index="{{ index }}">
-            {{ item }}
+            data-index="{{ item.id }}">
+            {{ item.spName }}
           </view>
         </block>
       </view>
       <view class="line"></view>
     </view>
-    <!-- 单票的列表 -->
-    <view class="item">
-      <view class="left">
-        <view class="name">{{ currentIndex === 0 ? '游泳 早场 成人票' : currentIndex === 1 ? '羽毛球 早场 成人票' :currentIndex === 2 ? '保龄球 早场 成人票':'' }}</view>
-        <view class="time">05:30-07:00</view>
-        <view>随时退 | 过期退</view>
-      </view>
-      <view class="right">
-        <view class="price">
-          <view class="active">￥90</view> ￥100<view class="line"></view>
+    <view wx:if='{{ticket.length>0  && details.openType == 1}}'>
+      <!-- 单票的列表 -->
+      <block wx:for='{{ticket}}' wx:key='{{index}}'>
+        <view class="item" wx:if='{{index<showLen}}'>
+          <view class="left">
+            <view class="name">{{item.ticketName}}</view>
+            <view class="time">{{item.dayStartTime +'-'+ item.dayEndTime}}</view>
+            <view class='flexStart'>
+              <block>
+                <view wx:for='{{item.tagsArr}}' wx:for-item='itemTwo' wx:for-index='index' class='tags'>{{itemTwo}}</view>
+              </block>
+            </view>
+          </view>
+          <view class="right">
+            <view class="price">
+              <view class="active">￥{{item.realAmout}}</view><view class="priceLine">￥{{item.virtualAmount}}</view>
+            </view>
+            <view class="btn" bindtap="buy" data-item='{{item}}'>购买</view>
+          </view>
         </view>
-        <view class="btn" bindtap="buy">购买</view>
-      </view>
+      </block>
     </view>
+    <view  wx:elif='{{details.openType == 0 && !details.noOpenUrl}}' class='noData flexCenter'>暂无售票</view>
     <!-- 更多 -->
-    <view wx:if="{{ !showTicket }}" class="more" bindtap="ticketClick">
-      查看其他5种票
+    <view wx:if="{{ !showTicket && ticket.length>3 }}" class="more flexCenter" bindtap="ticketClick">
+      查看其他票
       <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
     </view>
-    <view wx:if="{{ showTicket }}">
+    <!-- <view wx:if="{{ showTicket }}">
       <block wx:for="{{ ticket }}" wx:key="index">
         <view class="item">
           <view class="left">
@@ -111,8 +116,11 @@
           </view>
         </view>
       </block>
-    </view>
+    </view> -->
   </view>
+  <!-- <view wx:if='{{details.openType == 0 && details.noOpenUrl}}' class='noOpenUrl'> -->
+      <cover-image wx:if='{{details.openType == 0 && details.noOpenUrl}}' src='{{details.noOpenUrl}}'></cover-image>
+    <!-- </view> -->
   <!-- 联系场馆 -->
   <view class="contactVenues">
     <!-- <image class="icon" src="" mode="cover" /> -->

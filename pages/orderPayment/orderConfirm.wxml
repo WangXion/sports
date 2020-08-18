@@ -1,0 +1,66 @@
+<!--pages/orderPayment/orderConfirm.wxml-->
+<view class="orderConfirm">
+  <view class='title'>票务信息</view>
+  <view class='list'>
+    <view class='item flexBetween'>
+      <text class='label'>场馆</text>
+      <text class='value textOver'>{{details.stadiumName}}</text>
+    </view>
+    <view class='item flexBetween'>
+      <text class='label'>票种</text>
+      <text class='value'>{{details.ticketName}}</text>
+    </view>
+    <view class='item flexBetween'>
+      <text class='label'>有效期</text>
+      <text class='value'>{{details.effectiveDays}}天</text>
+    </view>
+    <view class='item flexBetween'>
+      <text class='label'>价格</text>
+      <text class='value'>{{details.realAmout}}元</text>
+    </view>
+    <view class='item flexBetween'>
+      <text class='label'>数量</text>
+      <view class='value flexCenter'>
+        <view class='reduce flexCenter' data-type='reduce' bindtap='count'>-</view>
+        <text class='num'>{{number}}</text>
+        <view class='add flexCenter' data-type='add' bindtap='count'>+</view>
+      </view>
+    </view>
+  </view>
+  <view class='title'>购买人信息</view>
+  <view class='list'>
+    <view class='item flexBetween'>
+      <text class='label'>预约人</text>
+      <text class='value'>{{userInfo.fullName}}</text>
+    </view>
+    <view class='item flexBetween'>
+      <text class='label'>手机号</text>
+      <text class='value'>{{userInfo.mobile}}</text>
+    </view>
+  </view>
+  <view class='title'>购买须知</view>
+  <view class='content'>
+    <view class='describe'>1、本订单核销券，仅限本人使用。本券有效期7天。</view>
+    <view class='describe'>2、使用时，请打开本小程序进入订单详情，把二维码放置扫码器进行核销，核销成功即可入馆。</view>
+    <view class='describe'>3、进入泳池请佩戴泳池帽，公共场所请注意个人卫生。</view>
+    <view class='describe'>4、入馆人员运动前需确保自己的身体状态处于健康，严谨患有各类传染病入场，有心脏病，高血压，痉挛性疾病患者以及饮酒者，孕妇以及其他身体不适禁止入场。
+</view>
+    <view class='describe'>5、1.4米一下儿童游泳，须由家长陪护。</view>
+  </view>
+  <view class='footer flexBetween'>
+    <view class='left' bindtap='handlerCheck'>
+      <view class='leftBottom flexStart'>
+        <!-- <checkbox-group class="row" bindchange="handlerCheck">
+          <checkbox name="box_check" style='transform: translateY(-5rpx)' value="{{ checked }}"></checkbox>
+          购买即视为同意
+          <text>《购买须知》</text>
+        </checkbox-group> -->
+        <view class='icon {{checked?"checked":""}}'></view>
+        购买即视为同意
+        <text>《购买须知》</text>                
+      </view>
+      <view class='cost'>合计费用：<text class='price'>¥ {{number*details.realAmout}}</text></view>
+    </view>
+    <view class='btn flexCenter' bindtap='submit'>立即购买</view>
+  </view>
+</view>

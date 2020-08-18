@@ -2,22 +2,36 @@
 <view class="keepSearch">
 	<view class="box">
 		<view class="search">
-            <input class="input" type="text" placeholder="请输入您感兴趣的新闻"/>
+            <input class="input" type="text" bindconfirm='confirm' placeholder="请输入您感兴趣的新闻"/>
             <image class="img"
                 src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-search.png" mode="cover" />
 		</view>
 		<view class="cancel" bindtap="cancel">取消</view>
 	</view>
-	<view class="hot">
+	<view class="hot" wx:if='{{type == "hot"}}'>
 		<image class="png" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/hot.png" mode="cover" />
 		<view class="hotspot">
 			今日热点
 		</view>
-    </view>
+  </view>
+  <view wx:if='{{type == "hot"}}'>
     <block wx:for="{{ content }}" wx:key="index">
-        <view class="content">
-            {{ index+1 }}、健康健身说明的啊啊的啊
-        </view>
+        <view class="content" data-item='{{item}}' bindtap="listHref">{{index+1+"、"+item.newsTitle}}</view>
     </block>
+  </view>
+  <!-- 列表页 -->
+  <view wx:if='{{type == "search"}}'>
+    <block wx:for="{{ listData }}" wx:key="index">
+      <view class="list" data-item='{{item}}' bindtap="listHref">
+        <view class="left">
+          <view> {{item.newsTitle}}</view>
+          <view class="bottom">{{item.recommend}}评论 <text class="ml20">{{item.updateTime}}</text></view>
+        </view>
+        <view class="right">
+          <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/food.png" mode="cover"></image>
+        </view>
+      </view>
+    </block>
+  </view>
 </view>
 

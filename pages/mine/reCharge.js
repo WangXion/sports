@@ -6,7 +6,7 @@ Page({
   data: {
     authLay: false,
     price: 100,
-    agree: 1
+    agree: 1,
   },
   onLoad: function () {
     this.setData({
@@ -45,9 +45,12 @@ Page({
     })
   },
   showLay() {
-    this.setData({
-      authLay: !this.data.authLay
+    wx.navigateTo({
+      url: '/pages/agreement/rechange',
     })
+    // this.setData({
+    //   authLay: !this.data.authLay
+    // })
   },
   changeTab(e) {
     let price = e.currentTarget.dataset.price;

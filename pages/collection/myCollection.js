@@ -4,54 +4,82 @@ const app = getApp()
 
 Page({
   data: {
-    dataList: [
-      {
-        title: '没有时间运动健身？试试戒掉这个习惯没有时间运动健身？',
-        collection: true,
-        key: 0
-      },
-      {
-        title: '没有时间运动健身？试试戒掉这个习惯没有时间运动健身？',
-        collection: true,
-        key: 1
+    dataList: [],
+    listData: [],
+    searchData: {
+      curPage: 1,
+      maxPage: 10,
+    },
+    getType: 0, // 0 加载 1刷新
+    total: 0, // 总数据条数
+  },
+  getPageList() {
+    let that = this;
+    app.request('/sportmedicalserver/NewsRelease/selectByMyLike',that.data.searchData).then(res => {
+      if(res.code == 200) {
+        let data = [];
+        if(that.data.getType == 0) {
+          data = data.concat(that.data.listData,res.data.data);
+        } else {
+          data = res.data.data;
+        }
+        that.setData({
+          listData: data,
+          total: res.data.total
+        })
       }
-    ]
-  },
-  //事件处理函数
-  //前往体检报告
-  details: function(e) {
-    let type = e.currentTarget.dataset.type;
-    if( type == 'team') {
-      wx.navigateTo({
-        url: '../appointRecord/teamReport'
-      })
-    } else {
-      wx.navigateTo({
-        url: '../appointRecord/details'
-      })
-    }
-  },
-  changeStatus(e){
-    let key = e.currentTarget.dataset.key;
-    let dataList = this.data.dataList;
-    let colletcion = dataList[key].collection;
-    if (colletcion) {
-      wx.showToast({
-        title: '您已取消收藏',
-        icon: 'none'
-      })
-    } else {
-      wx.showToast({
-        title: '收藏成功',
-        icon: 'none'
-      })
-    }
-    dataList[key].collection = !dataList[key].collection;
-    this.setData({
-      dataList: dataList
     })
   },
-  onLoad: function () {
-    
+  toDetails: function(e) {
+    let item = e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: '/pages/slimming/slimming?id='+ item.id
+    })
+  },
+  changeStatus(e){
+    let item = e.currentTarget.dataset.item;
+    let listData = this.data.listData;
+    if (item.isLike == 0) {
+      app.request('/sportmedicalserver/NewsRelease/deleteUserNewsRelease/'+item.userNewsReleaseId).then(res => {
+        if (res.code == 200) {
+          wx.showToast({
+            title: '取消收藏成功',
+            icon: 'none',
+          })
+          this.setData({
+            listData: listData
+          })
+          let searchData = this.data.searchData;
+          searchData.curPage = 1;
+          this.setData({
+            searchData: searchData,
+            getType: 1
+          });
+          this.getPageList();
+        }
+      })
+    }
+  },
+  onShow: function () {
+    this.setData({
+      getType: 1
+    })
+    this.getPageList();
+  },
+  onReachBottom: function () {
+    let searchData = this.data.searchData;
+    let total = this.data.total;
+    if (Math.ceil(total / searchData.maxPage) <= searchData.curPage) {
+      return wx.showToast({
+        title: '已经到底了哦～',
+        icon: 'none'
+      })
+    }
+    searchData.curPage = searchData.curPage+1;
+    this.setData({
+      searchData: searchData,
+      getType: 0
+    });
+    this.getPageList();
   },
 })

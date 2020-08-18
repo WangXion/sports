@@ -1,53 +1,39 @@
 <!--pages/slimming/slimming.wxml-->
 <view class="whole">
-    <view class="title">
-        打破留言，减肥健身少走弯路
-    </view>
+    <view class="title">{{details.newsTitle}}</view>
     <view class="row">
         <view class="left">
-            <view class="circular"></view>
-            <view class="department">
-                杭州体育局
-            </view>
-            <view class="time">
-                2020/07/16 15:20
-            </view>
+            <view class="department">{{details.newsSports}}</view>
+            <view class="time">{{details.createTime}}</view>
         </view>
         <view class="right" bindtap="changeTap">
-            <image wx:if="{{ selected }}" class="picture" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/star-icon.jpg" mode="cover"></image>
-            <image  wx:if="{{ !selected }}" class="picture" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/collection-icon.png" mode="cover"></image>
-            <view class="collection {{ selected ? 'active':'' }}">
+            <image wx:if="{{ details.isLike == 0 }}" class="picture" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/star-icon.jpg" mode="cover"></image>
+            <image  wx:if="{{ details.isLike == 1 }}" class="picture" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/collection-icon.png" mode="cover"></image>
+            <view class="collection {{ details.isLike == 0 ? 'active':'' }}">
                 收藏
             </view>
         </view>
     </view>
     <view class="top"></view>
-    <view class="order">
-        3月30日17时 ，四川省凉山州木里县境内发生森林火灾。扑火行动中，受风力风向突变影响，突发林火爆燃，瞬间形成巨大火球。30名扑火人员牺牲，其中森林消防队员
-    </view>
+    <view class="order">{{details.newsSubheading}}</view>
     <view class="cont">
         <view class="bottom"></view>
     </view>
-    <view class="img">
-        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/keep.png" mode="cover"></image>
+    <view class='videoCont' wx:if='{{details.newsVideo}}'>
+      <video src='{{details.newsVideo}}' poster='{{details.newsVideoPic}}'></video>
     </view>
     <view class="content">
-        7月30日17时 ，四川省凉山州木里县境内发生森林火灾。扑火行动中，受风力风向突变影响，突发林火爆燃，瞬间形成巨大火球。30名扑火人员牺牲，其中森林消防队员27人、地方干部群众3人。
-
-    什么是林火爆燃？中国消防救援学院教研室主任白夜说，林火爆燃通常指爆炸性燃烧，和森林灭火平时说的“轰燃”相近，往往发生突然，会瞬间形成巨大火球、蘑菇云，温度极高。
-
-    一般而言“轰燃”的原因主要两种。一种是林内可燃物堆积时间长、发生腐烂，产生以沼气为主的可燃气体，突然遇火再加上细小可燃物作用，产生轰燃。数据显示，过去5年，我国森林面积达到31.2亿亩，成为同期全球森林资源增长最多的国家。特别是全面停止天然林商业采伐后，林区林下的可燃物积累加快，大小兴安岭、长白山、滇北、川西这些大面积的原始林区，可燃物载量已经达近20年峰值。
-
-    造成“轰燃”的另一种原因是，林火烧到狭窄的山脊、单口山谷、陡坡、鞍部、草塘沟、山岩凸起等特殊地形，使可燃物同时预热，共同燃烧，瞬时形成巨大火球和蘑菇云。“比如狭窄山脊线，受热辐射和热对流影响，温度极高；而且又容易形成飘忽不动的气流，山火方向难以预测。”白夜解释。                           
+      <rich-text class='details' nodes='{{fwText}}'></rich-text>            
     </view>
     <view class="button">
-         <view class="friends" catchtap="banner">
-            分享好友
-            <image class="front" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/star-icon.jpg" mode="cover"></image>
-        </view>
-        <view class="poster" catchtap="poster">
-            分享海报
-            <image class="after" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/star-icon.jpg" mode="cover"></image>
+         <button class="friends" open-type='share'>
+            <!-- 分享好友
+            <image class="front" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/star-icon.jpg" mode="cover"></image> -->
+        </button>
+        <!-- <button class="poster" open-type='share'></button> -->
+        <view class="poster" catchtap="poster" catchtap="banner" wx:if='{{showShare}}'>
+            <!-- 分享海报
+            <image class="after" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/star-icon.jpg" mode="cover"></image> -->
         </view>
     </view>
 </view>

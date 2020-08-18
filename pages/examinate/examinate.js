@@ -1,4 +1,5 @@
 // pages/examinate/examinate.js
+let app = getApp();
 Page({
 
   /**
@@ -15,7 +16,8 @@ Page({
     ],
     currentKey: 1,
     disabled: false,
-    if_checked: false
+    if_checked: false,
+    userInfo: null
   },
 
   /**
@@ -42,13 +44,17 @@ Page({
         break;
     }
     this.setData({
-      if_checked: []
+      if_checked: false
     })
   },
   // 确认预约
   sureAppointment (event) {
     let { index } = event.currentTarget.dataset;
-    console.log(this.data.if_checked)
+    if (!this.data.userInfo.idCard) {
+      return wx.navigateTo({
+        url: '/pages/mine/nameAuthentication'
+      })
+    }
     if (!this.data.if_checked) {
       wx.showToast({
         title: '请先勾选预约须知',
@@ -62,11 +68,8 @@ Page({
   },
   /**是否同意协议 */
   boxcheck: function (e) {
-    console.log(e)
-    let flag = e.detail.value[0];
-    console.log(flag)
     this.setData({
-      if_checked: flag
+      if_checked: !this.data.if_checked
     })
   },
   /**
@@ -79,8 +82,10 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: function (options) {
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
   },
 
   /**

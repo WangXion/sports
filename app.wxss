@@ -1,6 +1,6 @@
 /**app.wxss**/
 .container {
-  height: 100%;
+  height: 100vh;
   /* display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,4 +28,36 @@ button::after{ /*button的边框样式是通过::after方式实现的*/
 image {
   width: 100%;
   height: 100%;
+}
+.flexBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flexStart{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.noData{
+  padding-top: 360rpx;
+  flex-direction: column;
+  font-size: 30rpx;
+  color: #333;
+  /* margin-top: 67rpx; */
+  opacity:0.6;
+}
+.noData::before{
+  width: 200rpx;
+  height: 200rpx;
+  content: '';
+  background: url('https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/20200812214138.png') no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  margin-bottom: 40rpx;
 }

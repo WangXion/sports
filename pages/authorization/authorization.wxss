@@ -1,7 +1,19 @@
 /* pages/authorization/authorization.wxss */
 .authorization {
-  margin-top: 350rpx;
+  margin-top: 80rpx;
   padding-left: 60rpx;
+}
+.authorization .logo{
+  width: 74rpx;
+  height: 133rpx;
+  margin: auto;
+  display: block;
+  margin-bottom: 40rpx;
+}
+.authorization .desc {
+  color: #FE7B1E;
+  font-size: 32rpx;
+  margin-bottom: 150rpx;
 }
 .authorization .title {
   display: flex;
@@ -13,7 +25,8 @@
 .authorization .title .icon {
   width: 40rpx;
   height: 40rpx;
-  background: #FF7C1D;
+  background: url('https://cunjifen.oss-cn-beijing.aliyuncs.com/userImg/1597385584129.png');
+  background-size: 100% 100%;
   margin-right: 20rpx;
   border-radius: 50%;
 }

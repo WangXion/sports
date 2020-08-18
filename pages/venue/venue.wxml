@@ -1,5 +1,5 @@
 <!--pages/venue/venue.wxml-->
-<view class="venue">
+<view class="venue container">
   <!-- 搜索框 -->
   <view class="venue-search">
     <image class="img" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-search.png" mode="cover"></image>
@@ -8,41 +8,42 @@
       type="text"
       placeholder="请输入您想查找的场馆"
       data-type="name"
-      value="{{ search }}"
-      bindinput="inputChange">
+      value="{{ searchData.stadiumName }}"
+      bindconfirm='confirm'>
     </input>
   </view>
   <!-- tab栏 -->
   <!-- <view class="tab"> -->
-    <dropdownmenu dropDownMenuTitle='{{dropDownMenuTitle}}' dropDownMenuDistrictData='{{data1}}' dropDownMenuSourceData='{{data2}}' dropDownMenuStyleData='{{data3}}' dropDownMenuFilterData='{{data4}}'
+    <dropdownmenu class='nav' dropDownMenuTitle='{{dropDownMenuTitle}}' dropDownMenuDistrictData='{{data1}}' dropDownMenuSourceData='{{data2}}' dropDownMenuStyleData='{{data3}}' dropDownMenuFilterData='{{data4}}'
     bind:selectedItem='selectedItem' />
   <!-- </view> -->
   <!-- 场馆信息 -->
-  <block wx:for="{{ venueArr }}" wx:key="index">
-    <view class="item" catchtap="hrefDetail">
-      <view class="left">
-        <image class="img" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/venue.png" mode="cover"></image>
-      </view>
-      <view class="right">
-        <view class="name">
-          杭州市游泳馆
-          <view class="icon">惠</view>
-          <view class="hot">热</view>
+  <view wx:if='{{venueArr.length>0}}' class='venveList'>
+    <block wx:for="{{ venueArr }}" wx:key="index">
+      <view class="item" data-item='{{item}}' catchtap="hrefDetail">
+        <view class="left">
+          <image class="img" src="{{item.stadiumImage}}" mode="cover"></image>
         </view>
-        <view class="time {{ item > 0 ? 'color1':'color' }}">
-          {{ item > 0 ? '正常营业 9:00-22:00' : '即将开业' }}
-        </view>
-        <view class="address">
-          下城区 环城北路179号
-        </view>
-        <view class="select">
-          <view class="cont">
-            <view class="tag">游泳</view>
-            <view class="tag">保龄球</view>
+        <view class="right">
+          <view class="name">
+            {{item.stadiumAbb}}
+            <view class="icon" wx:for='{{item.tagsArr}}' wx:for-item='itemTwo' wx:for-index='index'>{{itemTwo}}</view>
           </view>
-          <view>1000m</view>
+          <view class="time color1}}">
+            {{ item.stadiumOpentime }}
+          </view>
+          <view class="address">
+            {{item.stadiumArea+'  '+ item.stadiumAddress}}
+          </view>
+          <view class="select">
+            <view class="cont">
+              <view class="tag" wx:for="{{item.itemArr}}" wx:for-item="towItem" wx:for-key='index'>{{towItem}}</view>
+            </view>
+            <view>{{item.distance}}km</view>
+          </view>
         </view>
       </view>
-    </view>
-  </block>
+    </block>
+  </view>
+  <view wx:else class='noData flexCenter'>暂无数据</view>
 </view>

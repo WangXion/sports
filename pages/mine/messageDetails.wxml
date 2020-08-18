@@ -1,5 +1,7 @@
 <view class="container">
-    <view class='title'>高空考证、高空培训考证高空考证高空培训考 证案例</view>
-    <view class='time'>2020/06/03 小编名字</view>
-    <view class='details'>富文本内容</view>
+    <view class='title'>{{details.messageTitle}}</view>
+    <view class='time'>{{details.createTime}} {{details.authorName}}</view>
+    <view class='details'>
+        <rich-text nodes='{{fwText}}'></rich-text>   
+    </view>
 </view>

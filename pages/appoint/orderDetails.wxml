@@ -1,47 +1,58 @@
 <!--details.wxml-->
-<view class="container">
+<view class="containerbox">
     <view class='header flexStart' bindtap='toDetails'>
         <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/swimming.png' class='itemRight'></image>
         <view class='flexBetween center'>
             <view class='info'>
                 <view class='flexBetween'>
-                    <text class='orderName'>游泳早场-平时场-成人票</text>
+                    <view class='orderName'>
+                      {{details.ticketName}} 
+                      <text style='color:#FF9018;'>  {{details.dayStartTime+'-'+details.dayEndTime}}</text>
+                    </view>
                     <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png' class='arrow'></image>
                 </view>
-                <text class='limit'>限大关游泳馆</text>
+                <text class='limit'>限{{details.stadiumName}}</text>
             </view>
-            <view class='price flexStart'><text>￥</text>50<view>X1</view></view>
+            <view class='price flexStart'><text>￥</text>{{details.orderAmount}}<view>X{{details.payNumber}}</view></view>
         </view>
     </view>
     <view class='address'>
-        <view class='name'>大观体育馆</view>
-        <view class='details flexBetween'>
-            <text>杭州拱墅区大关路XXX号</text>
-            <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/nav-icon.png' class='navIcon' bindtap='toMap'></image>
+        <view class='name'>{{details.stadiumName}}</view>
+        <view class='details flexBetween' bindtap='toMap'>
+            <text>{{details.stadiumAddress}}</text>
+            <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/nav-icon.png' class='navIcon'></image>
         </view>
         <view class='flexCenter call'>
             <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/phone-icon.png' class='phoneIcon'></image>
-            <text bindtap='callPhone' data-tel='0571-88886666'>联系商家</text>
+            <text bindtap='callPhone' data-tel='{{details.stadiumPhone}}'>联系商家</text>
         </view>
     </view>
-    <view class='writeOff'>
-        <view class='title'>核销码<text>现场凭此码扫码入场 </text></view>
-        <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/20200728173330.png' class='writeCode'></image>
-        <view class="limit">剩余有效次数：<text>3次 </text></view>
+    <view class='writeOff' wx:if='{{details.codeUrl}}'>
+        <view class='flexBetween'>
+          <view class='title'>核销码<text>现场凭此码扫码入场 </text></view>
+          <view class="limit">剩余有效：<text>{{details.validNumber}}次 </text></view>
+        </view>
+        <image src='{{details.codeUrl}}' class='writeCode'></image>
+        <view class="orderNo flexCenter trans">{{details.shortCode}}</view>
+        <view class="limit flexCenter trans">剩余有效期：<text>{{details.restTimes}}天</text></view>
     </view>
     <view class='tip'>
         <view class="title">温馨提示</view>
-        <view class='content flexStart'>
+        <!-- <view class='content'> -->
+          <view class='details'>1、本订单核销券，仅限本人使用。本券有效期7天。</view>
+          <view class='details'>2、使用时，请打开本小程序进入订单详情，把二维码放置扫码器进行核销，核销成功即可入馆</view>
+          <view class='details'>3、进入泳池请佩戴泳池帽，公共场所请注意个人卫生。</view>
+          <view class='details'>4、入馆人员运动前需确保自己的身体状态处于健康，严谨患有各类传染病入场，有心脏病，高血压，痉挛性疾病患者以及饮酒者，孕妇以及其他身体不适禁止入场。</view>
+          <view class='details'>5、1.4米一下儿童游泳，须由家长陪护。</view>
+          
+        <!-- </view> -->
+        <!-- <view class='content flexStart'>
             <view class="label">不可用</view>
             <text class="details">什么情况下不可使用的说明什么情况下不情况下不情可使用的说明什么情况下不可使用的说明情况下不情什么情况下不可使用的说明什么情况下不情况下不情可使用的说明</text>
-        </view>
-        <view class='content flexStart'>
-            <view class="label">不可用</view>
-            <text class="details">什么情况下不可使用的说明什么情况下不情况下不情可使用的说明什么情况下不可使用的说明情况下不情什么情况下不可使用的说明什么情况下不情况下不情可使用的说明</text>
-        </view>
+        </view> -->
     </view>
     <view class='footer flexBetween'>
-        <view class="price">金额：<text>￥20.00</text></view>
-        <view class='btn'>去使用</view>
+        <view class="price">金额：<text>￥{{details.payAmount}}</text></view>
+        <view class='btn' wx:if='{{details.state == 1}}' bindtap='payOrder'>去支付</view>
     </view>
 </view>

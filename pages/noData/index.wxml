@@ -1,0 +1,4 @@
+<view class='flexCenter noData'>
+    <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/20200812214138.png'></image>
+    <text>{{desc}}</text>
+</view>

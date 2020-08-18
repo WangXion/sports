@@ -1,20 +1,35 @@
 // pages/venueInfo/venueInfo.js
+let app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    id: null,
+    details: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      id: options.id
+    })
+    this.getData();
   },
-
+  getData() {
+    let that = this;
+    app.request('/sportvenuesserver/stadium/selectStadiumDetail', { stadiumId: this.data.id}).then(res => {
+      if (res.code == 200) {
+        that.setData({
+          details: res.data.stadiumInfo,
+          tbStadium: res.data.tbStadium
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -24,7 +24,9 @@ Page({
       })
     }
   },
-  onLoad: function () {
-    
+  onLoad: function (options) {
+    this.setData({
+      listData: JSON.parse(options.params)
+    })
   },
 })

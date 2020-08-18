@@ -1,5 +1,7 @@
 // pages/shopCart/shopCart.js
-import { img_url } from '../../utils/util'
+import { img_url,formatDate } from '../../utils/util'
+var QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js'); 
+let app = getApp();
 Page({
 
   /**
@@ -35,47 +37,167 @@ Page({
     indicatorColorPorts: 'rgba(255, 255, 255, .5)',
     swiper_heightPorts: '80rpx',
     // 体育头条的数据
-    sportArr: [
-      {
-        title: '体育新闻头条内容闻头条内容体育新闻头条内容闻头条内容体育新闻头条内容闻头条内容',
-        time: '07/18'
-      },
-      {
-        title: '111111111111111容闻头条内容',
-        time: '07/19'
-      },
-      {
-        title: '2222222222222222容闻头条内容',
-        time: '07/20'
-      }
-    ]
+    sportArr: [],
+    stadiutmData: [],
+    location: {},
+    recommendData: [],
+    scientificData: [],
+    mapLongitude: null,
+    mapLatitude: null,
+    linkUrl: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // wx.getLocation({
-    //   type: 'wgs84',
-    //   success(res) {
-    //     console.log(res)
-    //     const latitude = res.latitude
-    //     const longitude = res.longitude
-    //     wx.openLocation({
-    //       latitude:latitude,
-    //       longitude:longitude,
-    //     })
-    //   }
-    // })
+    let that = this;
+    // 新建百度地图对象 
+    var qqmapsdk = new QQMapWX({
+      key: 'M27BZ-LOXRP-M3LDZ-VWKRG-A6CA3-6YBZL'
+    });
+    //根据经纬度获取地址
+    wx.getLocation({
+      type: 'gcj02',
+      success(res) {
+        let mapLocation = {
+          mapLongitude: res.longitude,
+          mapLatitude: res.latitude
+        }
+        let location = {};
+        app.globalData.mapLocation = mapLocation;
+        wx.setStorageSync('mapLocation', mapLocation);
+        qqmapsdk.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success: function (data) {
+            location = {
+              province: data.result.address_component.province,
+              city: data.result.address_component.city,
+              district: data.result.address_component.district,
+            }
+            app.globalData.location = location
+            that.setData({
+              location: location,
+              mapLongitude: res.longitude,
+              mapLatitude: res.latitude,
+            })  
+            that.getStadium();
+          },
+          fail: function (res) {
+            console.log(res);
+          }
+        });
+      }
+    })
+    this.getBanner();
+    this.getHotData();
+    this.getRecommendData();
+    this.getScientificData();
+  },
+  //推荐场馆
+  getStadium() {
+    let that = this;
+    let params = {
+      mapLongitude : this.data.mapLongitude,
+      mapLatitude : this.data.mapLatitude
+    }
+    console.log(params)
+    app.request('/sportvenuesserver/stadium/stadiumRecommendList', params).then(res => {
+      if (res.code == 200) {
+        res.data.forEach(item=>{
+          if (item.tags) {
+            item.tagsArr = item.tags.split(',');
+          }
+          if (item.stadiumItems) {
+            item.itemArr = item.stadiumItems.split(',');
+          }
+        })
+        that.setData({
+          stadiutmData: res.data
+        })
+      }
+    })
+  },
+  //banner
+  getBanner() {
+    let that = this;
+    app.request('/sportactivityserver/banner/getUseAll', { bannerType: 1 }).then(res => {
+      if (res.code == 200) {
+        that.setData({
+          background: res.data
+        })
+      }
+    })
+  },
+  //体育头条
+  getHotData() {
+    let that = this;
+    let params = {
+      curPage: 1,
+      maxPage: 10,
+      newsTop: 1,
+    }
+    app.request('/sportmedicalserver/NewsRelease/listNewsRelease', params).then(res => {
+      if (res.code == 200) {
+        res.data.list.forEach(item => {
+          item.createTimeData = formatDate(item.createTime,'hh:mm:ss')
+        })
+        console.log(res.data)
+        that.setData({
+          sportArr: res.data.list
+        })
+      }
+    })
+  },
+  //推荐资讯
+  getRecommendData() {
+    let that = this;
+    let params = {
+      curPage: 1,
+      maxPage: 10,
+      recommend: '1'
+    }
+    app.request('/sportmedicalserver/NewsRelease/listNewsRelease', params).then(res => {
+      if (res.code == 200) {
+        that.setData({
+          recommendData: res.data.list
+        })
+      }
+    })
+  },
+  //科学健身
+  getScientificData() {
+    let that = this;
+    let params = {
+      curPage: 1,
+      maxPage: 3,
+      newsFitness: '1'
+    }
+    app.request('/sportmedicalserver/NewsRelease/listNewsRelease', params).then(res => {
+      if (res.code == 200) {
+        that.setData({
+          scientificData: res.data.list
+        })
+      }
+    })
   },
   // 体质监测跳转
   hrefTap (event) {
-    let { key } = event.currentTarget.dataset;
+    let { key,item } = event.currentTarget.dataset;
     let url = '';
+    let type = 0;
     switch (key) {
       // 授权
       case 'avatar':
-        url = '/pages/authorization/authorization'
+        if(this.data.userInfo.idCard) {
+            url= '/pages/mine/index'
+            type = 1
+        } else {
+          url = '/pages/authorization/authorization';
+        }
         break;
       // 体质监测
       case 'examinate':
@@ -94,22 +216,45 @@ Page({
         url = '/pages/venue/venue'
         break;
       case 'venueDetail':
-        url = '/pages/venueDetail/venue'
+        url = '/pages/venueDetail/venue?id=' + item.stadiumId
         break;
       case 'scientificFitness':
-        url = '/pages/slimming/slimming?key='+2
+        let id = item.id ? item.id : item.newsReleaseId
+        url = '/pages/slimming/slimming?id=' + id
         break;
+      case 'matchReg':
+        url = '/pages/matchReg/index'
+        break;
+
       default:
         break;
     }
-    wx.navigateTo({
-      url
-    })
+    if(type == 0) {
+      wx.navigateTo({
+        url
+      })
+    } else {
+      wx.switchTab({
+        url
+      })
+    }
   },
   closeMask () {
     this.setData({
       flag: true
     })
+  },
+  toVenue(e) {
+    let {item} = e.currentTarget.dataset;
+    if (item.bannerType == 0) {
+      wx.navigateTo({
+        url: '/pages/venueDetail/venue?id=' + item.bannerId
+      })
+    } else {
+      this.setData({
+        linkUrl: 'www.baidu.com'
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -117,17 +262,18 @@ Page({
   onReady: function () {
 
   },
-
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let userInfo = wx.getStorageSync('userInfo')
+    let userInfo = app.globalData.userInfo ? app.globalData.userInfo : wx.getStorageSync('userInfo')
+    console.log(wx.getStorageSync('userInfo'))
     if (userInfo) {
       this.setData({
         userInfo
       })
     }
+       
   },
 
   /**

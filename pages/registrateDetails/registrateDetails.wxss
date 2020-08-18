@@ -38,7 +38,6 @@
 }
 .registrateDetails .section .item .value {
   color: #333;
-  flex: 1;
 }
 .registrateDetails .section .item .input {
   line-height: 80rpx;

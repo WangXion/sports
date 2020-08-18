@@ -40,6 +40,12 @@
     font-size: 30rpx;
     color: #333;
 }
+.userInfo .item .text{
+    text-align: right;
+    font-size: 30rpx;
+    color: #333;
+    opacity: 0.6;
+}
 .userInfo .item input{
     text-align: right;
     font-size: 30rpx;

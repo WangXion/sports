@@ -8,14 +8,14 @@
         </view>
         </picker>
     </view>
-    <view class='messageList flexBetween' bindtap='details'>
+    <view class='messageList flexBetween' bindtap='details' wx:if='{{false}}'>
         <view class='item'>
             <view class='title'>充值金额</view>
             <text class='content'>2020-06-04 15:30:20</text>
         </view>
         <view class='price'>-500.00</view>
     </view>
-    <view class='messageList flexBetween' bindtap='details'>
+    <view class='messageList flexBetween' bindtap='details' wx:if='{{false}}'>
         <view class='item'>
             <view class='title'>充值金额</view>
             <text class='content'>2020-06-04 15:30:20</text>

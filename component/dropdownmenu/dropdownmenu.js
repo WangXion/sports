@@ -246,8 +246,16 @@ Component({
   },
   //组件生命周期函数，在组件实例进入页面节点树时执行
   attached: function() {
-
-
+    
   },
-
+  lifetimes: {
+    attached: function () {
+      console.log(1111);
+      // 在组件实例进入页面节点树时执行
+    },
+    detached: function () {
+      console.log(222);
+      // 在组件实例被从页面节点树移除时执行
+    },
+  },
 })

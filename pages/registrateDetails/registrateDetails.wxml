@@ -2,61 +2,33 @@
 <view class="registrateDetails">
   <!-- title -->
   <view class="title">
-    <view>户外技能公益讲座</view>
-    <view class="info">本次报名提醒文字提醒文字提醒文字</view>
+    <view>{{details.pcMaintitle}}</view>
+    <view class="info">{{details.pcAssistanttitle}}</view>
   </view>
   <!-- 信息区域 -->
   <view class="section">
     <view class="item">
       <view class="lable">时间</view>
       <view class="value">
-        <input
-          class="input"
-          type="text"
-          placeholder="请选择预约时间"
-          data-type="date"
-          value="{{ date }}"
-          bindinput="inputChange">
-        </input>
+        {{time}}
       </view>
     </view>
     <view class="item">
       <view class="lable">地点</view>
       <view class="value">
-        <input
-          class="input"
-          type="text"
-          placeholder="请输入地点"
-          data-type="address"
-          value="{{ address }}"
-          bindinput="inputChange">
-        </input>
+        {{address}}
       </view>
     </view>
     <view class="item">
       <view class="lable">报名人姓名</view>
       <view class="value">
-        <input
-          class="input"
-          type="text"
-          placeholder="请输入姓名"
-          data-type="name"
-          value="{{ name }}"
-          bindinput="inputChange">
-        </input>
+        {{userInfo.fullName}}
       </view>
     </view>
     <view class="item">
       <view class="lable">手机号</view>
       <view class="value">
-        <input
-          class="input"
-          type="text"
-          placeholder="请输入手机号"
-          data-type="phone"
-          value="{{ phone }}"
-          bindinput="inputChange">
-        </input>
+        {{userInfo.mobile}}
       </view>
     </view>
     <view class="textarea">
@@ -66,10 +38,10 @@
           class='areaInput'
           bindblur="ifshowArea"
           data-show="yes"
-          value="{{u_remark}}"
+          value="{{remarks}}"
           bindinput='inputchange'
           maxlength="100"
-          data-type="u_remark"
+          data-type="remarks"
           placeholder="请填写备注内容"
           focus="true" />
           <!-- auto-height -->
@@ -86,6 +58,6 @@
   </view>
   <!-- 底部按钮 -->
   <view class="footer">
-    <view class="btn">我要报名</view>
+    <view class="btn" bindtap='submit'>我要报名</view>
   </view>
 </view>

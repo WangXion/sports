@@ -1,17 +1,17 @@
 <!--pages/publicLectureDetail/publicLectureDetail.wxml-->
 <view class="publicLectureDetail">
   <view class="title">
-    没有时间运动健身？试试戒掉这个习惯没有时间运动健身？
+    {{detailData.pcMaintitle}}
   </view>
   <!-- 详情信息 -->
   <view class="detail">
     <view class="left">
-      <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/food.png" mode="cover"></image>
+      <image src="{{detailData.pcImage}}" mode="cover"></image>
     </view>
     <view class="right">
-      <view class="time">时 间：9月15日  </view>
-      <view class="address">地 址：杭州黄龙体育中心B馆</view>
-      <view class="date">报名截止：报满即开班</view>
+      <view class="time">时 间：{{detailData.pcStarttime}}  </view>
+      <view class="address">地 址：{{detailData.pcAddress}}</view>
+      <view class="date">报名截止：{{detailData.pcEndtime}}</view>
     </view>
   </view>
   <!-- 分割线 -->
@@ -23,12 +23,12 @@
       <view >培训介绍</view>
     </view>
     <view class="section">
-      新建了块运动场地，她和不少邻居高兴极了，很快在日常生活中增加了“早起晨跑”项目。可跑了几天，她慢慢发现周围跑友中有不少“特别”的人。 “有好几个过度肥胖的跑友，还有一个轻度中风后在努力康复的病人，由于身体僵硬，跑步姿势看着别扭，心里暗自为他们着急。” 可过了两个多月，改变出现了：肥胖跑友的肚腩看起来没那么大了，身体僵硬的人几乎可以正常走路了。坚持跑步健身让普通人的生活中充满了奇迹，真是励志。 生命在于运动。过去社会上普遍存在“重医疗，轻运动”的观念，新建了块运动场地，她和不少邻居高兴极了，很快在日常生活中增加了“早起晨跑”项目。可跑了几天，她慢慢发现周围跑友中有不少“特别”的人。 “有好几个过度肥胖的跑友，还有一个轻度中风后在努力康复的病人，由于身体僵硬，跑步姿势看着别扭，心里暗自为他们着急。” 可过了两个多月，改变出现了：肥胖跑友的肚腩看起来没那么大了，身体僵硬的人几乎可以正常走路了。坚持跑步健身让普通人的生活中充满了奇迹，真是励志。 生命在于运动。过去社会上普遍存在“重医疗，轻运动”的观念，
+        <rich-text nodes='{{fwText}}'></rich-text>
     </view>
   </view>
   <!-- 底部费用 -->
   <view class="footer" catchtap="signUp">
-    <view class="fee">费用：0</view>
-    <view class="btn">我要报名</view>
+    <!-- <view class="fee">费用：{{details.pcMoney?details.pcMoney: '0'}}</view> -->
+    <view class="btn {{detailData.pcState == 1? '':'end'}}">我要报名</view>
   </view>
 </view>

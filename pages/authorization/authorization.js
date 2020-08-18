@@ -1,4 +1,5 @@
 // pages/authorization/authorization.js
+let app = getApp();
 Page({
 
   /**
@@ -6,7 +7,10 @@ Page({
    */
   data: {
     flag: true,
-    title: '注册协议'
+    title: '注册协议',
+    encryptedData: null,
+    iv: null,
+    if_checked: false,
   },
 
   /**
@@ -17,13 +21,20 @@ Page({
   },
   // 点击授权
   bindGetUserInfo (e) {
-    console.log('用户信息', e.detail.userInfo)
-    // 个人信息
-    wx.setStorageSync('userInfo', e.detail.userInfo)
-    if (e.detail.userInfo) {
-      wx.navigateBack({
-        delta: 1
+    if (!this.data.if_checked) {
+      return wx.showToast({
+        icon: 'none',
+        title: '请先勾选协议。',
       })
+    }
+    console.log(e);
+    // 个人信息
+    if (e.detail.userInfo) {
+      this.setData({
+        encryptedData: e.detail.encryptedData,
+        iv: e.detail.iv
+      });
+      this.doLogin()
     } else {
       wx.navigateBack({
         delta: 1
@@ -31,26 +42,57 @@ Page({
       console.log('拒绝了授权')
     }
   },
+  //登录
+  doLogin() {
+    var that = this
+    wx.login({
+      success: (res) => {
+        console.log(res)
+        if (res.code) {
+          //发起网络请求
+          let params = {
+            encryptedData: that.data.encryptedData,
+            iv: that.data.iv,
+            code: res.code,
+          }
+
+          app.request('/sportuserserver/user/login',params).then(data=>{
+            if(data.code == 200) {
+              wx.setStorageSync('userInfo', data.data);
+              app.globalData.userInfo = data.data;
+              wx.switchTab({
+                url: '/pages/index/index'
+              })
+            }
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: '登录失败',
+          })
+        }
+      },
+      error: (res) => {
+        console.log("错误信息" + res)
+      }
+    })
+  },
   // 协议
   agreement (event) {
-    let { type } = event.currentTarget.dataset;
-    if (type === 'register') {
-      this.setData({
-        title: '注册协议'
-      })
-    }else {
-      this.setData({
-        title: '隐私协议'
-      })
-    }
-    this.setData({
-      flag: false
+    // let { type } = event.currentTarget.dataset;
+    wx.navigateTo({
+      url: '/pages/agreement/index',
     })
   },
   // 取消
   cancel () {
     wx.navigateBack({
       delta: 1
+    })
+  },
+  boxcheck(){
+    this.setData({
+      if_checked: !this.data.if_checked
     })
   },
   // 协议

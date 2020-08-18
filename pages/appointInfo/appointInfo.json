@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "datePicker": "/component/datePicker/index"
+  },
   "navigationBarTitleText": "预约信息"
 }

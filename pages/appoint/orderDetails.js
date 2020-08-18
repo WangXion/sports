@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    tabKey: 1
+    details: null
   },
   //事件处理函数
   changeTab: function(e) {
@@ -14,13 +14,24 @@ Page({
     })
   },
   toMap(){
-    wx.navigateTo({
-      url: '../map/map'
+    wx.openLocation({
+      latitude: Number(this.data.details.mapLatitude),
+      longitude: Number(this.data.details.mapLongitude),
+      name: this.data.details.stadiumName,
+      success(res){
+        console.log(res);
+      },
+      fail(err) {
+        console.log(err)
+      }
     })
+    // wx.navigateTo({
+    //   url: '../map/map'
+    // })
   },
   toDetails() {
     wx.navigateTo({
-      url: '../venueDetail/venue'
+      url: '../venueDetail/venue?id=' + this.data.details.stadiumId
     })
   },
   callPhone(e) {
@@ -29,7 +40,47 @@ Page({
       phoneNumber: phone,
     })
   },
-  onLoad: function () {
-    
+  onLoad: function (options) {
+    this.setData({
+      orderNo: options.orderNo
+    })
+    this.getDetails();
+  },
+  getDetails() {
+    let that = this;
+    app.request('/sportticketserver/order/orderDetail', { orderNo: this.data.orderNo}).then(res => {
+      if (res.code == 200) {
+        that.setData({
+          details: res.data,
+        })
+      }
+    })
+  },
+  payOrder(e) {
+    app.request('/sportticketserver/order/waitPayOrder',{orderNo: this.data.orderNo}).then(res=>{
+      if(res.code == 200) {
+        console.log(res)
+        wx.requestPayment({
+          timeStamp: res.data.timeStamp,
+          nonceStr: res.data.nonceStr,
+          appId: res.data.appId,
+          package: res.data.mini_package,
+          signType: res.data.signType,
+          paySign: res.data.paySign,
+          success: function(data) {
+            console.log(data)
+            wx.navigateTo({
+              url: '/pages/paySuccess/paySuccess'
+            })
+          },
+          fail: function(err) {
+            wx.showToast({
+              title: '支付失败',
+              icon: 'none'
+            })
+          }
+        })
+      }
+    })
   },
 })

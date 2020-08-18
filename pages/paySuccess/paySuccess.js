@@ -22,8 +22,8 @@ Page({
   },
   // 查看订单
   checkOrder () {
-    wx.switchTab({
-      url: '/pages/index/index'
+    wx.navigateTo({
+      url: '/pages/appoint/appointOrder'
     })
   },
   /**

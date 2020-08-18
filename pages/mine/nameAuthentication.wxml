@@ -1,25 +1,31 @@
 <!--feedBack.wxml-->
 <view class="container">
-    <image class="header" src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/nameAuth.png'></image>
+    <image class="header" src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/20200813213210.png'></image>
     <view class='feedBack'>
         <view class='item flexStart'>
             <text class='label'>姓名</text>
-            <input value='' placeholder="请输入您的姓名"/>
+            <input 
+              data-type="fullName"
+              value="{{ fullName }}"
+              bindinput="inputChange" placeholder="请输入您的姓名"/>
         </view>
         <view class='item flexStart'>
             <text class='label'>手机号</text>
-            <input placeholder="请输入您的手机号"/>
+            <input data-type="mobile"
+              value="{{ mobile }}"
+              bindinput="inputChange" placeholder="请输入您的手机号"/>
         </view>
         <view class='item flexStart'>
             <text class='label'>身份证</text>
-            <input placeholder="请输入您的身份证号码"/>
+            <input data-type="idCard"
+              value="{{ idCard }}"
+              bindinput="inputChange"  placeholder="请输入您的身份证号码"/>
         </view>
     </view>
-    <view class='footer'>提交认证</view>
+    <view class='footer' bindtap='submit'>提交认证</view>
     <view class='tip'>
         <view class="title">温馨提示</view>
-        <view class='label'>1.温馨提示111</view>
-        <view class='label'>2.温馨提示</view>
-        <view class='label'>3.温馨提示</view>
+        <view class='label'>1、请填写本人真实信息，准确无误</view>
+        <view class='label'>2、实名通过杭州城市大脑完成健康码安全认证</view>
     </view>
 </view>

@@ -7,15 +7,26 @@
   position: fixed;
   top: 20rpx;
   left: 10rpx;
-  background:rgba(255,255,255,1);
   border-radius: 10rpx;
+  width: 100%;
 }
 .map .input {
-  width: 700rpx;
+  /* width: 700rpx; */
+  background:rgba(255,255,255,1);
+  flex: 1;
   height: 93rpx;
   text-align: left;
   z-index: 9999;
   padding-left: 25rpx;
+}
+.map .listBtn{
+  height: 93rpx;
+  width: 140rpx;
+  font-size: 28rpx;
+  color: #666;
+  background: #fff;
+  border-radius: 10rpx;
+  margin: 0 20rpx;
 }
 .input-placeholder {
   padding-left: 20rpx;
@@ -24,12 +35,17 @@
 /* 底部场馆的信息 */
 .map .cont {
   width: 720rpx;
-  height: 242rpx;
+  /* height: 242rpx; */
   background:rgba(255,255,255,1);
   border-radius: 10rpx;
   position: fixed;
   bottom: 15rpx;
   left: 15rpx;
+  padding-bottom: 20rpx;
+}
+.map .cont .desc{
+  padding-left: 20rpx;
+  box-sizing: border-box; 
 }
 .map .cont .name {
   font-size: 28rpx;
@@ -66,4 +82,72 @@
   border-radius: 70rpx;
   color: #fff;
   text-align: center;
+}
+.listCont{
+  background: #F7F4F8;
+  position: fixed;
+  top: 113rpx;
+  width: 100%;
+  height: calc(100vh - 113rpx);
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.map .listCont .item {
+  width: 720rpx;
+  /* height: 242rpx; */
+  background:rgba(255,255,255,1);
+  border-radius: 10rpx;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.map .listCont .item .name {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.map .listCont .item .address {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+}
+.map .listCont .item .btn {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 30rpx;
+  padding: 0 21rpx;
+}
+.map .listCont .item .btn .navigation {
+  height: 80rpx;
+  width: 180rpx;
+  line-height: 80rpx;
+  border: 2rpx solid #AAB5D4;
+  border-radius: 70rpx;
+  color: #6D8BC3;
+  margin-right: 20rpx;
+  text-align: center;
+}
+.map .listCont .item .btn .car {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 180rpx;
+  background: #3683FF;
+  border-radius: 70rpx;
+  color: #fff;
+  text-align: center;
+}
+.map .desc{
+  font-size: 28rpx;
+  color: #666;
+  padding-bottom: 20rpx;
+}
+.map .tel{
+  color: #3366FF;
+  padding-right: 20rpx;
+  font-size: 30rpx;
+  width: 260rpx;
+  align-self: flex-start;
+  text-align: right;
+  padding-top: 20rpx;
 }

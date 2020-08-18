@@ -1,44 +1,124 @@
 // pages/venueDetail/venue.js
+let app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    arr: ['游泳','羽毛球','保龄球'],
+    spData: [],
     currentIndex: 0,
-    ticket: [1,2,3,4,5],
-    showTicket: false
+    ticket: [],
+    showTicket: false,
+    id: null,
+    details: null,
+    showLen: 3,
+    userInfo: null,
+    configList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    this.setData({
+      id: options.id
+    })
+  },
+  getDetails() {
+    let that = this;
+    app.request('/sportvenuesserver/stadium/selectStadiumDetail', { stadiumId: this.data.id}).then(res => {
+      if (res.code == 200) {
+        that.setData({
+          details: res.data.tbStadium,
+          configList: res.data.stadiumInfo&&res.data.stadiumInfo.configList?res.data.stadiumInfo.configList:[]
+        })
+      }
+    })
+  },
+  getSportData() {
+    let that = this;
+    app.request('/sportticketserver/sportItem/selectItemByStadiumId', { stadiumId: this.data.id }).then(res => {
+      if (res.code == 200) {
+        that.setData({
+          spData: res.data,
+          currentIndex: res.data[0].id
+        })
+        that.getTicketData();
+      }
+    })
+  },
+  getTicketData() {
+    let that = this;
+    let params = { 
+      stadiumId: this.data.id,
+      itemId: this.data.currentIndex,
+    }
+    app.request('/sportticketserver/ticket/selectTicketListByStadiumIdAndSpId', params).then(res => {
+      if (res.code == 200) {
+        res.data.forEach(item =>{
+          if(item.tags) item.tagsArr = item.tags.split(',');
+        })
+        that.setData({
+          ticket: res.data,
+        })
+      }
+    })
   },
   tapChange (event) {
     let { index } = event.currentTarget.dataset;
     this.setData({
       currentIndex: index
     })
+    this.getTicketData();
   },
   // 查看更多票种
   ticketClick () {
     this.setData({
-      showTicket: true
+      showTicket: true,
+      showLen: this.data.ticket.length
+    })
+  },
+  //拨打电话
+  callPhone(e) {
+    let phone = e.currentTarget.dataset.tel;
+    wx.makePhoneCall({
+      phoneNumber: phone,
+    })
+  },
+  //打开地图
+  openMap(){
+    wx.openLocation({
+      latitude: Number(this.data.details.mapLatitude),
+      longitude: Number(this.data.details.mapLongitude),
+      name: this.data.details.stadiumName,
+      success(res){
+        console.log(res);
+      },
+      fail(err) {
+        console.log(err)
+      }
     })
   },
   // 跳转场馆信息
   herfInfo () {
     wx.navigateTo({
-      url: '/pages/venueInfo/venueInfo'
+      url: '/pages/venueInfo/venueInfo?id='+this.data.id
     })
   },
-  buy () {
-    wx.navigateTo({
-      url: '/pages/orderPayment/orderPayment'
-    })
+  buy (e) {
+    let { item } = e.currentTarget.dataset;
+    if(!this.data.userInfo.idCard) {
+      wx.navigateTo({
+        url: '/pages/mine/nameAuthentication'
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/orderPayment/orderConfirm?id=' + this.data.id + '&item=' + JSON.stringify(item)
+      })
+    }
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -50,8 +130,12 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: function (options) {
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
+    this.getSportData();
+    this.getDetails();
   },
 
   /**

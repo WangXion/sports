@@ -2,11 +2,12 @@
 <view class="index">
   <view class="index-title">
     <view class="left" bindtap="hrefTap" data-key="avatar">
-      <view class="avatar"></view>
-      <view>{{ userInfo.nickName ? '欢迎miyin周':'未登录' }}</view>
+      <image src='{{userInfo.headImg}}' wx:if='{{userInfo.headImg}}' class='avatar'></image>
+      <view class="avatar" wx:else></view>
+      <view>{{ userInfo.nickName ? userInfo.nickName:'未登录' }}</view>
     </view>
     <view class="right">
-      <view class="name">杭州市 下城区</view>
+      <view class="name">{{location.city + ' '+ location.district}}</view>
       <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/address.png" mode="cover"></image>
     </view>
   </view>
@@ -26,40 +27,41 @@
       next-margin="{{ nextMargin }}px"
       style="height:{{ swiper_height }}">
       <block wx:for="{{ background }}" wx:key="index">
-        <swiper-item>
-          <image src="{{ item }}" mode="cover"></image>
+        <swiper-item catchtap='toVenue' data-item='{{item}}'>
+          <image  src="{{ item.bannerImageurl }}" class='bannerImageurl' mode="cover"></image>
         </swiper-item>
       </block>
     </swiper>
   </view>
   <!-- 体质检测、体育大讲堂、门票卡劵 -->
   <view class="index-icon">
-    <view class="item" catchtap="hrefTap" data-key="examinate">
+    <view class="item" ><!--  catchtap="hrefTap" data-key="examinate" -->
       <view class="icon">
       <!-- https://sports-bureau.oss-cn-hangzhou.aliyuncs.com -->
-        <image src="../../images/icon1.png" mode="cover"></image>
+        <image src="https://cunjifen.oss-cn-beijing.aliyuncs.com/userImg/1597548470465.jpg" mode="cover"></image>
       </view>
-      <view class="name">体质检测</view>
+      <view class="name">体质监测</view>
+      <view class='noOpen'></view>
     </view>
     <view class="item" catchtap="hrefTap" data-key="lecture">
-      <image class="icon" src="../../images/icon2.png" mode="cover"></image>
+      <image class="icon" src="https://cunjifen.oss-cn-beijing.aliyuncs.com/userImg/1597548712248.jpg" mode="cover"></image>
       <view class="name">体育大讲堂</view>
     </view>
-    <view class="item" catchtap="hrefTap" data-key="cart">
+    <view class="item" catchtap="hrefTap" data-key="cart" wx:if='{{false}}'>
       <image class="icon" src="../../images/icon3.png" mode="cover"></image>
       <view class="name">门票卡劵</view>
     </view>
-    <view class="item">
-      <image class="icon" src="../../images/icon4.png" mode="cover"></image>
-      <view class="name">教学直播</view>
+    <view class="item" catchtap="hrefTap" data-key="matchReg">
+      <image class="icon" src="https://cunjifen.oss-cn-beijing.aliyuncs.com/userImg/1597548592521.jpg" mode="cover"></image>
+      <view class="name">赛事报名</view>
     </view>
     <view class="item" catchtap="hrefTap" data-key="map">
-      <image class="icon" src="../../images/icon5.png" mode="cover"></image>
+      <image class="icon" src="https://cunjifen.oss-cn-beijing.aliyuncs.com/userImg/1597548609434.jpg" mode="cover"></image>
       <view class="name">场馆地图</view>
     </view>
   </view>
   <!-- 体育头条 -->
-  <view class="index-ports">
+  <view class="index-ports" wx:if='{{sportArr.length>0}}'>
     <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon6.png" mode="cover"></image>
     <swiper
       class="swiper-box1"
@@ -76,9 +78,9 @@
       <block wx:for="{{ sportArr }}" wx:key="index">
         <swiper-item>
           <!-- <image src="{{ item }}" mode="cover"></image> -->
-          <view class="item">
-            <view class="title">{{ item.title }}</view>
-            <view class="right">{{ item.time }}</view>
+          <view class="item" catchtap="hrefTap" data-key="scientificFitness" data-item='{{item}}'>
+            <view class="title">{{ item.newsTitle }}</view>
+            <view class="right">{{ item.createTimeData }}</view>
           </view>
         </swiper-item>
       </block>
@@ -90,89 +92,79 @@
       推荐场馆
     </view>
     <view class="cont">
-      <view class="item" catchtap="hrefTap" data-key="venueDetail">
-        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/venue.png" mode="cover"></image>
-        <view class="name">杭州游泳馆</view>
-        <view class="section">
-          <view class="tag">
-              <view >滑雪</view>
+      <block wx:for="{{stadiutmData}}" wx:key='index'>
+        <view class="item flexStart" catchtap="hrefTap" data-key="venueDetail" data-item="{{item}}">
+          <image class="icon" src="{{item.stadiumImage}}" mode="cover"></image>
+          <view>
+            <view class="name flexStart">
+              {{item.stadiumAbb}} 
+              <view class="section">
+                <block wx:for='{{item.tagsArr}}' wx:for-item='itemTwo' wx:key='index'>
+                  <view class="tag" >{{itemTwo}}</view>
+                </block>
+              </view>
             </view>
-            <view class="tag color1">
-              <view >设施齐全</view>
+            <view class="detail}}">
+              正常营业
+              {{ item.stadiumOpentime }}
             </view>
-            <view class="tag">
-              <view >环境优美</view>
+            <view class="detail flexBetween">
+              <view class="address textOver">
+                {{item.stadiumArea +'   '+item.stadiumAddress}}
+              </view>
+              <!-- <view class="km" wx:if='{{item.distance}}'>{{item.distance}}km</view> -->
             </view>
-        </view>
-        <view class="detail">
-          <view class="address">
-            大关路20号
+            <view class="select">
+              <view class="selectCont">
+                <view class="tag" wx:for="{{item.itemArr}}" wx:for-item="towItem" wx:for-key='index'>{{towItem}}</view>
+              </view>
+              <view class="km">{{item.distance}}km</view>
+            </view>
           </view>
-          <view class="km">15.4km</view>
         </view>
-      </view>
-      <view class="item" catchtap="hrefTap" data-key="venueDetail">
-        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/venue.png" mode="cover"></image>
-        <view class="name">杭州游泳馆</view>
-        <view class="section">
-          <view class="tag">
-              <view >滑雪</view>
-            </view>
-            <view class="tag color1">
-              <view >设施齐全</view>
-            </view>
-            <view class="tag">
-              <view >环境优美</view>
-            </view>
-        </view>
-        <view class="detail">
-          <view class="address">
-            大关路20号
-          </view>
-          <view class="km">15.4km</view>
-        </view>
-      </view>
+      </block>
     </view>
   </view>
+  <view class='empty'></view>
   <!-- 科学健身 -->
   
-  <view class="index-fitness">
+  <view class="index-fitness" wx:if='{{scientificData.length>0}}'>
     <view class="title">科学健身</view>
       <scroll-view class="image-group" scroll-x>
         <view class="section">
-            <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
+            <view class="cont" wx:for='{{scientificData}}' wx:key='index' catchtap="hrefTap" data-key="scientificFitness" data-item='{{item}}'>
+              <view class="icon">
+                <image src="{{item.newsPic}}" mode="cover"></image>
+              </view>
+              <view class="desc textOver">{{item.newsTitle}}</view>
+            </view>
+            <!-- <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
               <view class="icon">
                 <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/keep.png" mode="cover"></image>
               </view>
               <view class="desc">打篮球投篮的正确方法</view>
-            </view>
-            <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
-              <view class="icon">
-                <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/keep.png" mode="cover"></image>
-              </view>
-              <view class="desc">打篮球投篮的正确方法</view>
-            </view>
+            </view> -->
         </view>
       </scroll-view>
   </view>
   <!-- 推荐资讯 -->
-  <view class="index-information">
+  <view class="index-information" wx:if='{{recommendData.length>0}}'>
     <view class="title">
       推荐资讯
     </view>
-    <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
+    <view class="cont" wx:for='{{recommendData}}' wx:key='index' catchtap="hrefTap" data-key="scientificFitness" data-item='{{item}}'>
       <view class="left">
-        <view class="top">没有时间运动健身？试试戒掉这个习惯没有时间运动健身？试试戒掉这个习惯</view>
+        <view class="top">{{item.newsTitle}}</view>
         <view class="desc">
-          <view class="record">6评论</view>
-          <view class="date">07/16 15:20</view>
+          <view class="record">{{item.author?item.author: ''}}</view>
+          <view class="date">{{item.createTime}}</view>
         </view>
       </view>
       <view class="right">
-        <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/food.png" mode="cover"></image>
+        <image class="icon" src="{{item.newsPic}}" mode="cover"></image>
       </view>
     </view>
-    <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
+    <!-- <view class="cont" catchtap="hrefTap" data-key="scientificFitness">
       <view class="left">
         <view class="top">没有时间运动健身？试试戒掉这个习惯没有时间运动健身？试试戒掉这个习惯</view>
         <view class="desc">
@@ -195,7 +187,7 @@
       <view class="right">
         <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/food.png" mode="cover"></image>
       </view>
-    </view>
+    </view> -->
   </view>
 </view>
 <!-- 遮罩层 -->
@@ -207,4 +199,5 @@
   <view class="closeImg" bindtap="closeMask">
     <image  class="closeImg_image" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/close.png"></image>
   </view>
+  <!-- <web-view src='{{linkUrl}}'></web-view> -->
 </view>

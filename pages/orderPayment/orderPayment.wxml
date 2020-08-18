@@ -1,23 +1,23 @@
 <!--pages/orderPayment/orderPayment.wxml-->
 <view class="orderPayment">
   <view class="info">
-    <view>支付倒计时：<text class="time">05:40</text></view>
-    <view class="unit">￥ <text class="price">125.00</text></view>
+    <view>支付倒计时：<text class="time">{{timeCount}}</text></view>
+    <view class="unit">￥ <text class="price">{{details.realAmout*submitData.payNumber}}</text></view>
   </view>
   <view class="cont">
-    <view class="name">杭州游泳馆</view>
-    <view class="date">
+    <view class="name">{{details.stadiumName}}</view>
+    <view class="date flexStart">
       <view class="icon">
         <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/date.png" mode="cover"></image>
       </view>
-      <view class="week">2020-07-17 星期五</view>
+      <view class="week">{{currentTime}}</view>
     </view>
     <!-- 票的信息 -->
     <view class="ticket">
-      <view >游泳早场 成人票 05:30-07:00</view>
+      <view>{{details.ticketName}} {{details.dayStartTime+'-'+details.dayEndTime}}</view>
       <view class="term">
-        <view class="day">有效期：30天</view>
-        <view >票价：25元 x5</view>
+        <view class="day">有效期：{{details.effectiveDays}}天</view>
+        <view >票价：{{details.realAmout}}元 x{{submitData.payNumber}}</view>
       </view>
     </view>
   </view>
@@ -32,7 +32,7 @@
       <image wx:if="{{ !weixinSelecetd }}" class="radio" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/radio.png" mode="cover"></image>
       <image wx:if="{{ weixinSelecetd }}" class="radio" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/radio-selected.png" mode="cover"></image>
     </view>
-    <view class="item" catchtap="method" data-type="vip">
+    <view class="item" catchtap="method" wx:if='{{false}}' data-type="vip">
       <view class="left">
         <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/vip.png" mode="cover"></image>
         <view >会员卡余额支付<text class="discount">（9折）</text></view>

@@ -4,14 +4,25 @@ const app = getApp()
 
 Page({
   data: {
-    
+    dataList: []
   },
   onLoad: function () {
-    
+    this.getData();
   },
-  details(){
+  getData(){
+    let that = this;
+    app.request('/sportmedicalserver/SystemMessage/listSystemMessage').then(res => {
+      if (res.code == 200) {
+        that.setData({
+          dataList: res.data,
+        })
+      }
+    })
+  },
+  details(e){
+    let item = e.currentTarget.dataset.item
     wx.navigateTo({
-      url: '../mine/messageDetails'
+      url: '../mine/messageDetails?id='+item.id
     })
   }
 })

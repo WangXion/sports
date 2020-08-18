@@ -17,6 +17,7 @@
     width: 240rpx;
     height: 152rpx;
     display: block;
+    border-radius: 6rpx;
 }
 .List .item .center{
     flex: 1;
@@ -30,6 +31,11 @@
     color: #333333;
     margin-bottom: 7rpx;
     opacity: 0.9;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    padding-right: 10rpx;
 }
 .List .item .limit{
     font-size: 20rpx;

@@ -1,0 +1,93 @@
+/* pages/registrateDetails/registrateDetails.wxss */
+.registrateDetails .detail {
+  font-size: 28rpx;
+  color:rgba(153,153,153,1);
+  box-sizing: border-box;
+  padding: 0 16rpx;
+  padding-bottom: 36rpx;
+  background: #fff;
+}
+.registrateDetails .detail .desc {
+  line-height: 45rpx;
+}
+.registrateDetails {
+  background: #f6f6f6;
+  height: 100vh;
+}
+.registrateDetails .title {
+  font-size: 30rpx;
+  font-weight: 400;
+  color:rgba(0,0,0,1);
+  padding: 30rpx 15rpx;
+}
+.registrateDetails .title .info {
+  font-size: 24rpx;
+  font-weight: 400;
+  color:rgba(247,141,27,1);
+  margin-top: 15rpx;
+}
+
+/* 信息 */
+.registrateDetails .section {
+  background: #fff;
+  padding: 0  22rpx 0 19rpx;
+  margin-bottom: 100rpx;
+}
+.registrateDetails .section .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 2;
+  font-size: 24rpx;
+  font-weight: 400;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.registrateDetails .section .item .lable {
+  color: #999;
+  flex: 1;
+}
+.registrateDetails .section .item .value {
+  color: #333;
+}
+.registrateDetails .section .item .input {
+  line-height: 80rpx;
+  text-align: right;
+}
+.registrateDetails .section .textarea {
+  padding-top: 20rpx;
+  color: #999;
+  font-size: 24rpx;
+}
+.registrateDetails .section .textarea .lable {
+  margin-bottom: 15rpx;
+}
+.registrateDetails .section .itemLeft{
+  justify-content: flex-start;
+  height: 280rpx;
+  align-items: flex-start;
+}
+.registrateDetails .section .itemLeft .lableText{
+  color: #999;
+  margin-right: 20rpx;
+}
+.registrateDetails .section .itemLeft .cont {
+  width: 215rpx;
+  height: 148rpx;
+  background:rgba(228,228,228,1);
+  margin-top: 20rpx;
+  /* flex: 1; */
+}
+/* 我要报名 */
+.registrateDetails .footer {
+  width: 720rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #fff;
+  background:rgba(247,141,27,1);
+  text-align: center;
+  margin-left: 16rpx;
+  border-radius: 50rpx;
+  font-size: 33rpx;
+}

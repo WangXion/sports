@@ -1,22 +1,23 @@
 <!--index.wxml-->
 <view class="container">
-    <view class='tabBar'>
-        <view  class='item {{tabKey == 1 ? "checked" :""}}' data-key='1' bindtap='changeTab'>待参加</view>
-        <view  class='item {{tabKey == 2 ? "checked" :""}}' data-key='2' bindtap='changeTab'>已结束</view>
-    </view>
-    <view class='List'>
-        <block>
-            <view class='item flexStart' bindtap='linkTo'>
-                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/swimming.png' class='itemRight'></image>
+    <view class='List' wx:if='{{listData.length>0}}'>
+        <block wx:for="{{listData}}">
+            <view class='item flexStart' data-item='{{item}}' bindtap='linkTo'>
+                <image src='{{item.pcImage}}' class='itemRight'></image>
                 <view class='flexStart center'>
-                    <text class='couponName'>没有时间运动健身？试试戒掉这个习惯没有时间运动健身？</text>
-                    <text class='limit'>限大关游泳馆</text>
-                    <text class='limit'>限大关游泳馆</text>
+                    <text class='couponName'>{{item.pcMaintitle}}</text>
+                    <text class='limit'>时间: {{item.pcStarttime}}</text>
+                    <text class='limit'>地址:{{item.pcAddress}}</text>
+                    <view class='limit flexStart'>
+                      地址: <text class='signToken'>{{item.signToken}}</text>
+                      <!-- <view class='statusBtn flexCenter'>{{item.wantJoin.joinState == 2?"失效": item.wantJoin.joinState == 0?"复制": ""}}</view> -->
+                    </view>
                 </view>
-                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/signup-success.png' class='success'></image>
+                <image wx:if='{{item.wantJoin.joinState == 2}}' src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/signup-end.png' class='end'></image>
+                <image wx:elif='{{item.wantJoin.joinState == 0 && item.wantJoin.joinState != 2}}' src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/signup-success.png' class='success'></image>
             </view>
         </block>
-        <block>
+        <!-- <block>
             <view class='item flexStart' bindtap='linkTo'>
                 <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/swimming.png' class='itemRight'></image>
                 <view class='flexStart center'>
@@ -26,6 +27,7 @@
                 </view>
                 <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/signup-end.png' class='end'></image>
             </view>
-        </block>
+        </block> -->
     </view>
+    <view wx:else class='noData flexCenter'>暂未报名</view>
 </view>

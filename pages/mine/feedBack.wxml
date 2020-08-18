@@ -3,16 +3,16 @@
     <view class='feedBack'>
         <view class='item flexStart'>
             <text class='label'>姓名</text>
-            <input value='' placeholder="请输入您的姓名"/>
+            <input value='{{userInfo.fullName}}' disabled='{{userInfo.fullName}}' data-type='userName' bindinput="inputChange" placeholder="请输入您的姓名"/>
         </view>
         <view class='item flexStart'>
             <text class='label'>手机号</text>
-            <input placeholder="请输入您的手机号"/>
+            <input value='{{userInfo.mobile}}' disabled='{{userInfo.mobile}}' data-type='userName' bindinput="inputChange" placeholder="请输入您的手机号"/>
         </view>
         <view class='item content flexStart'>
             <text class='label'>反馈内容</text>
-            <textarea maxlength='{{200}}' placeholder="请输入反馈内容信息限制200个字"/>
+            <textarea value='{{feedbackContent}}' data-type='feedbackContent' bindinput="inputChange" maxlength='{{200}}' placeholder="请输入反馈内容信息限制200个字"/>
         </view>
     </view>
-    <view class='footer'>提交反馈</view>
+    <view class='footer' bindtap='submit'>提交反馈</view>
 </view>

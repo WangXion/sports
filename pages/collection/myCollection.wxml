@@ -1,17 +1,18 @@
 <!--index.wxml-->
 <view class="container">
-    <view class='List'>
-        <block wx:for='{{dataList}}' wx:key='index'>
-            <view class='item flexStart' data-key='{{item.key}}' bindtap='changeStatus'>
+    <view class='List' wx:if='{{listData.length>0}}'>
+        <block wx:for='{{listData}}' wx:key='index'>
+            <view class='item flexStart' data-key='{{item.key}}' catchtap='toDetails' data-item='{{item}}'>
                 <view class='flexBetween center'>
-                    <text class='couponName'>{{item.title}}</text>
-                    <view class='collection flexStart' wx:if='{{item.collection}}'>
+                    <text class='couponName'>{{item.newsTitle}}</text>
+                    <view class='collection flexStart' wx:if='{{item.isLike==0}}' catchtap='changeStatus' data-item='{{item}}' data-key='{{index}}'>
                         <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/star-icon.jpg' class='star'></image>
                         <text>取消收藏</text>
                     </view>
                 </view>
-                <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/swimming.png' class='itemRight'></image>
+                <image src='{{item.newsPic}}' class='itemRight'></image>
             </view>
         </block>
     </view>
+    <view wx:else class='noData flexCenter'>暂无收藏</view>
 </view>

@@ -30,13 +30,20 @@
     "pages/venue/venue",
     "pages/venueDetail/venue",
     "pages/venueInfo/venueInfo",
+    "pages/orderPayment/orderConfirm",
     "pages/orderPayment/orderPayment",
     "pages/scientificFitness/scientificFitness",
     "pages/keepSearch/keepSearch",
     "pages/paySuccess/paySuccess",
     "pages/authorization/authorization",
     "pages/slimming/slimming",
-    "pages/share/share"
+    "pages/share/share",
+    "pages/noData/index",
+    "pages/agreement/index",
+    "pages/agreement/rechange",
+    "pages/matchReg/index",
+    "pages/matchReg/details",
+    "pages/matchReg/registrateDetails"
   ],
   "window": {
     "backgroundTextStyle": "light",

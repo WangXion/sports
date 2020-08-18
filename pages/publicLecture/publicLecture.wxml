@@ -1,21 +1,24 @@
 <!--pages/publicLecture/publicLecture.wxml-->
 <view class="publicLecture">
-  <block wx:for="{{ lectureArr }}"
-    wx:key="index">
-    <view class="item {{ index === 0 ? '':'pt40' }}" bindtap="hrefDetail">
-      <view class="left">
-        <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/banner.png" mode="cover"></image>
-      </view>
-      <view class="right">
-        <view class="title">没有时间运动健身？试试戒掉这个习惯没有时间运动健身？</view>
-        <view class="date">时间：9月15日 </view>
-        <view class="desc">
-          <view class="address">地址：杭州黄龙体育中心B馆</view>
-          <view class="btn {{ item.status === 3 ? 'active':'' }}">
-            {{ item.status === 3 ? '已结束':'报名中' }}
+  <view wx:if='{{lectureArr.length>0}}'>
+    <block wx:for="{{ lectureArr }}"
+      wx:key="index">
+      <view class="item" data-item='{{item}}' bindtap="hrefDetail">
+        <view class="left">
+          <image src="{{item.pcImage}}" mode="cover"></image>
+        </view>
+        <view class="right">
+          <view class="title">{{item.pcMaintitle}}</view>
+          <view class="date">时间：{{item.pcStarttime}}</view>
+          <view class="desc">
+            <view class="address">地址：{{item.pcAddress}}</view>
+            <view class="btn {{ item.pcState != 1  ? 'active':'' }}">
+              {{ item.pcState == 2? '已结束': item.pcState == 0 ? '未发布':'报名中' }}
+            </view>
           </view>
         </view>
       </view>
-    </view>
-  </block>
+    </block>
+  </view>
+  <view wx:else class='noData flexCenter'>暂无数据</view>
 </view>

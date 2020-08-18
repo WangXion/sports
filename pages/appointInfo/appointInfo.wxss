@@ -38,6 +38,17 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
+}
+.appointInfo .cont .item .appointTime{
+  position: absolute;
+  z-index: 0;
+  width: 300rpx;
+  text-align: right;
+  padding-right: 20rpx;
+}
+.appointInfo .cont .item .defaultT{
+  color: #999;
 }
 .appointInfo .cont .item .upload {
   width: 215rpx;
@@ -89,6 +100,7 @@
   color: #999;
   flex: 1;
 }
+
 /* 营业执照上传 */
 .appointInfo .cont .upload  .cont {
   width: 215rpx;
@@ -106,7 +118,7 @@
 .appointInfo .list {
   background: #fff;
   padding: 30rpx 15rpx;
-  margin-bottom: 120rpx;
+  /* margin-bottom: 120rpx; */
 }
 /* 添加名单 */
 .appointInfo .list .add {
@@ -147,6 +159,12 @@
   height: 37rpx;
 }
 /* 提交预约按钮 */
+.footer{
+  /* position: fixed;
+  bottom: 0; */
+  background: #F6F6F6;
+  width: 100%;
+}
 .btn {
   width: 720rpx;
   height: 90rpx;
@@ -154,9 +172,7 @@
   text-align: center;
   background: #F78E1E;
   color: #fff;
-  position: fixed;
-  bottom: 35rpx;
-  left: 20rpx;
+  margin: 35rpx 0;
   border-radius: 60rpx;
   font-size: 33rpx;
 }

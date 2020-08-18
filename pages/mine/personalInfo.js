@@ -4,35 +4,60 @@ const app = getApp()
 
 Page({
   data: {
-    userInfo: {},
-    hasUserInfo: false
+    userInfo: null,
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
+    
+  },
+  onShow: function() {
+    this.getData();
+  },
+  getData() {
+    let that = this;
+    app.request('/sportuserserver/user/userinfo').then(res => {
+      if (res.code == 200) {
+        that.setData({
+          userInfo: res.data
         })
       }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
+    })
   },
+  inputChange(event) {
+    let val = event.detail.value;
+    this.setData({
+      userSignature: val
+    })
+  },
+  submit() {
+    let that = this;
+    let params = {
+      type: 1,
+      userSignature: this.data.userSignature
+    }
+    app.request('/sportuserserver/user/updateUserinfo', params).then(res => {
+      if (res.code == '200') {
+        wx.showToast({
+          title: '更改成功',
+          icon: 'none',
+          complete: function(){
+            that.setData({
+              userInfo: res.data
+            })
+            wx.switchTab({
+              url: '/pages/mine/index'
+            })
+          }
+        })
+      }
+    })
+  },
+  // 前往实名认证
+  toRealName() {
+    if (this.data.userInfo.mobile) {
+      return false
+    }
+    wx.navigateTo({
+      url: '/pages/mine/nameAuthentication'
+    })
+  }
 })

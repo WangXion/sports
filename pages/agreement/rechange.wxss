@@ -1,0 +1,18 @@
+.agareement{
+    width: 100vw;
+    min-height: 100vh;
+    background: #fff;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+.title{
+    color: #3366FF;
+    padding: 15rpx;
+    font-size: 30rpx;
+}
+.details{
+    color: #333;
+    opacity: 0.6;
+    font-size: 26rpx;
+    margin-bottom: 20rpx;
+}

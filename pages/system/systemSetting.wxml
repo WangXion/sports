@@ -9,9 +9,9 @@
             <text class='label'>操作手册</text>
             <image class="arrow" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
         </view>
-        <view class='item flexBetween' data-tel='0571-88886666' bindtap='callPhone'>
+        <view class='item flexBetween' data-tel='0571-88886666'>
             <text class='label'>客服电话</text>
-            <text class='val' >0571-88886666</text>
+            <text class='val' >暂无</text>
         </view>
         <view class='item flexBetween'>
             <text class='label'>当前版本</text>

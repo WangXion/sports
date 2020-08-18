@@ -71,6 +71,9 @@
     font-size: 26rpx;
     color: #FF791F;
 }
+.listBox .item .endIng{
+    transform: translateY(10px);
+}
 .listBox .item .status.completed{
     color: #7FD262;
 }

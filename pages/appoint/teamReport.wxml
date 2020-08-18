@@ -1,19 +1,20 @@
 <!--teamReport.wxml-->
 <view class="container">
     <view class='listBox'>
-        <block>
+        <block wx:for='{{listData}}' wx:key='index'>
             <view class='item flexBetween' bindtap='details'>
                 <view class='itemTop'>
                     <view>
-                        <view class='name'>张珊</view>
-                        <view class='info'>15858623333</view>
-                        <view class='time'>2020-10-10 10:30</view>
+                        <view class='name'>{{item.appointmentPerson}}</view>
+                        <view class='info'>{{item.appointmentPhone}}</view>
+                        <view class='time'>{{item.appointmentTime}}</view>
                     </view>
                 </view>
-                <text class='status'>已出报告通知他</text>
+                <text class='status {{item.reportFlag == 0 ?"completed":""}}'>{{item.detectionState == 0 ?"报告未出":"已出报告通知他"}}</text>
+                <!-- <text class='status'>已出报告通知他</text> -->
             </view>
         </block>
-        <block>
+        <!-- <block>
             <view class='item flexBetween' bindtap='details'>
                 <view class='itemTop'>
                     <view>
@@ -24,7 +25,7 @@
                 </view>
                 <text class='status completed'>报告未出</text>
             </view>
-        </block>
+        </block> -->
     </view>
     <view class='footer flexBetween'>
         <view class='{{allChecked?"checked":"checkbox"}}' bindtap='changeChecked'></view>

@@ -1,0 +1,17 @@
+.noData{
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    /* padding-top: 361rpx; */
+}
+.noData image{
+    width: 200rpx;
+    height: 200rpx;
+}
+.noData text{
+    font-size: 30rpx;
+    color: #333;
+    margin-top: 67rpx;
+    opacity:0.6;
+}

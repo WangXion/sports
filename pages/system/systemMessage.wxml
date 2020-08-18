@@ -1,16 +1,12 @@
 <view class="container">
-    <view class='messageList' bindtap='details'>
-        <view class='time'>06-20 15:20</view>
+  <view wx:if='{{dataList.length>0}}'>
+    <view class='messageList' wx:for='{{dataList}}' wx:key='index' data-item='{{item}}' bindtap='details'>
+        <view class='time'>{{item.createTime}}</view>
         <view class='item'>
-            <view class='title'>培训教育中心端午放假通知</view>
-            <text class='content'>育中心端午放假培训教育中心端午放育中心端午放假育中心端午放假假通知</text>
+            <view class='title'>{{item.messageTitle}}</view>
+            <text class='content' wx-if='{{item.messageSubheading}}'>{{item.messageSubheading}}</text>
         </view>
     </view>
-    <view class='messageList'>
-        <view class='time'>06-20 15:20</view>
-        <view class='item'>
-            <view class='title textOver'>培训教育中心端午放假通知</view>
-            <text class='content'>育中心端午放假培训教育中心端午放育中心端午放假育中心端午放假假通知</text>
-        </view>
-    </view>
+  </view>
+  <view wx:else class='noData flexCenter'>暂无消息</view>
 </view>

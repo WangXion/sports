@@ -1,83 +1,71 @@
 <!--pages/venueInfo/venueInfo.wxml-->
 <view class="venueInfo">
   <view class="title">
-    <image class="icon" src="../../images/icon-informate.png" mode="cover"></image>
-    <view>场馆信息</view>
+    <image class="icon" src="https://cunjifen.oss-cn-beijing.aliyuncs.com/userImg/1597550002453.jpg" mode="cover"></image>
+    <view>基本信息</view>
   </view>
-  <view class="cont">
-    <view class="row">
-      <view class="item">
-        <!-- https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/ -->
-        <image class="icon" src="../../images/parking.png" mode="cover"></image>
-        <view>停车</view>
-      </view>
-      <view class="item">
-        <image class="icon" src="../../images/carRental.png" mode="cover"></image>
-        <view>器材租</view>
-      </view>
-      <view class="item">
-        <image class="icon" src="../../images/retail.png" mode="cover"></image>
-        <view>零售</view>
-      </view>
-      <view class="item mr0">
-        <image class="icon" src="../../images/airConditioner.png" mode="cover"></image>
-        <view>空调</view>
+  <view class='other br_b'>
+    <view class="section">
+      <view class="left">
+          <view class="label">营业时间：</view>
+          <view class="value">{{tbStadium.stadiumOpentime}}</view>
       </view>
     </view>
-    <view class="row start">
-      <view class="item">
-        <image class="icon" src="../../images/wifi.png" mode="cover"></image>
-        <view>wifi</view>
+    <view class="section">
+      <view class="left">
+          <view class="label">容纳人数：</view>
+          <view class="value">{{details.totalNum}}人</view>
       </view>
-      <view class="item">
-        <image class="icon" src="../../images/portableBattery.png" mode="cover"></image>
-        <view>充电宝</view>
-      </view>
-    </view>
-    <!-- 车位情况 -->
-    <view class="car">
-      <view class="top">
-        <image class="icon" src="../../images/icon-park.png" mode="cover"></image>
-        <view>车位情况</view>
-      </view>
-      <view class="section">
-        <view class="left">
-          <view >空余车位</view>
-          <view class="price">75</view>
-          <view >12元/小时</view>
-        </view>
-        <view class="left">
-          <view >空余充电桩</view>
-          <view class="price">5</view>
-          <view >充满50元/车</view>
-        </view>
+      <view class="left">
+        <view class="label">室内温度：</view>
+        <view class="value">{{details.roomTem}}</view>
       </view>
     </view>
-    <!-- 其他信息 -->
-    <view class="other">
-      <view class="top">
-        <image class="icon" src="../../images/icon-park.png" mode="cover"></image>
-        <view>其他信息</view>
+    <view class="section">
+      <view class="left">
+          <view class="label">泳池水温：</view>
+          <view class="value">{{details.poolTem}}</view>
       </view>
-      <view class="section">
-        <view class="left">
-            <view class="label">在馆人数：</view>
-            <view class="value">1000人</view>
-        </view>
-        <view class="left">
-          <view class="label">室内温度：</view>
-          <view class="value">29</view>
-        </view>
+      <view class="left">
+        <view class="label">PH值：</view>
+        <view class="value">{{details.phValue}}</view>
       </view>
-      <view class="section">
-        <view class="left">
-            <view class="label">泳池水温：</view>
-            <view class="value">30.5</view>
-        </view>
-        <view class="left">
-          <view class="label">PH值：</view>
-          <view class="value">7.2</view>
-        </view>
+    </view>
+  </view>
+  <view class="title mr_t" >
+    <image class="icon" src="https://cunjifen.oss-cn-beijing.aliyuncs.com/userImg/1597550490390.jpg" mode="cover"></image>
+    <view>场馆设备</view>
+  </view>
+  <view class="config flexStart br_b" wx:if='{{details.configList && details.configList.length> 0}}'>
+    <view class="item" wx:for='{{details.configList}}' wx:key='index'>
+      <!-- https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/ -->
+      <image class="icon" src="{{item.configImge}}" mode="cover"></image>
+      <view>{{item.configName}}</view>
+    </view>
+  </view>
+  <view class="title mr_t">
+    <image class="icon" src="https://cunjifen.oss-cn-beijing.aliyuncs.com/userImg/1597550802467.jpg" mode="cover"></image>
+    <view>停车信息</view>
+  </view>
+  <view class='other mr_l'>
+    <view class="section">
+      <view class="left">
+          <view class="label">车位数量：</view>
+          <view class="value">{{details.parkNum}}</view>
+      </view>
+      <view class="left">
+        <view class="label">收费标准：</view>
+        <view class="value">{{details.parkHoursAmount}}</view>
+      </view>
+    </view>
+    <view class="section">
+      <view class="left">
+          <view class="label">充电桩数：</view>
+          <view class="value">{{details.pileNum}}</view>
+      </view>
+      <view class="left">
+        <view class="label">充电标准：</view>
+        <view class="value">{{details.pileAmount}}元/小时</view>
       </view>
     </view>
   </view>

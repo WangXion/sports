@@ -49,7 +49,7 @@
 .icon {
   display: inline-block;
   border: 4px solid transparent;
-  border-top: 4px solid #9b9b9b;
+  border-top-color: #9b9b9b;
   margin-left: 5px;
   margin-top: 10rpx;
 }
@@ -135,8 +135,9 @@
 }
 
 .nav-child.active .icon {
-  /* border-bottom: 4px solid #FF7E1F; */
-  border-top: 0;
+  border-bottom-color: #FF7E1F;
+  border-top-color: transparent;
+  transform: translateY(-10rpx);
 }
 
 @keyframes slidown {

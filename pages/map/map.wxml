@@ -1,21 +1,40 @@
 <!--pages/map/map.wxml-->
 <view class="map">
-  <map style="width: 100%; height: 100vh;" :longitude='lng' :latitude='lat' :markers="covers">
+  <map style="width: 100%; height: 100vh;" longitude='{{searchData.originLon}}' latitude='{{searchData.originLat}}' bindmarkertap='markeTap' bindtap='mapCange' markers="{{markers}}" polyline='{{polyline}}' scale='{{scale}}'>
   </map>
-  <view class="search">
+  <view class="search flexBetween">
     <input
       class="input"
       type="text" 
-      bindinput='accountInput'
+      bindconfirm='confirm'
       placeholder='场馆名字搜索'
       placeholder-class='input-placeholder'/>
+      <view class='listBtn flexCenter' catchtap='changeList'>{{listCont?"地图":"列表"}}</view>
   </view>
-  <view class="cont">
-    <view class="name">糖果盒足球场</view>
-    <view class="address">903m | 浙江省杭州市下城区长城街124号附近</view>
-    <view class="btn">
-      <view class="navigation">导航</view>
-      <view class="car">到这去</view>
+  <scroll-view scroll-y='{{true}}' class='listCont' bindscrolltolower='scrollToLower' wx:if='{{listCont}}'>
+    <view class="item" wx:for='{{venueArr}}' wx:key='index' data-item='{{item}}' catchtap='showMap'>
+    <view class='flexBetween'>
+      <view class="name">{{item.venueName}}</view>
+      <view class="tel" data-tel='{{item.venuePhone}}' bindtap='callPhone'>{{item.venuePhone}}</view>
     </view>
-  </view>
+      <view class="address">{{item.lineDistance}}km | {{item.venueDetailPlace}}</view>
+      <view class='desc'>{{item.venueType}}</view>
+      <view class="btn">
+        <view class="navigation" catchtap='openMap' data-item="{{item}}"  >去导航</view>
+        <view class="car" catchtap='roateLine' data-item="{{item}}">到这去</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="cont" wx:if='{{!listCont && details}}'>
+    <view class='flexBetween'>
+      <view class="name">{{details.venueName}}</view>
+      <view class="tel" data-tel='{{details.venuePhone}}' bindtap='callPhone'>{{details.venuePhone}}</view>
+    </view>
+      <view class="address">{{details.lineDistance}}km | {{details.venueDetailPlace}}</view>
+      <view class='desc'>{{details.venueType}}</view>
+      <view class="btn">
+        <view class="navigation" bindtap='openMap' data-item="{{details}}">去导航</view>
+        <view class="car" bindtap='roateLine' data-item="{{details}}">到这去</view>
+      </view>
+    </view>
 </view>

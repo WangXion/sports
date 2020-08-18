@@ -1,0 +1,61 @@
+<!--pages/registrateDetails/registrateDetails.wxml-->
+
+<view class="registrateDetails">
+  <!-- title -->
+  <!-- 详情信息 -->
+  <view class="detail">
+      <view class="desc">报名截止时间：{{details.applyEndTime}}  </view>
+      <view class="desc">地址：{{details.competitionPlace}}</view>
+      <view class="desc">类型：{{details.competitionType}}</view>
+      <view class="desc">比赛时间：{{details.competitionStartTime+'-'+details.competitionEndTime}}</view>
+  </view>
+  <view class="title">
+    <view>{{details.pcMaintitle}}</view>
+    <view class="info">{{details.pcAssistanttitle}}</view>
+  </view>
+  <!-- 信息区域 -->
+  <view class="section">
+    <view class="item">
+      <view class="lable">报名人姓名</view>
+      <view class="value">
+        {{userInfo.fullName}}
+      </view>
+    </view>
+    <view class="item">
+      <view class="lable">手机号</view>
+      <view class="value">
+        {{userInfo.mobile}}
+      </view>
+    </view>
+    <view class="item">
+      <view class="lable">证件号码</view>
+      <view class="value">
+        {{userInfo.idCard}}
+      </view>
+    </view>
+    <view class="item">
+      <view class="lable">工作单位</view>
+      <view class="value">
+        <input
+          class="input"
+          type="text"
+          placeholder="请输入工作单位"
+          data-type="workUnit"
+          value="{{ workUnit }}"
+          bindinput="inputchange">
+        </input>
+      </view>
+    </view>
+    <view class="itemLeft item">
+      <view class="lableText">参赛材料</view>
+      <view class="cont flexCenter" bindtap='upLoadImg' wx:if='{{!materials}}'>
+          <view class="img">点击上传</view>
+      </view>
+      <image class='cont' style='padding: 0' bindtap='upLoadImg' wx:else src='{{materials}}'></image>
+    </view>
+  </view>
+  <!-- 底部按钮 -->
+  <view class="footer">
+    <view class="btn" bindtap='submit'>我要报名</view>
+  </view>
+</view>

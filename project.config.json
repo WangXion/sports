@@ -4,18 +4,15 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": false,
 		"postcss": true,
-		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": false,
 		"coverView": true,
 		"nodeModules": false,
 		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
 		"uglifyFileName": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
@@ -25,6 +22,10 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
+		"bundle": false,
+		"preloadBackgroundData": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
 		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false,
 		"compileHotReLoad": false,
@@ -32,7 +33,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.0",
-	"appid": "wx3aae9c6a2f646683",
+	"appid": "wx27917f3595394a0a",
 	"projectname": "sports",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -65,295 +66,7 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": [
-				{
-					"id": 0,
-					"name": "预约记录",
-					"pathName": "pages/appoint/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 1,
-					"name": "体质报告",
-					"pathName": "pages/appoint/details",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 2,
-					"name": "个人信息",
-					"pathName": "pages/mine/personalInfo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/map/map",
-					"pathName": "pages/map/map",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/appointInfo/appointInfo",
-					"pathName": "pages/appointInfo/appointInfo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "我的",
-					"pathName": "pages/mine/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 6,
-					"name": "pages/publicLecture/publicLecture",
-					"pathName": "pages/publicLecture/publicLecture",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/publicLectureDetail/publicLectureDetail",
-					"pathName": "pages/publicLectureDetail/publicLectureDetail",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/registrateDetails/registrateDetails",
-					"pathName": "pages/registrateDetails/registrateDetails",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "订单详情",
-					"pathName": "pages/appoint/orderDetails",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 10,
-					"name": "公益讲座",
-					"pathName": "pages/collection/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "我的收藏",
-					"pathName": "pages/collection/myCollection",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "报名详情",
-					"pathName": "pages/collection/signupDetails",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/venue/venue",
-					"pathName": "pages/venue/venue",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/venueDetail/venue",
-					"pathName": "pages/venueDetail/venue",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/venueInfo/venueInfo",
-					"pathName": "pages/venueInfo/venueInfo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/orderPayment/orderPayment",
-					"pathName": "pages/orderPayment/orderPayment",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/paySuccess/paySuccess",
-					"pathName": "pages/paySuccess/paySuccess",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/scientificFitness/scientificFitness",
-					"pathName": "pages/scientificFitness/scientificFitness",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/keepSearch/keepSearch",
-					"pathName": "pages/keepSearch/keepSearch",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/scientificFitness/scientificFitness",
-					"pathName": "pages/scientificFitness/scientificFitness",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/authorization/authorization",
-					"pathName": "pages/authorization/authorization",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/scientificFitness/scientificFitness",
-					"pathName": "pages/scientificFitness/scientificFitness",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/slimming/slimming",
-					"pathName": "pages/slimming/slimming",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/examinate/examinate",
-					"pathName": "pages/examinate/examinate",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/appointInfo/appointInfo",
-					"pathName": "pages/appointInfo/appointInfo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/publicLecture/publicLecture",
-					"pathName": "pages/publicLecture/publicLecture",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/appointInfo/appointInfo",
-					"pathName": "pages/appointInfo/appointInfo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/appointInfo/appointInfo",
-					"pathName": "pages/appointInfo/appointInfo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/venueDetail/venue",
-					"pathName": "pages/venueDetail/venue",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/orderPayment/orderPayment",
-					"pathName": "pages/orderPayment/orderPayment",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/venue/venue",
-					"pathName": "pages/venue/venue",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/venueDetail/venue",
-					"pathName": "pages/venueDetail/venue",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/venueDetail/venue",
-					"pathName": "pages/venueDetail/venue",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/slimming/slimming",
-					"pathName": "pages/slimming/slimming",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/share/share",
-					"pathName": "pages/share/share",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/venueDetail/venue",
-					"pathName": "pages/venueDetail/venue",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/map/map",
-					"pathName": "pages/map/map",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/authorization/authorization",
-					"pathName": "pages/authorization/authorization",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/appointInfo/appointInfo",
-					"pathName": "pages/appointInfo/appointInfo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "交易明细",
-					"pathName": "pages/mine/transactionRecords",
-					"query": "",
-					"scene": null
-				}
-			]
+			"list": []
 		}
 	}
 }

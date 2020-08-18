@@ -1,0 +1,24 @@
+<!--pages/publicLecture/publicLecture.wxml-->
+<view class="publicLecture">
+  <view wx:if='{{lectureArr.length>0}}'>
+    <block wx:for="{{ lectureArr }}"
+      wx:key="index">
+      <view class="item" data-item='{{item}}' bindtap="hrefDetail">
+        <view class="left">
+          <image src="{{item.pcImage}}" mode="cover"></image>
+        </view>
+        <view class="right">
+          <view class="title">{{item.competitionName}}</view>
+          <view class="date">比赛时间：{{item.competitionStartTime}}</view>
+          <view class="desc">
+            <view class="address">地址：{{item.competitionPlace}}</view>
+            <view class="btn {{ item.competitionState != 0  ? 'active':'' }}">
+              {{ item.competitionState == 1? '已截止': '报名中' }}
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view wx:else class='noData flexCenter'>尽请期待</view>
+</view>

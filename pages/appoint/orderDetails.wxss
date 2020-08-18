@@ -1,5 +1,5 @@
 /**details.wxss**/
-.container{
+.containerbox{
     background: #F7F4F8;
     box-sizing: border-box;
     padding-top: 17rpx;
@@ -81,7 +81,7 @@
     padding-top: 43rpx;
 }
 .writeOff{
-    height: 556rpx;
+    height: 780rpx;
     background: #fff;
     margin-bottom: 30rpx;
 }
@@ -97,26 +97,34 @@
     font-size: 24rpx;
 }
 .writeOff .writeCode{
-    width: 367rpx;
-    height: 365rpx;
+    width: 600rpx;
+    height: 600rpx;
     display: block;
     margin: 0 auto;
     margin-top: 36rpx;
 }
 .writeOff .limit {
-    font-size: 24rpx;
+    font-size: 26rpx;
     color: #000;
     text-align: center;
     padding-top: 23rpx;
+    padding-right: 20rpx;
 }
 .writeOff .limit text{
     color: #FF9018;
 }
+.writeOff .orderNo{
+  color: #FF9018;
+  font-size: 26rpx;
+}
+.writeOff .trans{
+  transform: translateY(-40rpx);
+}
 .tip{
     background: #fff;
-    margin-bottom: 123rpx;
     padding: 0 23rpx;
     box-sizing: border-box;
+    padding-bottom: 123rpx;
 }
 .tip .title{
     font-size: 30rpx;
@@ -137,7 +145,7 @@
     font-size: 24rpx;
     color: #333;
     line-height: 45rpx;
-    margin-bottom: 25rpx;
+    margin-bottom: 10rpx;
 }
 .footer{
     position: fixed;

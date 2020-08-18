@@ -11,8 +11,9 @@
             class="input"
             type="text"
             placeholder="请输入预约人姓名"
-            data-type="name"
-            value="{{ name }}"
+            disabled="{{true}}"
+            data-type="appointmentPerson"
+            value="{{ appointmentPerson }}"
             bindinput="inputChange">
           </input>
         </view>
@@ -20,13 +21,13 @@
       <view class="item">
         <view class="lable">性别</view>
         <view class="value">
-          <view class="left" bindtap="sexChange" data-key="1">
-            <view class="icon {{ currentKey === 1 ? 'active':'' }}"></view>
-            <view class="name {{ currentKey === 1 ? 'activeColor':'' }}">男</view>
+          <view class="left">
+            <view class="icon {{ appointmentSex == '男' ? 'active':'' }}"></view>
+            <view class="name {{ appointmentSex == '男' ? 'activeColor':'' }}">男</view>
           </view>
-          <view class="left" bindtap="sexChange" data-key="2">
-            <view class="icon {{ currentKey === 2 ? 'active':'' }}"></view>
-            <view class="name1 {{ currentKey === 2 ? 'activeColor':'' }}">女</view>
+          <view class="left">
+            <view class="icon {{ appointmentSex == '女' ? 'active':'' }}"></view>
+            <view class="name1 {{ appointmentSex == '女' ? 'activeColor':'' }}">女</view>
           </view>
         </view>
       </view>
@@ -37,8 +38,9 @@
             class="input name"
             type="text"
             placeholder="请输入手机号"
-            data-type="phone"
-            value="{{ phone }}"
+            disabled="{{true}}"
+            data-type="appointmentPhone"
+            value="{{ appointmentPhone }}"
             bindinput="inputChange">
           </input>
         </view>
@@ -50,8 +52,9 @@
             class="input name"
             type="text"
             placeholder="请输入身份证号"
-            data-type="cart"
-            value="{{ cart }}"
+            data-type="appointmentCard"
+            disabled="{{true}}"
+            value="{{ appointmentCard }}"
             bindinput="inputChange">
           </input>
         </view>
@@ -59,14 +62,9 @@
       <view class="item border-none">
         <view class="lable">预约时间</view>
         <view class="value">
-          <input
-            class="input name"
-            type="text"
-            placeholder="请选择预约时间"
-            data-type="date"
-            value="{{ date }}"
-            bindinput="inputChange">
-          </input>
+          <datePicker placeholder = "{{placeholder}}" date = "{{startTime}}" disabled = "{{disabled}}" bind:onPickerChange="onPickerChange" startDate="{{startTime}}">
+          </datePicker>
+          <view class='appointTime {{!appointmentTime?"defaultT":""}}'>{{appointmentTime?appointmentTime:"请先选择预约时间"}}</view>
         </view>
       </view>
     </view>
@@ -81,8 +79,8 @@
             class="input"
             type="text"
             placeholder="请输入预约人姓名"
-            data-type="name"
-            value="{{ name }}"
+            data-type="groupName"
+            value="{{ groupName }}"
             bindinput="inputChange">
           </input>
         </view>
@@ -93,9 +91,10 @@
           <input
             class="input"
             type="text"
+            disabled="{{true}}"
             placeholder="请输入预约联系人姓名"
-            data-type="name"
-            value="{{ name }}"
+            data-type="appointmentPerson"
+            value="{{ appointmentPerson }}"
             bindinput="inputChange">
           </input>
         </view>
@@ -107,8 +106,23 @@
             class="input name"
             type="text"
             placeholder="请输入手机号"
-            data-type="phone"
-            value="{{ phone }}"
+            disabled="{{true}}"
+            data-type="appointmentPhone"
+            value="{{ appointmentPhone }}"
+            bindinput="inputChange">
+          </input>
+        </view>
+      </view>
+      <view class="item">
+        <view class="lable">身份证</view>
+        <view class="value">
+          <input
+            class="input name"
+            type="text"
+            placeholder="请输入身份证号"
+            data-type="appointmentCard"
+            disabled="{{true}}"
+            value="{{ appointmentCard }}"
             bindinput="inputChange">
           </input>
         </view>
@@ -116,34 +130,45 @@
       <view class="item">
         <view class="lable">预约时间</view>
         <view class="value">
-          <input
-            class="input name"
-            type="text"
-            placeholder="请选择预约时间"
-            data-type="date"
-            value="{{ date }}"
-            bindinput="inputChange">
-          </input>
+          <view class="value">
+            <datePicker placeholder = "{{placeholder}}" date = "{{startTime}}" disabled = "{{disabled}}" bind:onPickerChange="onPickerChange" startDate="{{startTime}}">
+            </datePicker>
+            <view class='appointTime {{!appointmentTime?"defaultT":""}}'>{{appointmentTime?appointmentTime:"请先选择预约时间"}}</view>
+          </view>
         </view>
       </view>
       <view class="item">
         <view class="lable">上门检测</view>
         <view class="value">
-          <view class="left" bindtap="sexChange" data-key="1">
-            <view class="icon {{ currentKey === 1 ? 'active':'' }}"></view>
-            <view class="name {{ currentKey === 1 ? 'activeColor':'' }}">是</view>
+          <view class="left" bindtap="visitChange" data-key="0">
+            <view class="icon {{ visit == 0 ? 'active':'' }}"></view>
+            <view class="name {{ visit == 0 ? 'activeColor':'' }}">是</view>
           </view>
-          <view class="left" bindtap="sexChange" data-key="2">
-            <view class="icon {{ currentKey === 2 ? 'active':'' }}"></view>
-            <view class="name1 {{ currentKey === 2 ? 'activeColor':'' }}">否</view>
+          <view class="left" bindtap="visitChange" data-key="1">
+            <view class="icon {{ visit == 1 ? 'active':'' }}"></view>
+            <view class="name1 {{ visit == 1 ? 'activeColor':'' }}">否</view>
           </view>
+        </view>
+      </view>
+      <view class="item" wx:if='{{visit == 0}}'>
+        <view class="lable">上门地址</view>
+        <view class="value">
+          <input
+            class="input name"
+            type="text"
+            placeholder="请输入地址"
+            data-type="visitPlace"
+            value="{{ visitPlace }}"
+            bindinput="inputChange">
+          </input>
         </view>
       </view>
       <view class="upload">
         <view class="lable">营业执照上传</view>
-        <view class="cont">
+        <view class="cont" bindtap='upLoadImg' wx:if='{{!businessPic}}'>
           <view class="img">点击上传</view>
         </view>
+        <image class='cont' style='padding: 0' bindtap='upLoadImg' wx:else src='{{businessPic}}'></image>
       </view>
     </view>
   </view>
@@ -151,17 +176,17 @@
   <view wx:if="{{ key === '2' }}" class="list">
     <view class="add">
       <view class="left">人员列表</view>
-      <view class="right" bindtap="showMask">添加名单</view>
+      <view class="right" bindtap="showMask">+添加名单</view>
     </view>
-    <block wx:for="{{ personalArr }}"
+    <block wx:for="{{ userDetectionDtos }}"
       wx:key="index">
-      <view class="item">
+      <view class="item" data-key='{{index}}' bindtap='editList'>
         <view class="left">
           <view class="phone">
-            <view class="name">张山</view>
-            17856348907
+            <view class="name">{{item.appointmentPerson}}</view>
+            {{item.appointmentPhone}}
           </view>
-          <view class="">身份证：311111634568468486</view>
+          <view class="">身份证：{{item.appointmentCard}}</view>
         </view>
         <view class="right">
           <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-edit.png" mode="cover"></image>
@@ -169,21 +194,23 @@
       </view>
     </block>
   </view>
-  <view class="btn" bindtap="submit">
-    提交预约
+  <view class='footer flexCenter'>
+    <view class="btn" bindtap="submit">
+      提交预约
+    </view>
   </view>
 </view>
-<view class="mask" hidden="{{ flag }}">
-  <view class="maskContent">
+<view class="mask" hidden="{{ flag }}" catchtap='closeMask'>
+  <view class="maskContent" catchtap='null'>
     <view class="title">{{ isEdit === true ? '编辑': '添加' }}</view>
     <view>
-      <input class='input' placeholder="请输入人员姓名" />
+      <input class='input' placeholder="请输入人员姓名" data-type="itemPerson" bindinput="inputChange" value='{{teamItem.appointmentPerson}}'/>
     </view>
     <view>
-      <input class='input' placeholder="请输入人员手机号" />
+      <input class='input' type='number' placeholder="请输入人员手机号" data-type="itemPhone" bindinput="inputChange" value='{{teamItem.appointmentPhone}}'/>
     </view>
     <view>
-      <input class='input' placeholder="请输入人员身份证" />
+      <input class='input' type='idcard' placeholder="请输入人员身份证" data-type="itemCard" bindinput="inputChange" value='{{teamItem.appointmentCard}}'/>
     </view> 
     <view class='save' bindtap="addSubmit">保存添加</view>
   </view>

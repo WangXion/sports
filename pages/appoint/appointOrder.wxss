@@ -1,6 +1,7 @@
 /**index.wxss**/
 .container{
     background: #F7F4F8;
+    height: 100vh;
 }
 /* tab切换 */
 .tabBar{
