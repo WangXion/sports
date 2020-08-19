@@ -24,7 +24,7 @@ Page({
     let that = this;
     app.request('/sportmedicalserver/SystemMessage/pdRead').then(res => {
       if (res.code == 200) {
-        let pdRead = res.data = 0?true: false
+        let pdRead = res.data == 0?true: false
         that.setData({
           pdRead: pdRead
         })
