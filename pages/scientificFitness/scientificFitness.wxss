@@ -79,6 +79,7 @@
 .keep .list .left .bottom{
   margin-top: 30rpx;
   color: #FF791F;
+  font-size: 28rpx;
 }
 .keep .list .left  .time {
   color: rgba(153,153,153,1)

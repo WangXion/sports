@@ -11,14 +11,9 @@ App({
     mapLocation: wx.getStorageSync('mapLocation')
   },
 	onLaunch: function () {
-		let host = '';
-		let NODE_ENV = 'pro';
-		const fileManager = wx.getFileSystemManager();
-		try{
-			fileManager.accessSync('/local.txt');
-			NODE_ENV = 'dev';
-		}catch(e){}
-		if( NODE_ENV === 'pro' ){
+    let host = 'https://api.zjjcjc888.com';
+    let appid = wx.getAccountInfoSync().miniProgram.appId;
+    if (appid === 'wx957022b626b709f3' ){
 			host = 'https://api.cloudsymbol.cn';
 		}else{
 			host = 'https://api.zjjcjc888.com';

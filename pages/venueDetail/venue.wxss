@@ -1,6 +1,8 @@
 /* pages/venueDetail/venue.wxss */
 .venueDetail {
-
+  min-height: 100vh;
+  position: relative;
+  z-index: 10
 }
 /* banner */
 .venueDetail .banner {
@@ -229,13 +231,9 @@
 }
 
 /* 暂未开放图片 */
-.venueDetail .singleTicket .noOpenUrl{
-  width: 100%;
-  height: 350rpx;
-}
-.venueDetail .singleTicket .noOpenUrl image{
-  width: 100%;
-  height: 100%;
+.venueDetail .noOpenUrl{
+  position: absolute;
+  z-index: 1;
 }
 /* 查看更多 */
 .venueDetail .more {

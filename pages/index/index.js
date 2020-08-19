@@ -247,8 +247,9 @@ Page({
   toVenue(e) {
     let {item} = e.currentTarget.dataset;
     if (item.bannerType == 0) {
+      let id = 1;
       wx.navigateTo({
-        url: '/pages/venueDetail/venue?id=' + item.bannerId
+        url: '/pages/venueDetail/venue?id=' + id
       })
     } else {
       this.setData({

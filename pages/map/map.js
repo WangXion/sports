@@ -269,13 +269,21 @@ Page({
    */
   changeList() {
     let listCont = this.data.listCont;
-    if (!listCont){
+    // this.setData({
+    //   listCont: !listCont,
+    //   polyline: []
+    // })
+    // if (!listCont){
+      let searchData = this.data.searchData;
+      searchData.curPage = 1;
+      this.setData({
+        getType: 1,
+        searchData: searchData,
+        listCont: !listCont,
+        polyline: []
+      })
       this.getData();
-    }
-    this.setData({
-      listCont: !listCont,
-      polyline: []
-    })
+    // }
   },
   //点击标记显示
   markeTap(e){

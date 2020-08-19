@@ -12,6 +12,10 @@ Page({
         id: 0,
         title: '附近',
         childModel: [{
+            id: '0',
+            title: '全部'
+          },
+          {
             id: '1',
             title: '1km以内'
           },
@@ -186,13 +190,16 @@ Page({
     console.log(data);
     if(data.index == '1') {
       if (data.selectedId < 0) {
-        searchData.stadiumArea = data.selectedTitle
+        searchData.stadiumArea = data.selectedTitle;
+        searchData.distance = null;
       } else if (data.selectedId == '0') {
         searchData.stadiumArea = ''
+        searchData.distance = null;
       } else {
         // searchData.mapLongitude = this.data.longitude;
         // searchData.mapLatitude = this.data.latitude;
         searchData.distance = data.selectedId;
+        searchData.stadiumArea = ''
       }
     } else if(data.index == '2') {
       if (data.selectedId == '0'){

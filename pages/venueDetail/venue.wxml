@@ -119,7 +119,7 @@
     </view> -->
   </view>
   <!-- <view wx:if='{{details.openType == 0 && details.noOpenUrl}}' class='noOpenUrl'> -->
-      <cover-image wx:if='{{details.openType == 0 && details.noOpenUrl}}' src='{{details.noOpenUrl}}'></cover-image>
+      <image class='noOpenUrl' mode='widthFix' wx:if='{{details.openType == 0 && details.noOpenUrl}}' src='{{details.noOpenUrl}}'></image>
     <!-- </view> -->
   <!-- 联系场馆 -->
   <view class="contactVenues">
