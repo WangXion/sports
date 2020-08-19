@@ -10,7 +10,7 @@
   padding: 30rpx 15rpx;
 }
 .registrateDetails .title .info {
-  font-size: 24rpx;
+  font-size: 26rpx;
   font-weight: 400;
   color:rgba(247,141,27,1);
   margin-top: 15rpx;
@@ -26,10 +26,10 @@
   justify-content: space-between;
   align-items: center;
   flex: 2;
-  font-size: 24rpx;
+  font-size: 30rpx;
   font-weight: 400;
-  height: 80rpx;
-  line-height: 80rpx;
+  height: 114rpx;
+  line-height: 114rpx;
   border-bottom: 2rpx solid #e5e5e5;
 }
 .registrateDetails .section .item .lable {
@@ -40,16 +40,17 @@
   color: #333;
 }
 .registrateDetails .section .item .input {
-  line-height: 80rpx;
+  line-height: 114rpx;
   text-align: right;
 }
 .registrateDetails .section .textarea {
   padding-top: 20rpx;
   color: #999;
-  font-size: 24rpx;
+  font-size: 30rpx;
 }
 .registrateDetails .section .textarea .lable {
   margin-bottom: 15rpx;
+  color: #999;
 }
 /* 我要报名 */
 .registrateDetails .footer {

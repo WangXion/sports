@@ -35,7 +35,7 @@
 /* 场馆信息 */
 .venue .item {
   display: flex;
-  font-size: 20rpx;
+  font-size: 24rpx;
   font-weight: 400;
   color:rgba(27,27,27,1);
   margin-top: 11rpx;
@@ -54,11 +54,11 @@
   min-width: 490rpx;
 }
 .venue .item .name {
-  font-size: 28rpx;
+  font-size: 30rpx;
   font-weight: bold;
   color:rgba(27,27,27,1);
   display: flex;
-  margin-bottom: 10rpx;
+  margin-bottom: 5rpx;
 }
 .venue .item .time{
   font-size: 28rpx;

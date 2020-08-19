@@ -25,7 +25,7 @@
   <!-- 场馆信息 -->
   <view class="info" catchtap="herfInfo" wx:if='{{configList && configList.length>0}}'>
     <view class="title">
-      <image class="icon" src="../../images/icon-informate.png" mode="cover"></image>
+      <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-informate.png" mode="cover"></image>
       <view>场馆信息</view>
     </view>
     <view class="cont">
@@ -46,14 +46,14 @@
     <view class="title">
       <view class="left">
         <view class="icon">
-          <image class="icon" src="../../images/ticket.png" mode="cover"></image>
+          <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/ticket.png" mode="cover"></image>
         </view>
         <view>单票</view>
         <view class="price" wx:if='{{false}}'>9折</view>
       </view>
       <view class="right" wx:if='{{false}}'>
         <view class="icon">
-          <image class="icon" src="../../images/icon-yes.png" mode="cover"></image>
+          <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-yes.png" mode="cover"></image>
         </view>
         <view>可发票</view>
       </view>
