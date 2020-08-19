@@ -55,7 +55,7 @@ Page({
             iv: that.data.iv,
             code: res.code,
           }
-
+          // return false
           app.request('/sportuserserver/user/login',params).then(data=>{
             if(data.code == 200) {
               wx.setStorageSync('userInfo', data.data);
