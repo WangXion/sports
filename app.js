@@ -19,6 +19,11 @@ App({
 			host = 'https://api.zjjcjc888.com';
 		}
 		this.globalData.hostUrl = host
+    if (!this.globalData.userInfo) {
+      wx.navigateTo({
+        url: '/pages/authorization/authorization',
+      })
+    }
 	},
   	/**
 	 * 封封微信的的request
