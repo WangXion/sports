@@ -39,7 +39,8 @@
     <view class='tip'>
         <view class="title">温馨提示</view>
         <!-- <view class='content'> -->
-          <view class='details'>1、本订单核销券，仅限本人使用。本券有效期7天。</view>
+          <view class='details'>1、本票有效期7天，请在有效期内使用，过期作废，一经售出概不退票。
+</view>
           <view class='details'>2、使用时，请打开本小程序进入订单详情，把二维码放置扫码器进行核销，核销成功即可入馆</view>
           <view class='details'>3、进入泳池请佩戴泳池帽，公共场所请注意个人卫生。</view>
           <view class='details'>4、入馆人员运动前需确保自己的身体状态处于健康，严谨患有各类传染病入场，有心脏病，高血压，痉挛性疾病患者以及饮酒者，孕妇以及其他身体不适禁止入场。</view>

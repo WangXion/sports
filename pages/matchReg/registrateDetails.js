@@ -9,7 +9,9 @@ Page({
     details: {},
     userInfo: app.globalData.userInfo,
     materials: null,
-    workUnit: ''
+    workUnit: '',
+    fwText: null,
+    id: null
   },
 
   /**
@@ -17,35 +19,21 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      details: JSON.parse(options.details),
+      id: options.id,
     })
-    // this.getData();
+    this.getData();
   },
   getData() {
     let that = this;
-    let params = {
-      pblId: this.data.id,
-      userId: this.data.userInfo.id,
-      remarks: this.data.remarks
-    }
-    app.request('/sportactivityserver/publiclecture/insertwantjoinBefore', params).then(res => {
+    app.request('/sportmedicalserver/UserCompetition/competitionDetail/' + this.data.id).then(res => {
       if (res.code == 200) {
-        if(res.data.message== "您已报名") {
-          wx.showToast({
-            title: '你已经报名成功',
-            icon: 'none',
-            complete(res){
-              setTimeout(function(){
-                wx.switchTab({
-                  url: '/pages/index/index'
-                })
-              },1000)
-            }
-          })
+        let fwText = '';
+        if (res.data.competitionRequire) {
+          fwText = res.data.competitionRequire.replace(/<img/g, '<img style="width:100%;height:auto;display:block;"')
         }
         that.setData({
-          details: res.data.pblecture,
-          userInfo: res.data.user
+          details: res.data,
+          fwText: fwText
         })
       }
     })
@@ -65,6 +53,18 @@ Page({
       idCard: this.data.userInfo.idCard,
       workUnit: this.data.workUnit,
       materials: this.data.materials,
+    }
+    if (!params.workUnit){
+      return wx.showToast({
+        title: '工作单位不能为空',
+        icon: 'none',
+      })
+    }
+    if (!params.materials) {
+      return wx.showToast({
+        title: '请上传参赛资料',
+        icon: 'none',
+      })
     }
     app.request('/sportmedicalserver/UserCompetition/saveUserCompetition', params).then(res => {
       if (res.code == 200) {

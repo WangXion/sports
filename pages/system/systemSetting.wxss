@@ -45,3 +45,8 @@
     justify-content: flex-start;
     align-items: center;
 }
+.technology{
+  height: 70rpx;
+  color: rgba(51,51,51,0.3);
+  font-size: 24rpx;
+}

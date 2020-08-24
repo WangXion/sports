@@ -118,26 +118,35 @@ Page({
   onShow(options) {
     let that = this;
     let searchData  = this.data.searchData;
-    searchData.mapLongitude = app.globalData.mapLocation.mapLongitude;
-    searchData.mapLatitude = app.globalData.mapLocation.mapLatitude;
-    that.setData({
-      refresh: true,
-      searchData: searchData,
-    })
-    that.getData();
-    // wx.getLocation({
-    //   type: 'gcj02',
-    //   success(res) {
-    //     searchData.mapLongitude = res.longitude;
-    //     searchData.mapLatitude = res.latitude;
-    //     // searchData.stadiumArea = app.globalData.location.district;
-    //     that.setData({
-    //       refresh: true,
-    //       searchData: searchData,
-    //     })
-    //     that.getData();
-    //   }
-    // })
+    if(!app.globalData.mapLocation) {
+      wx.getLocation({
+        type: 'gcj02',
+        success(res) {
+          let mapLocation = {
+            mapLongitude: res.longitude,
+            mapLatitude: res.latitude
+          }
+          app.globalData.mapLocation = mapLocation;
+          searchData.mapLongitude = res.longitude;
+          searchData.mapLatitude = res.latitude;
+          // searchData.stadiumArea = app.globalData.location.district;
+          that.setData({
+            refresh: true,
+            searchData: searchData,
+          })
+          that.getData();
+        }
+      })
+    } else {
+      searchData.mapLongitude = app.globalData.mapLocation.mapLongitude;
+      searchData.mapLatitude = app.globalData.mapLocation.mapLatitude;
+      that.setData({
+        refresh: true,
+        searchData: searchData,
+      })
+      that.getData();
+    }
+    
   },
   getSport() {
     let that = this;

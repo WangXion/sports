@@ -60,7 +60,7 @@ Page({
         linkUrl = '../system/systemSetting';
         break
       case 'ticket':
-        linkUrl = '../mine/index';
+        linkUrl = '../matchReg/order';
         break
       case 'appointOrder':
         linkUrl = '../appoint/appointOrder';

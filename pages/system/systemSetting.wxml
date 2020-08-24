@@ -18,4 +18,5 @@
             <text class='val'>v1.0</text>
         </view>
     </view>
+    <view class='technology flexCenter'>技术支持©云符号</view>
 </view>

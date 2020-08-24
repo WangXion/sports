@@ -9,7 +9,8 @@ Page({
     id: null,
     details: null,
     userInfo: app.globalData.userInfo,
-    fwText: null
+    fwText: null,
+    type: true
   },
 
   /**
@@ -19,6 +20,7 @@ Page({
     console.log(options)
     this.setData({
       id: options.id,
+      type: options.type == 'order' ? false : true
     })
     this.getData();
   },
@@ -39,17 +41,21 @@ Page({
   },
   // 我要报名
   signUp () {
-    console.log(1111)
     if(!this.data.userInfo.idCard) {
       return wx.navigateTo({
         url: '/pages/mine/nameAuthentication'
       })
     }
-    // if (this.data.details.competitionState != 1 && this.data.details.userState != 0) {
+    if (this.data.details.competitionState == 0 && this.data.details.userState == 1) {
       wx.navigateTo({
-        url: '/pages/matchReg/registrateDetails?details=' + JSON.stringify(this.data.details)
+        url: '/pages/matchReg/registrateDetails?id=' + this.data.details.id
       })
-    // }
+    } else {
+      wx.showToast({
+        title: '您已报名或报名已结束',
+        icon: 'none'
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -3,16 +3,15 @@
 <view class="registrateDetails">
   <!-- title -->
   <!-- 详情信息 -->
+  <view class='mainTitle'>赛事信息</view>
   <view class="detail">
+      <view class='title'>{{details.competitionName}}</view>
       <view class="desc">报名截止时间：{{details.applyEndTime}}  </view>
       <view class="desc">地址：{{details.competitionPlace}}</view>
       <view class="desc">类型：{{details.competitionType}}</view>
       <view class="desc">比赛时间：{{details.competitionStartTime+'-'+details.competitionEndTime}}</view>
   </view>
-  <view class="title">
-    <view>{{details.pcMaintitle}}</view>
-    <view class="info">{{details.pcAssistanttitle}}</view>
-  </view>
+  <view class='mainTitle'>参赛人信息</view>
   <!-- 信息区域 -->
   <view class="section">
     <view class="item">
@@ -48,11 +47,16 @@
     </view>
     <view class="itemLeft item">
       <view class="lableText">参赛材料</view>
-      <view class="cont flexCenter" bindtap='upLoadImg' wx:if='{{!materials}}'>
-          <view class="img">点击上传</view>
+      <view class="cont uploadCont flexCenter" bindtap='upLoadImg' wx:if='{{!materials}}'>
+          <image src='https://cunjifen.oss-cn-beijing.aliyuncs.com/userImg/1597978006129.png'></image>
+          <view class="img">材料上传</view>
       </view>
       <image class='cont' style='padding: 0' bindtap='upLoadImg' wx:else src='{{materials}}'></image>
     </view>
+  </view>
+  <view class='mainTitle'>报名要求</view>
+  <view class="fwText">
+      <rich-text nodes='{{fwText}}'></rich-text>
   </view>
   <!-- 底部按钮 -->
   <view class="footer">

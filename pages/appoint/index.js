@@ -38,7 +38,7 @@ Page({
     } else {
       if(item.reportFlag != 0) {
         wx.navigateTo({
-          url: '../appoint/details'
+          url: '../appoint/details?item=' + JSON.stringify(item)
         })
       }
     }

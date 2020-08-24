@@ -13,12 +13,12 @@
         {{ details.stadiumOpentime}}
       </view>
       <view class="icon" data-tel='{{details.stadiumPhone}}' bindtap='callPhone'>
-        <image src="../../images/icon-phone.png" mode="cover"></image>
+        <image src="../../images/icon-phone.jpg" mode="cover"></image>
       </view>
       <view class="phone" data-tel='{{details.stadiumPhone}}' bindtap='callPhone'>{{details.stadiumPhone}}</view>
     </view>
     <view class="address flexStart" bindtap='openMap'>
-      <image src="../../images/icon-navigete.png" class='icon' mode="cover"></image>
+      <image src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/nav-icon.png" class='icon' mode="cover"></image>
       <view>地址：{{details.stadiumArea+'  '+details.stadiumAddress}}</view>
     </view>
   </view>

@@ -43,7 +43,8 @@
     "pages/agreement/rechange",
     "pages/matchReg/index",
     "pages/matchReg/details",
-    "pages/matchReg/registrateDetails"
+    "pages/matchReg/registrateDetails",
+    "pages/matchReg/order"
   ],
   "window": {
     "backgroundTextStyle": "light",

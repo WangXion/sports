@@ -44,7 +44,8 @@ Page({
     scientificData: [],
     mapLongitude: null,
     mapLatitude: null,
-    linkUrl: ''
+    linkUrl: '',
+    isOpen: true
   },
 
   /**
@@ -52,50 +53,13 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
-    // 新建百度地图对象 
-    var qqmapsdk = new QQMapWX({
-      key: 'M27BZ-LOXRP-M3LDZ-VWKRG-A6CA3-6YBZL'
-    });
-    //根据经纬度获取地址
-    wx.getLocation({
-      type: 'gcj02',
-      success(res) {
-        let mapLocation = {
-          mapLongitude: res.longitude,
-          mapLatitude: res.latitude
-        }
-        let location = {};
-        app.globalData.mapLocation = mapLocation;
-        wx.setStorageSync('mapLocation', mapLocation);
-        qqmapsdk.reverseGeocoder({
-          location: {
-            latitude: res.latitude,
-            longitude: res.longitude
-          },
-          success: function (data) {
-            location = {
-              province: data.result.address_component.province,
-              city: data.result.address_component.city,
-              district: data.result.address_component.district,
-            }
-            app.globalData.location = location
-            that.setData({
-              location: location,
-              mapLongitude: res.longitude,
-              mapLatitude: res.latitude,
-            })  
-            that.getStadium();
-          },
-          fail: function (res) {
-            console.log(res);
-          }
-        });
-      }
-    })
     this.getBanner();
     this.getHotData();
     this.getRecommendData();
     this.getScientificData();
+    this.setData({
+      isOpen: app.globalData.isOpen
+    })
   },
   //推荐场馆
   getStadium() {
@@ -261,12 +225,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let that = this;
     let userInfo = app.globalData.userInfo ? app.globalData.userInfo : wx.getStorageSync('userInfo')
     console.log(wx.getStorageSync('userInfo'))
     if (userInfo) {
@@ -274,7 +239,49 @@ Page({
         userInfo
       })
     }
-       
+    console.log(app.globalData)
+    if (!app.globalData.mapLocation || !app.globalData.location) {
+      // 新建百度地图对象 
+      var qqmapsdk = new QQMapWX({
+        key: app.globalData.mapKey
+      });
+      //根据经纬度获取地址
+      wx.getLocation({
+        type: 'gcj02',
+        success(res) {
+          let mapLocation = {
+            mapLongitude: res.longitude,
+            mapLatitude: res.latitude
+          }
+          let location = {};
+          app.globalData.mapLocation = mapLocation;
+          wx.setStorageSync('mapLocation', mapLocation);
+          qqmapsdk.reverseGeocoder({
+            location: {
+              latitude: res.latitude,
+              longitude: res.longitude
+            },
+            success: function (data) {
+              location = {
+                province: data.result.address_component.province,
+                city: data.result.address_component.city,
+                district: data.result.address_component.district,
+              }
+              app.globalData.location = location
+              that.setData({
+                location: location,
+                mapLongitude: res.longitude,
+                mapLatitude: res.latitude,
+              })
+              that.getStadium();
+            },
+            fail: function (res) {
+              console.log(res);
+            }
+          });
+        }
+      })
+    }
   },
 
   /**

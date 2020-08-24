@@ -99,7 +99,7 @@ Page({
       searchData: searchData,
       getType: 0
     });
-    this.getPageList();
+    this.getData();
   },
 
   /**

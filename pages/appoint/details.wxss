@@ -31,3 +31,14 @@
     padding-top: 29rpx;
     padding-left: 14rpx;
 }
+.reportDetails .cont{
+  flex-direction: column;
+  color: #e31416;
+  font-size: 30rpx;
+  margin-top: 150rpx;
+}
+.reportDetails .cont image{
+  width: 147rpx;
+  height: 192rpx;
+  margin-bottom: 20rpx;
+}

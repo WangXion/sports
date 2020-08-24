@@ -7,18 +7,25 @@ App({
     header: {
       "Content-Type": 'application/json',
     },
-    location: {},
-    mapLocation: wx.getStorageSync('mapLocation')
+    location: null,
+    mapLocation: wx.getStorageSync('mapLocation'),
+    mapKey: '',
+    isOpen: true // 当前是否开放功能
   },
 	onLaunch: function () {
     let host = 'https://api.zjjcjc888.com';
+    let mapKey = '';
     let appid = wx.getAccountInfoSync().miniProgram.appId;
     if (appid === 'wx957022b626b709f3' ){
 			host = 'https://api.cloudsymbol.cn';
-		}else{
+      mapKey = '7VYBZ-BPWKX-DF24R-72Y7F-YDONQ-6QBPU'
+      this.globalData.isOpen = false
+    } else if (appid === 'wx27917f3595394a0a'){
 			host = 'https://api.zjjcjc888.com';
+      mapKey = 'M27BZ-LOXRP-M3LDZ-VWKRG-A6CA3-6YBZL'
 		}
-		this.globalData.hostUrl = host
+    this.globalData.hostUrl = host;
+    this.globalData.mapKey = mapKey;
     if (!this.globalData.userInfo) {
       wx.navigateTo({
         url: '/pages/authorization/authorization',

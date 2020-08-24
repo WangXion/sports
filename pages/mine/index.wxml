@@ -24,9 +24,9 @@
         </view>
     </view>
     <view class='module flexBetween'>
-        <view class='flexCenter item' data-type='ticket' bindtap='showNone'>
+        <view class='flexCenter item' data-type='ticket' bindtap='linkTo'>
             <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/ticket-icon.png' mode='cover' class='ticketIcon'></image>
-            <text>我的门票</text>
+            <text>赛事报名</text>
         </view>
         <view class='flexCenter item' data-type='appointOrder' bindtap='linkTo'>
             <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/order-icon.png' mode='cover' class='orderIcon'></image>
@@ -34,7 +34,7 @@
         </view>
         <view class='flexCenter item' data-type='constitution' bindtap='linkTo'>
             <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/constitution-icon.png' mode='cover' class='constitutionIcon'></image>
-            <text>体质监测</text>
+            <text>体质测试</text>
         </view>
         <view class='flexCenter item' data-type='classRoom' bindtap='linkTo'>
             <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/classRoom-icon.png' mode='cover' class='classRoomIcon'></image>

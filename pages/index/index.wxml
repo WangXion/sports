@@ -35,13 +35,13 @@
   </view>
   <!-- 体质检测、体育大讲堂、门票卡劵 -->
   <view class="index-icon">
-    <view class="item" ><!--  catchtap="hrefTap" data-key="examinate" -->
+    <view class="item" catchtap="hrefTap" data-key="examinate"><!--  catchtap="hrefTap" data-key="examinate" -->
       <view class="icon">
       <!-- https://sports-bureau.oss-cn-hangzhou.aliyuncs.com -->
         <image src="https://cunjifen.oss-cn-beijing.aliyuncs.com/userImg/1597548470465.jpg" mode="cover"></image>
       </view>
-      <view class="name">体质监测</view>
-      <view class='noOpen'></view>
+      <view class="name">体质测试</view>
+      <view class='noOpen' wx:if='{{!isOpen}}'></view>
     </view>
     <view class="item" catchtap="hrefTap" data-key="lecture">
       <image class="icon" src="https://cunjifen.oss-cn-beijing.aliyuncs.com/userImg/1597548712248.jpg" mode="cover"></image>

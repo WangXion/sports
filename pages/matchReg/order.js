@@ -24,7 +24,7 @@ Page({
   hrefDetail (e) {
     let item = e.currentTarget.dataset.item;
     wx.navigateTo({
-      url: '/pages/matchReg/details?id=' + item.id
+      url: '/pages/matchReg/details?id=' + item.id + '&type=order'
     })
   },
   /**
@@ -35,7 +35,7 @@ Page({
   },
   getData(){
     let that = this;
-    app.request('/sportmedicalserver/UserCompetition/listCompetition', that.data.searchData).then(res => {
+    app.request('/sportmedicalserver/UserCompetition/listUserCompetition', that.data.searchData).then(res => {
       if (res.code == 200) {
         let data = [];
         if (that.data.getType == 0) {
@@ -59,17 +59,7 @@ Page({
     })
     this.getData();
   },
-  changeSearch(e) {
-    let val = e.detail.value;
-    let searchData = this.data.searchData;
-    searchData.competitionName = val;
-    searchData.curPage = 1;
-    this.setData({
-      searchData: searchData,
-      getType: 1
-    })
-    this.getData()
-  },
+
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -108,7 +98,7 @@ Page({
       searchData: searchData,
       getType: 0
     });
-    this.getData();
+    this.getPageList();
   },
 
   /**

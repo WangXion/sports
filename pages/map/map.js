@@ -31,7 +31,7 @@ Page({
    */
   onLoad: function (options) {
     qqmapsdk = new QQMapWX({
-      key: 'M27BZ-LOXRP-M3LDZ-VWKRG-A6CA3-6YBZL'
+      key: app.globalData.mapKey
     });
   },
 
@@ -97,14 +97,14 @@ Page({
           total: res.data.total
         })
       } else {
-        console.log(app.globalData.mapLocation)
-        let details = {
-          venueLatitude: app.globalData.mapLocation.mapLongitude,
-          venueLongitude: app.globalData.mapLocation.mapLatitude
-        }
-        that.setData({
-          details: details
-        })
+        // console.log(app.globalData.mapLocation)
+        // let details = {
+        //   venueLatitude: app.globalData.mapLocation.mapLongitude,
+        //   venueLongitude: app.globalData.mapLocation.mapLatitude
+        // }
+        // that.setData({
+        //   details: details
+        // })
       }
     })
   },

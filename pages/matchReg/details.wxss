@@ -5,42 +5,57 @@
 .publicLectureDetail .banner{
   width: 100%;
   background: #fff;
-  height: 430rpx;
+  height: 460rpx;
 }
 .publicLectureDetail .title {
-  font-size: 34rpx;
+  font-size: 32rpx;
   font-weight: 400;
-  color: rgba(51,51,51,1);
+  color: #1C1C1C;
   background: #fff;
   padding: 0 16rpx;
   padding-top: 20rpx;
   padding-bottom: 30rpx;
 }
 .publicLectureDetail .detail {
-  font-size: 28rpx;
-  color:rgba(153,153,153,1);
+  font-size: 26rpx;
+  color:#9A9A9A;
   box-sizing: border-box;
   padding: 0 16rpx;
   padding-bottom: 36rpx;
   background: #fff;
 }
 .publicLectureDetail .detail .desc {
-  line-height: 45rpx;
+  line-height: 50rpx;
+}
+.publicLectureDetail .detail  .desc .btn {
+  width: 101rpx;
+  height: 39rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border: 1rpx solid #FB8036;
+  font-size: 20rpx;
+  font-weight: 400;
+  color: #FB8036;
+  border-radius: 20rpx;
+}
+.publicLectureDetail .detail .desc .btn.active {
+  border: 1rpx solid #A4A4A4;
+  color: #9B9B9A;
 }
 /* 分割线 */
 .publicLectureDetail .border {
   width:750rpx;
   height:11rpx;
-  background:rgba(233,233,233,1);
+  background:#F4F4F4;
 }
 /* 培训介绍 */
 .publicLectureDetail .cont {
   padding: 30rpx 16rpx 0 16rpx;
 }
 .publicLectureDetail .cont .title {
-  font-size: 30rpx;
+  font-size:26;
   font-weight: 400;
-  color:#F98B1C;
+  color:#FE7416;
   display: flex;
   align-items: center;
   margin-bottom: 34rpx;
@@ -49,18 +64,23 @@
 .publicLectureDetail .cont .title:after{
   content: '';
   width: 120rpx;
-  height: 10rpx;
-  background: #F98B1C;
+  height: 7rpx;
+  background: #FE7416;
   border-radius: 6rpx;
   position: absolute;
   bottom: 15rpx;
+  left: 16rpx;
 }
 .publicLectureDetail .cont .section {
-  font-size: 24rpx;
+  font-size: 30rpx;
   font-weight: 400;
   color:rgba(51,51,51,1);
-  line-height: 36rpx;
+  line-height: 50rpx;
   padding-bottom: 140rpx;
+}
+.publicLectureDetail .cont .section .fwText{
+  text-indent: 2em;
+
 }
 /* 底部费用和报名按钮 */
 .publicLectureDetail .footer {
@@ -72,18 +92,20 @@
   font-weight: 400;
   color:rgba(111,111,111,1);
   position: fixed;
-  bottom: 30rpx;
+  bottom: 0rpx;
   /* left: 15rpx; */
   padding: 0 40rpx;
   box-sizing: border-box;
+  background: #fff;
+  height: 115rpx;
 }
 .publicLectureDetail .footer .btn {
   width: 100%;
-  height: 83rpx;
-  line-height: 83rpx;
+  height: 85rpx;
+  line-height: 85rpx;
   text-align: center;
   /* margin-left: 280rpx; */
-  background:rgba(247,141,27,1);
+  background:#FE7416;
   font-size: 30rpx;
   font-weight: 400;
   color:rgba(255,255,255,1);

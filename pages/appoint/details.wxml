@@ -2,12 +2,16 @@
 <view class="container">
     <view class='header'>
        <view class='top'>
-           <text class='name'>张珊</text>
-           <text class='num'>15858623333</text>
+           <text class='name'>{{details.appointmentPerson}}</text>
+           <text class='num'>{{details.appointmentPhone}}</text>
        </view>
-       <view class='num'>331082198801281010</view>
+       <view class='num'>{{details.appointmentCard}}</view>
     </view>
-    <view class='reportDetails'>
+    <view class='reportDetails' >
         <view class='title'>体检结果：</view>
+        <view class='cont flexCenter' bindtap='report'>
+          <image class='' src='https://cunjifen.oss-cn-beijing.aliyuncs.com/userImg/1598000737187.jpg'></image>
+          <text>点击查看体测结果</text>
+        </view>
     </view>
 </view>

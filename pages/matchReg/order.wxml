@@ -1,10 +1,5 @@
 <!--pages/publicLecture/publicLecture.wxml-->
 <view class="publicLecture">
-  <view class="search flexCenter" bindtap="search">
-      <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-search.png" mode="cover"></image>
-      <input placeholder="请输入关键词搜索" confirm-type='search' bindconfirm="changeSearch" class='searchIn'></input>
-      
-  </view>
   <view wx:if='{{lectureArr.length>0}}'>
     <block wx:for="{{ lectureArr }}"
       wx:key="index">
@@ -17,13 +12,13 @@
           <view class="date">比赛时间：{{item.competitionStartTime}}</view>
           <view class="desc">
             <view class="address">地址：{{item.competitionPlace}}</view>
-            <view class="btn {{ item.competitionState != 0  ? 'active':'' }}">
-              {{ item.competitionState == 1? '已截止': '报名中' }}
+            <view class="btn {{ item.competitionState == 1 ? 'active':'' }}">
+              {{ item.competitionState == 1 ? '已结束': '已报名' }}
             </view>
           </view>
         </view>
       </view>
     </block>
   </view>
-  <view wx:else class='noData flexCenter'>尽请期待</view>
+  <view wx:else class='noData flexCenter'>暂无数据</view>
 </view>

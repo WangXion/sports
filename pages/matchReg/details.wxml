@@ -1,14 +1,19 @@
 <!--pages/publicLectureDetail/publicLectureDetail.wxml-->
 <view class="publicLectureDetail">
   <view class='banner'>
-    <image src="{{details.pcImage}}" mode="cover"></image>
+    <image src="{{details.competitionPic}}" mode="cover"></image>
   </view>
   <view class="title">
     {{details.competitionName}}
   </view>
   <!-- 详情信息 -->
   <view class="detail">
-      <view class="desc">报名截止时间：{{details.applyEndTime}}  </view>
+      <view class="desc flexBetween">
+        <text>报名截止时间：{{details.applyEndTime}} </text>
+        <view class="btn {{ details.competitionState != 0  ? 'active':'' }}">
+              {{ details.competitionState == 1? '已截止': '报名中' }}
+        </view>
+      </view>
       <view class="desc">地址：{{details.competitionPlace}}</view>
       <view class="desc">类型：{{details.competitionType}}</view>
       <view class="desc">比赛时间：{{details.competitionStartTime+'-'+details.competitionEndTime}}</view>
@@ -19,12 +24,12 @@
   <view class="cont">
       <view class='title'>赛事详情</view>
     <view class="section">
-        <rich-text nodes='{{fwText}}'></rich-text>
+        <rich-text nodes='{{fwText}}' class='fwText'></rich-text>
     </view>
   </view>
   <!-- 底部费用 -->
-  <view class="footer" catchtap="signUp">
+  <view class="footer" catchtap="signUp" wx:if='{{type}}'>
     <!-- <view class="fee">费用：{{details.pcMoney?details.pcMoney: '0'}}</view> -->
-    <view class="btn {{details.competitionState == 1 && details.userState == 1? 'end':''}}">我要报名</view>
+    <view class="btn {{details.competitionState == 1 || details.userState == 0? 'end':''}}">{{details.userState == 0?"已报名": "我要报名"}}</view>
   </view>
 </view>

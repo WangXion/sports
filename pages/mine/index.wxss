@@ -123,7 +123,7 @@
 }
 .moduleFu{
     width: 100%;
-    height: 619rpx;
+    /* height: 619rpx; */
     background: #fff;
     margin-bottom: 18rpx;
 }

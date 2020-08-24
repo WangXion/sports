@@ -91,3 +91,9 @@
   font-size: 33rpx;
   line-height: 90rpx;
 }
+.noDataImg{
+  width: 100vw;
+  height: 100vh;
+  background: url('https://api.cloudsymbol.cn/url/image/20200823160912.jpg') no-repeat;
+  background-size: 100% 100%;
+}

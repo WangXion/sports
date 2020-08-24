@@ -17,14 +17,17 @@ Page({
     currentKey: 1,
     disabled: false,
     if_checked: false,
-    userInfo: null
+    userInfo: null,
+    isOpen: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      isOpen: app.globalData.isOpen
+    })
   },
   // tab  change事件
   handleChange (event) {
