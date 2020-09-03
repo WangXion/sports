@@ -6,7 +6,7 @@
             <image class="avatar" src="{{userInfo.headImg?userInfo.headImg: 'https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/20200728173316.png'}}" mode="cover"></image>
             <view class='topRight'>
                 <view class='flexBetween' data-type='userInfo' bindtap='linkTo'>
-                    <text class='nickName'>{{userInfo.nickName}}</text>
+                    <text class='nickName'>{{userInfo.nickName?userInfo.nickName:"未登录"}}</text>
                     <image src='https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow-white.png' mode='cover' class='arrow'></image>
                 </view>
                 <view class='flexStart' data-type='realName' bindtap='linkTo'>

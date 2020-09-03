@@ -25,15 +25,13 @@
     <view class="content">
       <rich-text class='details' nodes='{{fwText}}'></rich-text>            
     </view>
-    <view class="button">
+    <view class="button flexBetween">
+      <view class='flexStart'>
          <button class="friends" open-type='share'>
-            <!-- 分享好友
-            <image class="front" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/star-icon.jpg" mode="cover"></image> -->
         </button>
-        <!-- <button class="poster" open-type='share'></button> -->
         <view class="poster" catchtap="poster" catchtap="banner" wx:if='{{showShare}}'>
-            <!-- 分享海报
-            <image class="after" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/star-icon.jpg" mode="cover"></image> -->
         </view>
+      </view>
+      <view class='newsVisitNum'>阅读 {{details.newsVisitNum}}</view>
     </view>
 </view>

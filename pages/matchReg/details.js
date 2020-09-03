@@ -8,9 +8,10 @@ Page({
   data: {
     id: null,
     details: null,
-    userInfo: app.globalData.userInfo,
+    userInfo: app.globalData.userInfo ? app.globalData.userInfo : wx.getStorageSync('userInfo'),
     fwText: null,
-    type: true
+    type: true,
+    buttonText: '',
   },
 
   /**
@@ -32,15 +33,37 @@ Page({
         if(res.data.competitionDetail) {
           fwText = res.data.competitionDetail.replace(/<img/g , '<img style="width:100%;height:auto;display:block;"')
         }
+        let buttonText = '我要报名'
+        if(res.data.competitionState == 0) {
+          if(res.data.userState == 0){
+            buttonText = '已报名'
+          } else {
+            buttonText = '我要报名'
+          }
+        } else {
+          buttonText = '我要报名'
+        }
         that.setData({
           details: res.data,
-          fwText: fwText
+          fwText: fwText,
+          buttonText: buttonText
         })
       }
     })
   },
   // 我要报名
   signUp () {
+    if(!this.data.userInfo) {
+      return wx.navigateTo({
+        url: '/pages/authorization/authorization',
+        success(res) {
+          wx.showToast({
+            title: '请先授权登录',
+            icon: 'none'
+          })
+        }
+      })
+    }
     if(!this.data.userInfo.idCard) {
       return wx.navigateTo({
         url: '/pages/mine/nameAuthentication'
@@ -51,10 +74,23 @@ Page({
         url: '/pages/matchReg/registrateDetails?id=' + this.data.details.id
       })
     } else {
-      wx.showToast({
-        title: '您已报名或报名已结束',
-        icon: 'none'
-      })
+      if(this.data.details.competitionState == 1) {
+        wx.showToast({
+          title: '报名已结束',
+          icon: 'none'
+        })
+      } else if(this.data.details.competitionState == 2) {
+        wx.showToast({
+          title: '活动暂未开始',
+          icon: 'none'
+        })
+      } else if(this.data.details.userState == 0){
+        wx.showToast({
+          title: '您已报名',
+          icon: 'none'
+        })
+      }
+      
     }
   },
   /**

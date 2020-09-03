@@ -53,6 +53,17 @@ Page({
   // 确认预约
   sureAppointment (event) {
     let { index } = event.currentTarget.dataset;
+    if(!this.data.userInfo) {
+      return wx.navigateTo({
+        url: '/pages/authorization/authorization',
+        success(res) {
+          wx.showToast({
+            title: '请先授权登录',
+            icon: 'none'
+          })
+        }
+      })
+    }
     if (!this.data.userInfo.idCard) {
       return wx.navigateTo({
         url: '/pages/mine/nameAuthentication'

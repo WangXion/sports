@@ -2,6 +2,10 @@
 .container {
   background:rgba(245,245,245,1);
 }
+.scrollLay{
+  overflow: hidden;
+  height: 100vh;
+}
 .venue .venue-search {
   font-size: 24rpx;
   font-weight: 400;

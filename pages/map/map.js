@@ -55,7 +55,7 @@ Page({
     searchData = { listOrMap, ...searchData};
     app.request('/sportvenuesserver/SportVenue/listSportVenue',searchData).then(res => {
       if (res.code == 200 && res.data.data.length>0) {
-        let searchData = that.data.searchData;
+        // let searchData = that.data.searchData;
         let userInfo = that.data.userInfo;
         let item = res.data.data[0];
         let data = [];
@@ -94,17 +94,26 @@ Page({
           // details: item,
           scale: that.countDistance(item.lineDistance),
           searchData: searchData,
-          total: res.data.total
+          total: res.data.total,
+          polyline: []
         })
       } else {
-        // console.log(app.globalData.mapLocation)
-        // let details = {
-        //   venueLatitude: app.globalData.mapLocation.mapLongitude,
-        //   venueLongitude: app.globalData.mapLocation.mapLatitude
-        // }
-        // that.setData({
-        //   details: details
-        // })
+        // let searchData = that.data.searchData;
+        let userInfo = that.data.userInfo;
+        let markers = this.data.markers;
+        let obj = {
+            id: '-1',
+            latitude: searchData.originLat,
+            longitude: searchData.originLon,
+            name: userInfo.nickName,
+            iconPath: userInfo.headImg,
+            width: 20,
+            height: 20
+         };
+        markers[0] = obj
+        that.setData({
+          markers: markers
+        })
       }
     })
   },
@@ -141,6 +150,7 @@ Page({
     let searchData = this.data.searchData;
     let userInfo = this.data.userInfo;
     let details = e.currentTarget.dataset.item;
+    console.log(details)
     let markers = [
       {
         id: '-1',
@@ -194,8 +204,8 @@ Page({
               color: '#FF0000DD',
               width: 2,
               dottedLine: true,
-              details: details
             }],
+            details: details,
             markers: markers,
             listCont: false,
             scale: that.countDistance(details.lineDistance),           
@@ -296,22 +306,39 @@ Page({
   },
   //视野发生改变
   mapCange(e) {
+    console.log(e)
     let searchData = {
       originLon: e.detail.longitude,
       originLat: e.detail.latitude,
       curPage: 1,
-      maxPage: 10
+      maxPage: 10,
+      venueName: null
     }
-    this.getData(searchData)
+    this.setData({
+      searchData: searchData
+    })
+    this.getData()
+  },
+  //定位自己所在位置
+  mapSelf() {
+    let searchData = this.data.searchData;
+    searchData.originLon = app.globalData.mapLocation.mapLongitude;
+    searchData.originLat = app.globalData.mapLocation.mapLatitude;
+    this.setData({
+      searchData: searchData
+    })
+    this.getData();
   },
   onShow: function () {
     let that = this;
     let searchData  = this.data.searchData;
     searchData.originLon = app.globalData.mapLocation.mapLongitude;
     searchData.originLat = app.globalData.mapLocation.mapLatitude;
+    let userInfo = app.globalData.userInfo ? app.globalData.userInfo : wx.getStorageSync('userInfo')
     that.setData({
       searchData: searchData,
-      getType: 1
+      getType: 1,
+      userInfo: userInfo
     })
     that.getData();
   },

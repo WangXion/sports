@@ -39,11 +39,10 @@ Page({
     // 体育头条的数据
     sportArr: [],
     stadiutmData: [],
-    location: {},
+    location: wx.getStorageSync('location'),
     recommendData: [],
     scientificData: [],
-    mapLongitude: null,
-    mapLatitude: null,
+    mapLocation: wx.getStorageSync('mapLocation'),
     linkUrl: '',
     isOpen: true
   },
@@ -60,14 +59,21 @@ Page({
     this.setData({
       isOpen: app.globalData.isOpen
     })
+    this.test();
+  },
+  test() {
+    let params = {
+      tbToken: '9850530'
+    }
+    app.request('/sportactivityserver/publiclecture/signPublic',params).then(res => {
+      console.log(res)
+      console.log('............')
+    })
   },
   //推荐场馆
   getStadium() {
     let that = this;
-    let params = {
-      mapLongitude : this.data.mapLongitude,
-      mapLatitude : this.data.mapLatitude
-    }
+    let params = this.data.mapLocation
     console.log(params)
     app.request('/sportvenuesserver/stadium/stadiumRecommendList', params).then(res => {
       if (res.code == 200) {
@@ -156,7 +162,7 @@ Page({
     switch (key) {
       // 授权
       case 'avatar':
-        if(this.data.userInfo.idCard) {
+        if(this.data.userInfo) {
             url= '/pages/mine/index'
             type = 1
         } else {
@@ -210,14 +216,35 @@ Page({
   },
   toVenue(e) {
     let {item} = e.currentTarget.dataset;
-    if (item.bannerType == 0) {
-      let id = 1;
-      wx.navigateTo({
-        url: '/pages/venueDetail/venue?id=' + id
-      })
+    if (item.jumpType == 0) {
+      if(item.jumpState == 1){
+        wx.navigateTo({
+          url: '/pages/venueDetail/venue?id=' + item.jumpId
+        })
+      } else if(item.jumpState == 2){
+        wx.navigateTo({
+          url: '/pages/slimming/slimming?id=' + item.jumpId
+        })
+      }  else if(item.jumpState == 3){
+        wx.navigateTo({
+          url: '/pages/matchReg/details?id=' + item.jumpId
+        })
+      }  else if(item.jumpState == 4){
+        wx.navigateTo({
+          url: '/pages/publicLectureDetail/publicLectureDetail?publiclectureid=' + item.jumpId
+        })
+      } else if(item.jumpState == 5){
+        // wx.navigateTo({
+        //   url: '/pages/venueDetail/venue?id=' + item.jumpId
+        // })
+      }   else if(item.jumpState == 6){
+        // wx.navigateTo({
+        //   url: '/pages/venueDetail/venue?id=' + item.jumpId
+        // })
+      } 
     } else {
-      this.setData({
-        linkUrl: 'www.baidu.com'
+      wx.navigateTo({
+        url: '/pages/webPage/index?src=' + item.jumpId
       })
     }
   },
@@ -267,11 +294,44 @@ Page({
                 city: data.result.address_component.city,
                 district: data.result.address_component.district,
               }
-              app.globalData.location = location
+              app.globalData.location = location;
+              wx.setStorageSync('location', location);
               that.setData({
                 location: location,
-                mapLongitude: res.longitude,
-                mapLatitude: res.latitude,
+                mapLocation: mapLocation
+              })
+              that.getStadium();
+            },
+            fail: function (res) {
+              console.log(res);
+            }
+          });
+        },
+        fail(err){
+          console.log(err)
+          let mapLocation = {
+            mapLongitude: 120.15,
+            mapLatitude: 30.28
+          }
+          let location = {};
+          app.globalData.mapLocation = mapLocation;
+          wx.setStorageSync('mapLocation', mapLocation);
+          qqmapsdk.reverseGeocoder({
+            location: {
+              latitude: mapLocation.mapLatitude,
+              longitude: mapLocation.mapLongitude
+            },
+            success: function (data) {
+              location = {
+                province: data.result.address_component.province,
+                city: data.result.address_component.city,
+                district: data.result.address_component.district,
+              }
+              app.globalData.location = location;
+              wx.setStorageSync('location', location);
+              that.setData({
+                location: location,
+                mapLocation: mapLocation
               })
               that.getStadium();
             },
@@ -281,7 +341,14 @@ Page({
           });
         }
       })
+    } else {
+      this.setData({
+        location: app.globalData.location,
+        mapLocation: app.globalData.mapLocation
+      })
+      that.getStadium();
     }
+
   },
 
   /**

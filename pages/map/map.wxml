@@ -37,4 +37,5 @@
         <view class="car" bindtap='roateLine' data-item="{{details}}">到这去</view>
       </view>
     </view>
+    <view class='mapIcon {{details?"bottom400":""}}' bindtap='mapSelf' wx:if='{{!listCont}}'></view>
 </view>

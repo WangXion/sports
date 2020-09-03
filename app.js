@@ -7,7 +7,7 @@ App({
     header: {
       "Content-Type": 'application/json',
     },
-    location: null,
+    location: wx.getStorageSync('location'),
     mapLocation: wx.getStorageSync('mapLocation'),
     mapKey: '',
     isOpen: true // 当前是否开放功能
@@ -26,11 +26,11 @@ App({
 		}
     this.globalData.hostUrl = host;
     this.globalData.mapKey = mapKey;
-    if (!this.globalData.userInfo) {
-      wx.navigateTo({
-        url: '/pages/authorization/authorization',
-      })
-    }
+    // if (!this.globalData.userInfo) {
+    //   wx.navigateTo({
+    //     url: '/pages/authorization/authorization',
+    //   })
+    // }
 	},
   	/**
 	 * 封封微信的的request
@@ -38,8 +38,10 @@ App({
 	request(url, data = {}, method = "POST", header = this.globalData.header) {
 		let hostUrl = this.globalData.hostUrl;
 		if (this.globalData.userInfo.token) {
-		header.token = this.globalData.userInfo.token
-		}
+		  header.token = this.globalData.userInfo.token
+		} else {
+      header.token = 9999
+    }
 		return new Promise(function (resolve, reject) {
 			wx.request({
 				url: hostUrl+url,
@@ -56,12 +58,14 @@ App({
 							})
 						if(res.data.code == '300') {
               wx.showToast({
-                title: res.data.message ? res.data.message : '数据错误',
+                title: '请先登录！',
                 icon: 'none'
               })
-							wx.navigateTo({
-							url: '/pages/authorization/authorization',
-							})
+              setTimeout(function(){
+                wx.navigateTo({
+                  url: '/pages/authorization/authorization',
+                })
+              },1000)
 						}
 						}
 						resolve(res.data);

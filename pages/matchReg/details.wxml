@@ -11,12 +11,12 @@
       <view class="desc flexBetween">
         <text>报名截止时间：{{details.applyEndTime}} </text>
         <view class="btn {{ details.competitionState != 0  ? 'active':'' }}">
-              {{ details.competitionState == 1? '已截止': '报名中' }}
+              {{ details.competitionState == 1? '已截止': details.competitionState == 2 ? '未开始': '报名中' }}
         </view>
       </view>
       <view class="desc">地址：{{details.competitionPlace}}</view>
       <view class="desc">类型：{{details.competitionType}}</view>
-      <view class="desc">比赛时间：{{details.competitionStartTime+'-'+details.competitionEndTime}}</view>
+      <view class="desc">比赛时间：{{details.competitionStartTime}}</view>
   </view>
   <!-- 分割线 -->
   <view class="border"></view>
@@ -30,6 +30,8 @@
   <!-- 底部费用 -->
   <view class="footer" catchtap="signUp" wx:if='{{type}}'>
     <!-- <view class="fee">费用：{{details.pcMoney?details.pcMoney: '0'}}</view> -->
-    <view class="btn {{details.competitionState == 1 || details.userState == 0? 'end':''}}">{{details.userState == 0?"已报名": "我要报名"}}</view>
+    <view class="btn {{details.competitionState != 0 || details.userState == 0? 'end':''}}">
+    {{buttonText}}
+    </view>
   </view>
 </view>

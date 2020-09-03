@@ -12,8 +12,11 @@
           <view class="date">比赛时间：{{item.competitionStartTime}}</view>
           <view class="desc">
             <view class="address">地址：{{item.competitionPlace}}</view>
-            <view class="btn {{ item.competitionState == 1 ? 'active':'' }}">
-              {{ item.competitionState == 1 ? '已结束': '已报名' }}
+            <!-- <view class="btn {{ item.competitionState == 1 ? 'active':'' }}">
+              {{ item.competitionState == 1 ? '已截止': '已报名' }}
+            </view> -->
+            <view class="btn {{ item.competitionState == 1 ? '':'' }}">
+              {{ item.competitionState == 1 ? '已报名': '已报名' }}
             </view>
           </view>
         </view>

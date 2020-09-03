@@ -44,7 +44,9 @@
     "pages/matchReg/index",
     "pages/matchReg/details",
     "pages/matchReg/registrateDetails",
-    "pages/matchReg/order"
+    "pages/matchReg/order",
+    "pages/webPage/index",
+    "pages/venveDetail/venveFiled"
   ],
   "window": {
     "backgroundTextStyle": "light",

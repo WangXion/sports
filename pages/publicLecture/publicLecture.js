@@ -6,12 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    lectureArr: [],
+    listData: [],
     searchData: {
       curPage: 1,
       maxPage: 10,
-      queryString: ''
     },
+    checkedId: 0,
     getType: 0, // 0 加载 1刷新
     total: 0, // 总数据条数
   },
@@ -22,10 +22,30 @@ Page({
   onLoad: function (options) {
     
   },
+  //切换tab
+  changeTab: function(e) {
+    let searchData = this.data.searchData;
+    let tabKey = e.currentTarget.dataset.key;
+    let checkedId = tabKey;
+    searchData.curPage = 1;
+    this.setData({
+      searchData: searchData,
+      checkedId: checkedId,
+      getType: 1
+    })
+    this.getData();
+  },
   hrefDetail (e) {
     let item = e.currentTarget.dataset.item;
     wx.navigateTo({
       url: '/pages/publicLectureDetail/publicLectureDetail?publiclectureid=' + item.pcId
+    })
+  },
+  // 跳转
+  listHref (e) {
+    let item = e.currentTarget.dataset.item
+    wx.navigateTo({
+      url: '/pages/slimming/slimming?id='+item.id
     })
   },
   /**
@@ -36,20 +56,43 @@ Page({
   },
   getData(){
     let that = this;
-    app.request('/sportactivityserver/publiclecture/getAll', that.data.searchData).then(res => {
-      if (res.code == 200) {
-        let data = [];
-        if (that.data.getType == 0) {
-          data = data.concat(that.data.listData, res.data.data);
-        } else {
-          data = res.data.data;
+    let searchData = this.data.searchData;
+    let params;
+    if(this.data.checkedId == 0) {
+      let bigClass = 1;
+      params = {bigClass,...searchData}
+      app.request('/sportmedicalserver/NewsRelease/listNewsRelease',params).then(res => {
+        if(res.code == 200) {
+          let data = [];
+          if(that.data.getType == 0) {
+            data = data.concat(that.data.listData,res.data.list);
+          } else {
+            data = res.data.list;
+          }
+          console.log(data);
+          that.setData({
+            listData: data,
+            total: res.data.total
+          })
         }
-        that.setData({
-          lectureArr: data,
-          total: res.data.total
-        })
-      }
-    })
+      })
+    } else if(this.data.checkedId == 1){
+      params = {...searchData}
+      app.request('/sportactivityserver/publiclecture/getAll', params).then(res => {
+        if (res.code == 200) {
+          let data = [];
+          if (that.data.getType == 0) {
+            data = data.concat(that.data.listData, res.data.data);
+          } else {
+            data = res.data.data;
+          }
+          that.setData({
+            listData: data,
+            total: res.data.total
+          })
+        }
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面显示

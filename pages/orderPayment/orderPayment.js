@@ -13,7 +13,8 @@ Page({
     details: null,
     currentTime: null,
     timeCount: null,
-    maxtime: 60*15 // 15分钟
+    maxtime: 60*15, // 15分钟
+    isPay: true
   },
 
   /**
@@ -87,6 +88,11 @@ Page({
     }
   },
   buy () {
+    let that = this;
+    if(!this.data.isPay) return false
+    that.setData({
+      isPay: false
+    })
     app.request('/sportticketserver/order/placeOrder',this.data.submitData).then(res=>{
       if(res.code == 200) {
         console.log(res)
@@ -107,6 +113,9 @@ Page({
             wx.showToast({
               title: '支付失败',
               icon: 'none'
+            })
+            that.setData({
+              isPay: true
             })
           }
         })

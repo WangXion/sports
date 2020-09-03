@@ -116,7 +116,7 @@
             </view>
             <view class="select">
               <view class="selectCont">
-                <view class="tag" wx:for="{{item.itemArr}}" wx:for-item="towItem" wx:for-key='index'>{{towItem}}</view>
+                <view class="tag" wx:for="{{item.itemArr}}" wx:for-item="towItem" wx:key='index'>{{towItem}}</view>
               </view>
               <view class="km">{{item.distance}}km</view>
             </view>

@@ -12,7 +12,7 @@ Page({
     showTicket: false,
     id: null,
     details: null,
-    showLen: 3,
+    showLen: 5,
     userInfo: null,
     configList: []
   },
@@ -116,6 +116,17 @@ Page({
   },
   buy (e) {
     let { item } = e.currentTarget.dataset;
+    if(!this.data.userInfo) {
+      return wx.navigateTo({
+        url: '/pages/authorization/authorization',
+        success(res) {
+          wx.showToast({
+            title: '请先授权登录',
+            icon: 'none'
+          })
+        }
+      })
+    }
     if(!this.data.userInfo.idCard) {
       wx.navigateTo({
         url: '/pages/mine/nameAuthentication'

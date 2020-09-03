@@ -1,5 +1,5 @@
 <!--pages/venue/venue.wxml-->
-<view class="venue container">
+<view class="venue container {{isScrollLay?'scrollLay': ''}}">
   <!-- 搜索框 -->
   <view class="venue-search">
     <image class="img" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/icon-search.png" mode="cover"></image>
@@ -15,7 +15,7 @@
   <!-- tab栏 -->
   <!-- <view class="tab"> -->
     <dropdownmenu class='nav' dropDownMenuTitle='{{dropDownMenuTitle}}' dropDownMenuDistrictData='{{data1}}' dropDownMenuSourceData='{{data2}}' dropDownMenuStyleData='{{data3}}' dropDownMenuFilterData='{{data4}}'
-    bind:selectedItem='selectedItem' />
+    bind:selectedItem='selectedItem' bindtap='scrollLay'/>
   <!-- </view> -->
   <!-- 场馆信息 -->
   <view wx:if='{{venueArr.length>0}}' class='venveList'>

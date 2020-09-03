@@ -1,7 +1,12 @@
 <!--pages/publicLecture/publicLecture.wxml-->
 <view class="publicLecture">
-  <view wx:if='{{lectureArr.length>0}}'>
-    <block wx:for="{{ lectureArr }}"
+  <view class='tabBar'>
+      <view  class='item {{checkedId == 0 ? "checked" :""}}' data-key='0' bindtap='changeTab'>培训课程</view>
+      <view  class='item {{checkedId == 1 ? "checked" :""}}' data-key='1' bindtap='changeTab'>讲堂报名</view>
+      <view  class='item {{checkedId == 2 ? "checked" :""}}' data-key='2' bindtap='changeTab'>在线直播</view>
+  </view>
+  <view wx:if='{{listData.length>0 && checkedId == 1}}' class='list-cont'>
+    <block wx:for="{{ listData }}"
       wx:key="index">
       <view class="item" data-item='{{item}}' bindtap="hrefDetail">
         <view class="left">
@@ -16,6 +21,20 @@
               {{ item.pcState == 2? '已结束': item.pcState == 0 ? '未发布':'报名中' }}
             </view>
           </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- 列表页 -->
+  <view wx:elif='{{listData.length>0 && checkedId == 0}}' class='keep'>
+    <block wx:for="{{ listData }}" wx:key="index">
+      <view class="list" data-item='{{item}}' bindtap="listHref">
+        <view class="left">
+          <view class='flexStart'> {{item.newsTitle}} <text wx:if='{{item.newsTag}}' class='newsTag'>{{item.newsTag}}</text></view>
+          <view class="bottom">{{item.author?item.author: ''}} <text class="time">{{item.createTime?item.createTime: ''}}</text></view>
+        </view>
+        <view class="right">
+          <image class="icon" src="{{item.newsPic}}" mode="cover"></image>
         </view>
       </view>
     </block>

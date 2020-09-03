@@ -183,6 +183,7 @@
 .index-venues .item .select .selectCont {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .index-venues .item .select .selectCont .tag {
   line-height: 32rpx;
@@ -192,6 +193,7 @@
   color: #66b2ff;
   font-size: 24rpx;
   border: 1rpx solid #66b2ff;
+  margin-bottom: 10rpx;
 }
 .index-fitness {
   font-size: 30rpx;

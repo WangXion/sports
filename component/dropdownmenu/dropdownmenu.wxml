@@ -33,7 +33,7 @@
 
 <view class="container container_hd {{source_open ? 'show' : 'disappear'}} ">
   <view class='z-height'>
-    <view>
+    <view class='flexStart list-cont'>
       <block wx:for="{{dropDownMenuSourceData}}" wx:key="unique">
         <view class="sortitem {{selected_source_id==item.id ? ' active ' : ' '}}" data-model='{{item}}' bindtap='selectSourceItem'> {{item.title}}</view>
       </block>

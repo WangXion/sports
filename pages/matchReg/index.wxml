@@ -18,7 +18,7 @@
           <view class="desc">
             <view class="address">地址：{{item.competitionPlace}}</view>
             <view class="btn {{ item.competitionState != 0  ? 'active':'' }}">
-              {{ item.competitionState == 1? '已截止': '报名中' }}
+              {{ item.competitionState == 1? '已截止': item.competitionState == 2? '未开始': '报名中' }}
             </view>
           </view>
         </view>

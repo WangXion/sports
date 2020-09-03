@@ -96,7 +96,7 @@
     </view>
     <view  wx:elif='{{details.openType == 0 && !details.noOpenUrl}}' class='noData flexCenter'>暂无售票</view>
     <!-- 更多 -->
-    <view wx:if="{{ !showTicket && ticket.length>3 }}" class="more flexCenter" bindtap="ticketClick">
+    <view wx:if="{{ !showTicket && ticket.length>showLen }}" class="more flexCenter" bindtap="ticketClick">
       查看其他票
       <image class="icon" src="https://sports-bureau.oss-cn-hangzhou.aliyuncs.com/images/right-arrow.png" mode="cover"></image>
     </view>

@@ -33,6 +33,38 @@
       </view>
     </view>
     <view class="item">
+      <view class="lable">性别</view>
+      <view class="value">
+        {{userInfo.sex}}
+      </view>
+    </view>
+    <view class="item">
+      <view class="lable">紧急联系人</view>
+      <view class="value">
+        <input
+          class="input"
+          type="text"
+          placeholder="请输入紧急联系人姓名"
+          data-type="emergencyContact"
+          value="{{ emergencyContact }}"
+          bindinput="inputchange">
+        </input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="lable">紧急联系人电话</view>
+      <view class="value">
+        <input
+          class="input"
+          type="text"
+          placeholder="请输入紧急联系人电话"
+          data-type="emergencyPhone"
+          value="{{ emergencyPhone }}"
+          bindinput="inputchange">
+        </input>
+      </view>
+    </view>
+    <view class="item">
       <view class="lable">工作单位</view>
       <view class="value">
         <input
@@ -45,7 +77,17 @@
         </input>
       </view>
     </view>
-    <view class="itemLeft item">
+    <view class="item" wx:if='{{details.haveVenueChoose == 1}}'>
+      <view class="lable">场馆</view>
+      <view class="value">
+        <picker bindchange="bindPickerChange" range-key='name' value="{{index}}" range="{{venue}}">
+          <view class="{{venueChoose?'value': 'lable'}}">
+            {{venueChoose?venueChoose: '请选择场馆'}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="itemLeft item" wx:if='{{false}}'>
       <view class="lableText">参赛材料</view>
       <view class="cont uploadCont flexCenter" bindtap='upLoadImg' wx:if='{{!materials}}'>
           <image src='https://cunjifen.oss-cn-beijing.aliyuncs.com/userImg/1597978006129.png'></image>

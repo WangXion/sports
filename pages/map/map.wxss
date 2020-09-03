@@ -151,3 +151,15 @@
   text-align: right;
   padding-top: 20rpx;
 }
+.map .mapIcon{
+  width: 101rpx;
+  height: 95rpx;
+  background: url('https://cunjifen.oss-cn-beijing.aliyuncs.com/userImg/1598319164228.jpg') no-repeat;
+  background-size: 100% 100%;
+  position: fixed;
+  bottom: 20rpx;
+  right: 15rpx;
+}
+.map .mapIcon.bottom400{
+  bottom: 400rpx;
+}

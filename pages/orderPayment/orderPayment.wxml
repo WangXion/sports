@@ -1,7 +1,7 @@
 <!--pages/orderPayment/orderPayment.wxml-->
 <view class="orderPayment">
   <view class="info">
-    <view>支付倒计时：<text class="time">{{timeCount}}</text></view>
+    <view>支付倒计时：<text class="time">{{timeCount? timeCount: "15:00"}}</text></view>
     <view class="unit">￥ <text class="price">{{details.realAmout*submitData.payNumber}}</text></view>
   </view>
   <view class="cont">

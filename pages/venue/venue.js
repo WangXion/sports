@@ -107,6 +107,7 @@ Page({
       mapLatitude: null,
     },
     location: app.globalData.location,
+    isScrollLay: false
   },
 
   /**
@@ -196,6 +197,7 @@ Page({
   selectedItem(e) {
     let searchData = this.data.searchData;
     let data = e.detail;
+    let that = this;
     console.log(data);
     if(data.index == '1') {
       if (data.selectedId < 0) {
@@ -219,8 +221,14 @@ Page({
     }
     console.log(e);
     this.setData({
-      searchData: searchData
+      searchData: searchData,
     })
+    setTimeout(function(){
+      console.log(2222)
+      that.setData({
+        isScrollLay: false
+      })
+    },500)
     this.getData();
   },
   //输入内容查询场馆
@@ -232,6 +240,11 @@ Page({
       searchData: searchData,
     })
     this.getData();
+  },
+  scrollLay() {
+    this.setData({
+      isScrollLay: !this.data.isScrollLay
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -273,5 +286,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
 })
